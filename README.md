@@ -1,7 +1,7 @@
 # FPGA-Trace
 
-An FPGA accelerated ray tracer, implemented in C++ and VHDL.
-This project will use FPGA hardware to encode triangle intersection tests on a scene, allowing for reduced energy usage. I will compare the energy efficiency of a CPU-based and FPGA-based implementations in terms of energy per triangle intersection.
+An FPGA accelerated ray tracer, implemented in C++ and using High Level Synthesis (HLS) for hardware design, running on the Xilinx Zedboard SoC.
+This project will use FPGA hardware to encode triangle intersection tests on a scene, allowing for reduced energy usage. I will compare the energy efficiency of SIMD and FPGA accelerated implementations in terms of energy and speed per triangle intersection.
 
 ## Background
 
@@ -12,6 +12,7 @@ In addition, the algorithm has massive potential for parallization, as the path 
 However, this procedure is notoriously intensive, due to the high number of computations required for just a single ray. This ray needs to be tested against the polygons present in a scene to see if it intersects, and must continue to be traced when reflected or refracted through a material. As a full image could potentially have millions of pixels, rendering a scene typically takes seconds or even minutes, making ray-tracing in real-time inefficient with current methods.
 
 In this project, I attempt to significantly improve the efficency of this method by offloading the most intensive portion, triangle collision testing, to an FPGA. This will provide much lower energy consumption for the same operations, lowering cost to run the ray-tracing algorithm.
+Using HLS features will allow me to quickly iterate on my hardware design, allowing hardware operations to be written in C syntax.
 
 ## Challenge
 
@@ -23,8 +24,8 @@ In this project, I attempt to significantly improve the efficency of this method
 
 ## Resources
 
-* Intel i7-4790K CPU (4 cores at 4.0 GHz)
-* FPGA (exact model TBD)
+* Xilinx Zedboard SoC, with onboard FPGA and 2-core ARM processor
+* Operating System: [Modified version of Xillinux](https://github.com/bperez77/zynq_linux) with [AXI DMA driver](https://github.com/bperez77/zynq_linux), provided by Brandon Perez
 * Starter code: A single threaded CPU ray tracer in C++ (implemented for 15-462 Computer Graphics)
 
 ## Goals
@@ -36,27 +37,27 @@ In this project, I attempt to significantly improve the efficency of this method
 
 ## Platform
 
-Using an FPGA is appropriate for ray tracing as the algorithm requires repeated math operations which are quite simple, but need to be done quickly and in parallel. An FPGA can provide performance improvments even superior to GPU acceleration, but much more cost effectively.
+Using an FPGA is appropriate for ray tracing as the algorithm requires repeated math operations which are quite simple, but need to be done quickly and in parallel. An FPGA can provide performance improvments even superior to GPU acceleration, but much more cost effectively. As this application is naturally parallel, and involves pure mathematics, encoding this calculation in hardware should be relatively basic, especially when taking advantage of HLS.
 
 ## Schedule
 
-Friday April 8: 
+Monday April 11: 
 
-* Create benchmark scenes
-* Review and benchmark CPU implementation
 * Acquire FPGA and implement basic logic that can be inferfaced with from C++ (LED blink, adder, etc)
+* Port ray-tracer to ARM and use SIMD to accelerate execution
+* Benchmark ray-tracer performance on CPU
 
-Friday April 15 (Checkpoint):
+Tuesday April 19 (Checkpoint):
 
 * Implement intersection for one triangle in FPGA
 * Benchmark rendering a single triangle on FPGA vs CPU
 
-Friday April 22:
+Monday April 26:
 
 * Encode scene in FPGA
 * Render and benchmark one full scene with FPGA acceleration
 
-Friday April 29:
+Monday May 1:
 
 * Render and benchmark multiple scenes with FPGA acceleration
 
