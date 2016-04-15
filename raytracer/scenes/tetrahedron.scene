@@ -1,0 +1,174 @@
+<scene>
+    <camera>
+        <fov v="0.4487989505"/>
+        <near_clip v=".1"/>
+        <far_clip v="100.0"/>
+        <position x="-6.56632" y="5.33547" z="-5.33068"/>
+        <orientation a="3.80352" x="-0.1391" y="0.915251" z="0.378109"/>
+    </camera>
+
+    <background_color r="0.7" g="0.8" b="1.0"/>
+
+    <refractive_index v="1.0"/>
+
+    <ambient_light r="0.1" g="0.1" b="0.1"/>
+
+    <point_light>
+        <position x="4.0" y="8.5" z="8.0"/>
+        <color r="0.7" g="0.7" b="0.7"/>
+    </point_light>
+
+    <point_light>
+        <position x="-2.0" y="0.5" z="-4.0"/>
+        <color r="0.5" g="0.5" b="0.5"/>
+    </point_light>
+
+    <material name="red">
+        <ambient r="0.8" g="0.0" b="0.0"/>
+        <diffuse r="0.8" g="0.0" b="0.0"/>
+        <specular r="1.0" g="0.2" b="0.2"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="blue">
+        <ambient r="0.1" g="0.1" b="0.9"/>
+        <diffuse r="0.1" g="0.1" b="0.9"/>
+        <specular r="0.1" g="0.1" b="0.2"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="swirly" texture="images/swirly.png">
+        <ambient r="1.0" g="1.0" b="1.0"/>
+        <diffuse r="1.0" g="1.0" b="1.0"/>
+        <specular r="1.0" g="1.0" b="1.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="mirror">
+        <ambient r="0.0" g="0.0" b="0.0"/>
+        <diffuse r="0.0" g="0.0" b="0.0"/>
+        <specular r="1.0" g="1.0" b="1.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <vertex name="r1" material="red">
+        <position x="1.0" y="1.0" z="1.0"/>
+        <normal x="-1.0" y="1.0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="r2" material="blue">
+        <position x="-1.0" y="-1.0" z="1.0"/>
+        <normal x="-1.0" y="1.0" z="1.0"/>
+        <tex_coord u="0.5" v="1.0"/>
+    </vertex>
+
+    <vertex name="r3" material="swirly">
+        <position x="-1.0" y="1.0" z="-1.0"/>
+        <normal x="-1.0" y="1.0" z="1.0"/>
+        <tex_coord u="0.5" v="0.5"/>
+    </vertex>
+
+    <vertex name="b1" material="blue">
+        <position x="-1.0" y="-1.0" z="1.0"/>
+        <normal x="-1.0" y="-1.0" z="-1.0"/>
+        <tex_coord u="0.5" v="1.0"/>
+    </vertex>
+
+    <vertex name="b2" material="swirly">
+        <position x="-1.0" y="1.0" z="-1.0"/>
+        <normal x="-1.0" y="-1.0" z="-1.0"/>
+        <tex_coord u="0.5" v="0.5"/>
+    </vertex>
+
+    <vertex name="b3" material="mirror">
+        <position x="1.0" y="-1.0" z="-1.0"/>
+        <normal x="-1.0" y="-1.0" z="-1.0"/>
+        <tex_coord u="1.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="s1" material="swirly">
+        <position x="-1.0" y="1.0" z="-1.0"/>
+        <normal x="1.0" y="1.0" z="-1.0"/>
+        <tex_coord u="0.5" v="0.5"/>
+    </vertex>
+
+    <vertex name="s2" material="mirror">
+        <position x="1.0" y="-1.0" z="-1.0"/>
+        <normal x="1.0" y="1.0" z="-1.0"/>
+        <tex_coord u="1.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="s3" material="red">
+        <position x="1.0" y="1.0" z="1.0"/>
+        <normal x="1.0" y="1.0" z="-1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="m1" material="mirror">
+        <position x="1.0" y="-1.0" z="-1.0"/>
+        <normal x="1.0" y="-1.0" z="1.0"/>
+        <tex_coord u="1.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="m2" material="red">
+        <position x="1.0" y="1.0" z="1.0"/>
+        <normal x="1.0" y="-1.0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="m3" material="blue">
+        <position x="-1.0" y="-1.0" z="1.0"/>
+        <normal x="1.0" y="-1.0" z="1.0"/>
+        <tex_coord u="0.5" v="1.0"/>
+    </vertex>
+
+    <triangle material="red">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="r3"/>
+        <vertex name="r2"/>
+        <vertex name="r1"/>
+    </triangle>
+
+    <triangle material="blue">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="b3"/>
+        <vertex name="b2"/>
+        <vertex name="b1"/>
+    </triangle>
+
+    <triangle material="swirly">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="s3"/>
+        <vertex name="s2"/>
+        <vertex name="s1"/>
+    </triangle>
+
+    <triangle material="mirror">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="m3"/>
+        <vertex name="m2"/>
+        <vertex name="m1"/>
+    </triangle>
+
+    <sphere material="red">
+        <position x="-1.0" y="-1.0" z="-1.0"/>
+        <radius v="0.5"/>
+    </sphere>
+
+    <sphere material="blue">
+        <position x="1.0" y="1.0" z="-1.0"/>
+        <radius v="0.5"/>
+    </sphere>
+
+    <sphere material="swirly">
+        <position x="1.0" y="-1.0" z="1.0"/>
+        <radius v="0.5"/>
+    </sphere>
+
+    <sphere material="mirror">
+        <position x="-1.0" y="1.0" z="1.0"/>
+        <radius v="0.5"/>
+    </sphere>
+
+</scene>

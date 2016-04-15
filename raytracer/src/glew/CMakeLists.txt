@@ -1,0 +1,4 @@
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+add_library(glew glew.cpp)
+set(GLEW_LIBRARIES glew PARENT_SCOPE)
+set(GLEW_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR} PARENT_SCOPE)

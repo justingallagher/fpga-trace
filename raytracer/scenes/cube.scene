@@ -1,0 +1,82 @@
+
+<scene>
+    <camera>
+        <fov v=".785"/>
+        <near_clip v=".01"/>
+        <far_clip v="200.0"/>
+        <position x="0.0" y="6.0" z="11.0"/>
+        <orientation a="-0.50" x="1.0" y="0.0" z="0.0"/>
+    </camera>
+
+    <background_color r="0.4" g="0.4" b="0.4"/>
+
+    <refractive_index v="1.0"/>
+
+    <ambient_light r="0.2" g="0.2" b="0.2"/>
+
+    <point_light>
+        <position x="-10.0" y="5.0" z="10.0"/>
+        <color r="1.0" g="1.0" b="1.0"/>
+		<radius v="1.0"/>
+    </point_light>
+
+    <material name="cube" texture="images/cube.png">
+        <diffuse r="0.9" g="0.9" b="0.9"/>
+        <specular r="0.1" g="0.1" b="0.1"/>
+    </material>
+
+    <material name="floor" texture="images/tiles.png">
+        <ambient r="0.5" g="0.5" b="0.5"/>
+        <diffuse r="0.5" g="0.5" b="0.5"/>
+        <specular r="0.5" g="0.5" b="0.5"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <mesh name="cube" filename="models/cube.obj"/>
+
+    <vertex name="f1" material="floor">
+        <position x="-2000.0" y="0.0" z="-2000.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="f2" material="floor">
+        <position x="-2000.0" y="0.0" z="2000.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="500.0"/>
+    </vertex>
+
+    <vertex name="f3" material="floor">
+        <position x="2000.0" y="0.0" z="2000.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="500.0" v="500.0"/>
+    </vertex>
+
+    <vertex name="f4" material="floor">
+        <position x="2000.0" y="0.0" z="-2000.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="500.0" v="0.0"/>
+    </vertex>
+ 
+     <triangle material="floor">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="f1"/>
+        <vertex name="f2"/>
+        <vertex name="f3"/>
+    </triangle> 
+
+     <triangle material="floor">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="f3"/>
+        <vertex name="f4"/>
+        <vertex name="f1"/>
+    </triangle> 
+
+
+    <model material="cube" mesh="cube">
+        <position x="0.0" y="1.0" z="0.0"/>
+        <orientation a="1.3" x="0.0" y="1.0" z="0.0"/>
+    </model> 
+
+</scene>
+
