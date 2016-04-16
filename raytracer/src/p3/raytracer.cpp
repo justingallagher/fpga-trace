@@ -91,17 +91,14 @@ Color3 Raytracer::trace_pixel(size_t x,
         Ray r = Ray(scene->camera.get_position(), projector.get_pixel_dir(i, j));
 
         res += trace_ray(r);
-        // TODO return the color of the given pixel
-        // you don't have to use this stub function if you prefer to
-        // write your own version of Raytracer::raytrace.
-
     }
+
     return res*(real_t(1)/num_samples);
 }
 
 /**
  * Raytraces some portion of the scene. Should raytrace for about
- * max_time duration and then return, even if the raytrace is not copmlete.
+ * max_time duration and then return, even if the raytrace is not complete.
  * The results should be placed in the given buffer.
  * @param buffer The buffer into which to place the color data. It is
  *  32-bit RGBA (4 bytes per pixel), in row-major order.
