@@ -1,0 +1,1 @@
+raytracer/extra/wv.obj filter=lfs diff=lfs merge=lfs -text
