@@ -41,25 +41,41 @@ Using an FPGA is appropriate for ray tracing as the algorithm requires repeated 
 
 ## Schedule
 
-Tuesday April 19 (Checkpoint):
+Wednesday April 13:
 
 * Acquire Zedboard FPGA (DONE)
+
+Tuesday April 19 (Checkpoint):
+
 * Install Xillinux and set up board for SSH (DONE)
 * Port ray-tracer to ARM (DONE)
+
+Friday April 22:
+
 * Update ray-tracer with SIMD acceleration
-* Test FPGA with basic logic controlled from the ARM processor (LED blink, adder, etc)
+* Benchmark ARM ray-tracer, recording (with and without SIMD):
+
+1. Average rendering time for each scene
+2. Average latency for a single triangle intersection
+3. Throughput of triangle intersections
 
 Monday April 26:
 
+* Test FPGA with basic logic controlled from the ARM processor (LED blink, adder, etc)
+
+Friday April 29:
+
 * Implement intersection for one triangle in FPGA
-* Benchmark rendering a single triangle on FPGA vs CPU
-* Encode scene in FPGA
-* Render and benchmark one full scene with FPGA acceleration
+* Integrate FPGA triangle intersection logic with ARM ray tracer
 
 Monday May 1:
 
-* Render and benchmark multiple scenes with FPGA acceleration
+* Allow simultaneous intersections for many triangles in FPGA
 
 Friday May 6:
 
-* Optimize and benchmark performance for all scenes
+* Benchmark FPGA accelerated ray tracer, using metrics above
+
+Monday May 9:
+
+* Continue optimizing and benchmarking performance for all scenes
