@@ -45,7 +45,7 @@ Tuesday April 19 (Checkpoint):
 
 * Acquire Zedboard FPGA (DONE)
 * Install Xillinux and set up board for SSH (DONE)
-* Port ray-tracer to ARM (IN PROGRESS)
+* Port ray-tracer to ARM (DONE)
 * Update ray-tracer with SIMD acceleration
 * Test FPGA with basic logic controlled from the ARM processor (LED blink, adder, etc)
 

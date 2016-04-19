@@ -93,7 +93,15 @@ public:
     Vector2( real_t x, real_t y )
         : x( x ), y( y ) {}
 
-    // also uses default copy and assignment
+    /**
+     * Assignment constructor.
+     */
+    Vector2 operator=( const Vector2& rhs ) {
+        x = rhs.x;
+        y = rhs.y;
+    }
+
+    // also uses default copy
 
     Vector2 operator+( const Vector2& rhs ) const {
         return Vector2( x + rhs.x, y + rhs.y );
@@ -327,7 +335,16 @@ public:
     explicit Vector3( const float arr[3] )
         : x( arr[0] ), y( arr[1] ), z( arr[2] ) { }
 
-    // also uses default copy and assignment
+    /**
+     * Assignment constructor.
+     */
+    Vector3 operator=( const Vector3& rhs ) {
+        x = rhs.x;
+        y = rhs.y;
+        z = rhs.z;
+    }
+
+    // also uses default copy
 
     Vector3 operator+( const Vector3& rhs ) const {
         return Vector3( x + rhs.x, y + rhs.y, z + rhs.z );
@@ -585,7 +602,17 @@ public:
     Vector4( const Vector3& v, real_t w )
         : x( v.x ), y( v.y ), z( v.z ), w( w ) {}
 
-    // also uses default copy and assignment
+    /**
+     * Assignment constructor.
+     */
+    Vector4 operator=( const Vector4& rhs ) {
+        x = rhs.x;
+        y = rhs.y;
+        z = rhs.z;
+        w = rhs.w;
+    }
+
+    // also uses default copy
 
     Vector4 operator+( const Vector4& rhs ) const {
         return Vector4( x + rhs.x, y + rhs.y, z + rhs.z, w + rhs.w );
