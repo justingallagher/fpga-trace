@@ -39,6 +39,33 @@ Using HLS features will allow me to quickly iterate on my hardware design, allow
 
 Using an FPGA is appropriate for ray tracing as the algorithm requires repeated math operations which are quite simple, but need to be done quickly and in parallel. An FPGA can provide performance improvments even superior to GPU acceleration, but much more cost effectively. As this application is naturally parallel, and involves pure mathematics, encoding this calculation in hardware should be relatively basic, especially when taking advantage of HLS.
 
+## Checkpoint
+
+### Progress
+
+Due to delays in acquiring the Zedboard, my schedule has been adjusted backward. I received the board on Wednesday April 13th, and have since been hard at work getting it up and running.
+Firstly, I downloaded, compiled and installed the [custom version of Xillinux](https://github.com/bperez77/zynq_linux/wiki) I'm using onto the board. In addition, I've set up the board for remote work over SSH, which significantly speeds up development time.
+This design also allows for easy programming of the FPGA, as I will just need to replace a file at the root of the board's SD card which will be automatically programmed to the FPGA on boot.
+
+In addition, I've completed the port of the 15-462 ray-tracer to ARM, allowing it to run in headless mode identically on the Zedboard as it does on x86 processors, tested on all scenes I will use to benchmark.
+The port takes advantage of OpenMP to parallelize ray casting, allowing it to run in multiple threads on the dual core processor.
+The next step will be to incorporate SIMD into this design, as this processor also supports double-wide SIMD instructions.
+
+Now that I have access to the board (and have spent some time clearing my schedule of other commitments), I will be able to significantly accelerate my progress. I'm confident that I should be able to hit my targets going forward.
+
+### Deliverables
+
+For the parallelism contest, I intend analyze my program in many configurations: single-threaded CPU, multi-threaded CPU, SIMD-accelerated CPU, and FPGA-accelerated.
+For each configuration, I will measure the latency of a single triangle intersection, the throughput of triangle intersections, and the energy consumption per intersection.
+I will present a by-scene analysis of runtime and energy efficiencies for each configuration, and determine under which circumstances the FPGA-accelerated version has an advantage over the others.
+
+### Concerns
+
+My major concern is that designing for the FPGA will be more difficult than anticipated.
+To combat this, I'll be able to use the examples provided by the system driver I'm using to interact between the ARM processor and the FPGA, as well as lean on the support I have from students more experienced with FPGA programming.
+In addition, unforeseen bugs may cause unexpected delays.
+I've already experienced this, with a bug in gcc's automatically generated assignment constructor causing the ray tracer to fail when code optimization is enabled.
+
 ## Schedule
 
 Wednesday April 13:
