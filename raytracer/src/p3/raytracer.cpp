@@ -14,6 +14,8 @@
 #include "math/quickselect.hpp"
 #include "p3/randomgeo.hpp"
 #include <SDL_timer.h>
+#include <iostream>
+#include "cycleTimer.h"
 
 namespace _462 {
 
@@ -25,6 +27,7 @@ Raytracer::Raytracer() {
         scene = 0;
         width = 0;
         height = 0;
+        tracetime = 0.0;
     }
 
 Raytracer::~Raytracer() { }
@@ -123,6 +126,8 @@ bool Raytracer::raytrace(unsigned char* buffer, real_t* max_time)
         end_time = SDL_GetTicks() + duration;
     }
 
+    double startTime = CycleTimer::currentSeconds();
+
     // until time is up, run the raytrace. we render an entire group of
     // rows at once for simplicity and efficiency.
     for (; !max_time || end_time > SDL_GetTicks(); current_row += STEP_SIZE)
@@ -160,7 +165,16 @@ bool Raytracer::raytrace(unsigned char* buffer, real_t* max_time)
         }
     }
 
-    if (is_done) printf("Done raytracing!\n");
+    double endTime = CycleTimer::currentSeconds();
+
+    tracetime += endTime - startTime;
+
+    if (is_done) {
+        std::cout << "Raytrace completed in " << tracetime << " seconds." <<
+            std::endl;
+
+        tracetime = 0.0;
+    }
 
     return is_done;
 }

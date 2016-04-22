@@ -52,6 +52,8 @@ private:
 
     unsigned int num_samples;
 
+    // Current time it has taken to trace
+    double tracetime;
 };
 
 } /* _462 */
