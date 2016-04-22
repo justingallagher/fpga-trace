@@ -50,7 +50,6 @@ bool Raytracer::initialize(Scene* scene, size_t num_samples,
 
     projector.init(scene->camera);
     scene->initialize();
-    photonMap.initialize(scene);
     return true;
 }
 //compute ambient lighting

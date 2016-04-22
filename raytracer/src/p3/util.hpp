@@ -3,8 +3,6 @@
 
 #include "math/color.hpp"
 #include "math/random462.hpp"
-#include "p3/photon.hpp"
-#include "p3/neighbor.hpp"
 #include "application/opengl.hpp"
 #include "scene/ray.hpp"
 #include "scene/scene.hpp"
@@ -13,7 +11,7 @@ namespace _462 {
 
 class Intersection;
 
-// max number of threads OpenMP can use. Change this if you like. (Hint: set to 1 for debugging)
+// max number of threads OpenMP can use. Change this if you like.
 #define MAX_THREADS 4
 
 //maximum depth of the recursive (sampling) tracing
@@ -21,15 +19,6 @@ class Intersection;
 
 //increase lighting by a factor
 #define WATT_BOOST 10.0
-
-//maximum depth of the recursive (photon) tracing
-#define MAX_PHOTON_DEPTH 10
-
-//total number of photons shot from light source
-#define PHOTON_COUNT 0
-
-//the ``k'' in k-nearest-neighbors. The number of photons used in each radiance estimate
-#define PHOTON_SAMPLE_COUNT 0
 
 //the number of samples used in the direct (shadow) estimate
 #define DIRECT_SAMPLE_COUNT 50

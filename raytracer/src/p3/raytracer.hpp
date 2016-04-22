@@ -14,10 +14,7 @@
 
 #include "math/color.hpp"
 #include "math/random462.hpp"
-#include "p3/photon.hpp"
-#include "p3/neighbor.hpp"
 #include "application/opengl.hpp"
-#include "p3/photonmap.hpp"
 #include "p3/util.hpp"
 namespace _462 {
 
@@ -27,8 +24,6 @@ struct Intersection;
 class Raytracer
 {
 public:
-    PhotonMap photonMap;
-
     Raytracer();
 
     ~Raytracer();

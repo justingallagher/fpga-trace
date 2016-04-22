@@ -98,7 +98,7 @@ public:
     unsigned char* buffer;
     // width and height of the buffer
     int buf_width, buf_height;
-    
+
     bool queue_render_photon;
 // true if we are in raytrace mode.
     // if so, we raytrace and display the raytrace.
@@ -262,7 +262,7 @@ void RaytracerApplication::handle_event( const SDL_Event& event )
         case KEY_SEND_PHOTONS:
             raytracer.initialize(&scene, options.num_samples, 0, 0);
             queue_render_photon=true;
-            
+
         case KEY_SCREENSHOT:
             output_image();
             break;
@@ -380,12 +380,7 @@ void RaytracerApplication::render_scene(const Scene& scene)
                camup.x,  camup.y,  camup.z );
 
     // render each object
-    if(queue_render_photon){
-        queue_render_photon = false;
-        raytracer.photonMap.update_photons();
-    }
-    raytracer.photonMap.render_photons();
-    
+
     glEnable( GL_LIGHTING );
     // set light data
     float arr[4];
@@ -416,7 +411,7 @@ void RaytracerApplication::render_scene(const Scene& scene)
         glLightfv( LightConstants[i], GL_POSITION, arr );
     }
 
-    
+
     Geometry* const* geometries = scene.get_geometries();
 
     for (size_t i = 0; i < scene.num_geometries(); ++i)
@@ -538,7 +533,7 @@ int main( int argc, char* argv[] )
     omp_set_num_threads(MAX_THREADS);
 #endif
 
-    
+
     Options opt;
 
     Matrix3 mat;

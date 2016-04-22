@@ -3,8 +3,6 @@
 
 #include "math/color.hpp"
 #include "math/random462.hpp"
-#include "p3/photon.hpp"
-#include "p3/neighbor.hpp"
 #include "application/opengl.hpp"
 #include "scene/ray.hpp"
 #include "scene/scene.hpp"

@@ -4,7 +4,6 @@
 //
 //  Created by Nathan Dobson on 11/18/14.
 //  Copyright (c) 2014 Nathan Dobson. All rights reserved.
-//  You may find this useful in photon mapping...
 //
 #ifndef __p4__quickselect__
 #define __p4__quickselect__
