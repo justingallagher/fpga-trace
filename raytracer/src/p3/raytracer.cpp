@@ -54,10 +54,6 @@ bool Raytracer::initialize(Scene* scene, size_t num_samples,
     projector.init(scene->camera);
     return scene->initialize();
 }
-//compute ambient lighting
-Color3 Raytracer::trace_ray(Ray &ray/*maybe some more arguments*/){
-    return scene->trace_ray(ray, scene->refractive_index,0);
-}
 
 /**
  * Performs a raytrace on the given pixel on the current scene.
@@ -91,10 +87,11 @@ Color3 Raytracer::trace_pixel(size_t x,
 
         Ray r = Ray(scene->camera.get_position(), projector.get_pixel_dir(i, j));
 
-        res += trace_ray(r);
+        res += scene->trace_ray(r, scene->refractive_index, 0)
+                * (real_t(1)/num_samples);
     }
 
-    return res*(real_t(1)/num_samples);
+    return res;
 }
 
 /**
@@ -152,6 +149,7 @@ bool Raytracer::raytrace(unsigned char* buffer, real_t* max_time)
                 // write the result to the buffer, always use 1.0 as the alpha
                 color.to_array4(&buffer[4 * (c_row * width + x)]);
             }
+
 #pragma omp barrier
 
         }
@@ -162,8 +160,17 @@ bool Raytracer::raytrace(unsigned char* buffer, real_t* max_time)
     tracetime += endTime - startTime;
 
     if (is_done) {
+
+        double tris_per_sec = ((double) scene->intersections) / tracetime;
+
         std::cout << "Raytrace completed in " << tracetime << " seconds." <<
             std::endl;
+        std::cout << "Completed " << scene->intersections
+            << " triangle intersections - " << tris_per_sec / 1000000.0
+            << "M tris/sec" << std::endl;
+
+        #pragma omp atomic write
+        scene->intersections = 0;
 
         tracetime = 0.0;
     }

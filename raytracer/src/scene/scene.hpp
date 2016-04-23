@@ -163,6 +163,8 @@ public:
     void add_mesh( Mesh* m );
     void add_light( const SphereLight& l );
 
+    unsigned long long intersections;
+
 private:
 
     typedef std::vector< SphereLight > SphereLightList;

@@ -106,8 +106,15 @@ Scene::~Scene()
 bool Scene::initialize()
 {
     bool res = true;
+
     for (unsigned int i = 0; i < num_geometries(); i++)
         res &= geometries[i]->initialize();
+
+    intersections = 0;
+
+    if (triangles.size() > 0) {
+        return res;
+    }
 
     for (unsigned int i = 0; i < num_geometries(); i++) {
         TriangleList newtris = geometries[i]->get_triangles();
@@ -208,6 +215,11 @@ Intersection Scene::cast_ray(Ray &ray) {
             min_inter.tri = triangles[i]->num_tri;
         }
     }
+
+    long long num_tris = (long long) triangles.size();
+
+    #pragma omp atomic update
+    intersections += num_tris;
 
     return min_inter;
 }
