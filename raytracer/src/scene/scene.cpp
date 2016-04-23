@@ -108,6 +108,12 @@ bool Scene::initialize()
     bool res = true;
     for (unsigned int i = 0; i < num_geometries(); i++)
         res &= geometries[i]->initialize();
+
+    for (unsigned int i = 0; i < num_geometries(); i++) {
+        TriangleList newtris = geometries[i]->get_triangles();
+        triangles.insert(triangles.end(), newtris.begin(), newtris.end());
+    }
+
     return res;
 }
 
@@ -182,15 +188,24 @@ Color3 Scene::trace_ray(Ray &ray, int refracti, int depth) {
  * @return: Intersection object representing the intersection.
  */
 Intersection Scene::cast_ray(Ray &ray) {
+
     // Use ray casting to find if an object is seen
     Intersection min_inter;
     min_inter.time = -1.0;
 
-    for (unsigned int i = 0; i < num_geometries(); i++) {
-        Intersection temp_inter = get_geometries()[i]->intersect(ray);
-        if (temp_inter.time >= EPS && (min_inter.time < EPS ||
-                temp_inter.time < min_inter.time)) {
-            min_inter = temp_inter;
+    for (unsigned int i = 0; i < triangles.size(); i++) {
+        real_t temp_beta, temp_gamma, temp_t;
+
+        temp_t = triangles[i]->intersect(ray, temp_beta, temp_gamma);
+
+        if (temp_t != -1 && temp_t >= EPS &&
+                (min_inter.time < EPS || temp_t < min_inter.time)) {
+
+            min_inter.time = temp_t;
+            min_inter.x = temp_beta;
+            min_inter.y = temp_gamma;
+            min_inter.shape = triangles[i]->parent;
+            min_inter.tri = triangles[i]->num_tri;
         }
     }
 
@@ -199,6 +214,9 @@ Intersection Scene::cast_ray(Ray &ray) {
 
 void Scene::reset()
 {
+    for ( TriangleList::iterator i = triangles.begin(); i != triangles.end(); ++i ) {
+        delete *i;
+    }
     for ( GeometryList::iterator i = geometries.begin(); i != geometries.end(); ++i ) {
         delete *i;
     }
@@ -239,59 +257,6 @@ void Scene::add_mesh( Mesh* m )
 void Scene::add_light( const SphereLight& l )
 {
     point_lights.push_back( l );
-}
-
-/**
- * @brief Calculates the time of intersection for a point with a triangle.
- * @param v0, v1, v2: Vertices of the triangle to intersect.
- * @param rd: Direction of ray.
- * @param re: Starting location of ray.
- * @return: The time of intersection, or -1 if there is no intersection.
- */
-real_t tri_intersect(Vector3 v0, Vector3 v1, Vector3 v2, Vector3 rd, Vector3 re,
-        real_t &beta, real_t &gamma)
-{
-    // Compute t
-    real_t a = v0.x - v1.x;
-    real_t b = v0.y - v1.y;
-    real_t c = v0.z - v1.z;
-    real_t d = v0.x - v2.x;
-    real_t e = v0.y - v2.y;
-    real_t f = v0.z - v2.z;
-    real_t g = rd.x;
-    real_t h = rd.y;
-    real_t i = rd.z;
-    real_t j = v0.x - re.x;
-    real_t k = v0.y - re.y;
-    real_t l = v0.z - re.z;
-
-    real_t m = a*(e*i-h*f) + b*(g*f-d*i) + c*(d*h-e*g);
-
-    if (fabs(m) == 0.0) {
-        return -1.0;
-    }
-
-    real_t t = (f*(a*k-j*b) + e*(j*c-a*l) + d*(b*l-k*c)) * -1.0/m;
-
-    if (t < EPS) {
-        return -1.0;
-    }
-
-    // Compute gamma
-    gamma = (i*(a*k-j*b) + h*(j*c-a*l) + g*(b*l-k*c)) / m;
-
-    if (gamma < 0 || gamma > 1) {
-        return -1.0;
-    }
-
-    // Compute beta
-    beta = (j*(e*i-h*f) + k*(g*f-d*i) + l*(d*h-e*g)) / m;
-
-    if (beta < 0 || beta > 1 - gamma) {
-        return -1.0;
-    }
-
-    return t;
 }
 
 } /* _462 */

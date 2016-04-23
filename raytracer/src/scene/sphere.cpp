@@ -81,43 +81,12 @@ Sphere::Sphere()
 Sphere::~Sphere() {}
 
 /**
- * @brief Calculates time that a ray intersects with the shape
- * @param ray: Ray to calculate for
- * @return: Object representing the intersection, or null if there is no
- *        intersection.
+ * @brief Returns this object as a simple triangle.
  */
-Intersection Sphere::intersect(Ray &ray) {
+std::vector< SimpleTriangle* > Sphere::get_triangles() {
+    std::vector< SimpleTriangle* > mytris;
 
-    // Transform ray to local space
-    Vector3 locale = (invMat * Vector4(ray.e, 1.0)).xyz();
-    Vector3 locald = (invMat * Vector4(ray.d, 0.0)).xyz();
-
-    // Calculate quadratic coefficients
-    real_t a = dot(locald, locald);
-    real_t b = 2.0 * dot(locald, locale);
-    real_t c = dot(locale, locale) - radius * radius;
-
-    // Get t
-    real_t t = solve_time(a, b, c);
-
-    // Calculate lat/long
-    Vector3 pos = locale + locald * t;
-    real_t theta = acos(pos.y / radius);
-    real_t phi = atan2(pos.x, pos.z);
-    if (phi < 0) {
-        phi += 2 * PI;
-    }
-    real_t lon = phi / (2 * PI);
-    real_t lat = (PI - theta) / PI;
-
-    // Create return object
-    Intersection intersect;
-    intersect.time = t;
-    intersect.shape = this;
-    intersect.x = lon;
-    intersect.y = lat;
-
-    return intersect;
+    return mytris;
 }
 
 /**

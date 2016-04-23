@@ -52,8 +52,7 @@ bool Raytracer::initialize(Scene* scene, size_t num_samples,
     current_row = 0;
 
     projector.init(scene->camera);
-    scene->initialize();
-    return true;
+    return scene->initialize();
 }
 //compute ambient lighting
 Color3 Raytracer::trace_ray(Ray &ray/*maybe some more arguments*/){
@@ -141,15 +140,8 @@ bool Raytracer::raytrace(unsigned char* buffer, real_t* max_time)
 
         for (int c_row = current_row; c_row < loop_upper; c_row++)
         {
-            /*
-             * This defines a critical region of code that should be
-             * executed sequentially.
-             */
-#pragma omp critical
-            {
-                if (c_row % PRINT_INTERVAL == 0)
-                    printf("Raytracing (Row %d)\n", c_row);
-            }
+            if (c_row % PRINT_INTERVAL == 0)
+                printf("Raytracing (Row %d)\n", c_row);
 
         // This tells OpenMP that this loop can be parallelized.
 #pragma omp parallel for schedule(dynamic, CHUNK_SIZE)

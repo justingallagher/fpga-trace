@@ -8,20 +8,21 @@
 #ifndef _462_SCENE_SCENE_HPP_
 #define _462_SCENE_SCENE_HPP_
 
+#include <string>
+#include <vector>
+#include <cfloat>
+
+#include "p3/util.hpp"
 #include "math/vector.hpp"
 #include "math/quaternion.hpp"
 #include "math/matrix.hpp"
 #include "math/camera.hpp"
 #include "math/random462.hpp"
+#include "scene/bound.hpp"
 #include "scene/material.hpp"
 #include "scene/mesh.hpp"
-//#include "scene/bvh.hpp"
-#include "ray.hpp"
-#include <string>
-#include <vector>
-#include <cfloat>
-#include "scene/bound.hpp"
-#include "p3/util.hpp"
+#include "scene/ray.hpp"
+#include "scene/simpletriangle.hpp"
 
 namespace _462 {
 class Geometry;
@@ -72,12 +73,6 @@ public:
     bool isBig;
 
     /**
-     * Returns the time t where the geometry intersections with the given ray.
-     * -1 if no such time exists.
-     */
-    virtual Intersection intersect(Ray &ray) = 0;
-
-    /**
      * Returns color at the given intersection
      */
     virtual Color3 color(Intersection intersect, Ray &ray, Scene &scene,
@@ -87,6 +82,8 @@ public:
      * Renders this geometry using OpenGL in the local coordinate space.
      */
     virtual void render() const = 0;
+
+    virtual std::vector< SimpleTriangle* > get_triangles() = 0;
 
     virtual bool initialize();
 };
@@ -172,6 +169,7 @@ private:
     typedef std::vector< Material* > MaterialList;
     typedef std::vector< Mesh* > MeshList;
     typedef std::vector< Geometry* > GeometryList;
+    typedef std::vector< SimpleTriangle* > TriangleList;
 
     // list of all lights in the scene
     SphereLightList point_lights;
@@ -181,6 +179,9 @@ private:
     MeshList meshes;
     // list of all geometries. deleted in dctor, so should be allocated on heap.
     GeometryList geometries;
+    // list of all triangles and their associated geometries.
+    TriangleList triangles;
+
 private:
 
     // no meaningful assignment or copy
@@ -188,10 +189,6 @@ private:
     Scene& operator=(const Scene&);
 
 };
-
-// Calculate intersection of a ray with a triangle
-real_t tri_intersect(Vector3 v0, Vector3 v1, Vector3 v2, Vector3 d, Vector3 e,
-        real_t &beta, real_t &gamma);
 
 } /* _462 */
 

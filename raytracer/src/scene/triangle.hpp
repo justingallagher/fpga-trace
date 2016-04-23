@@ -40,12 +40,12 @@ public:
 
     Triangle();
     virtual ~Triangle();
-    Intersection intersect(Ray &ray);
     Color3 color(Intersection intersect, Ray &ray, Scene &scene, int depth,
             int refractive_index);
     virtual void render() const;
-};
 
+    std::vector< SimpleTriangle* > get_triangles();
+};
 
 } /* _462 */
 

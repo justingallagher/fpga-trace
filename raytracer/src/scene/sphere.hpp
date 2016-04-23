@@ -27,11 +27,11 @@ public:
 
     Sphere();
     virtual ~Sphere();
-    Intersection intersect(Ray &ray);
     Color3 color(Intersection intersect, Ray &ray, Scene &scene, int depth,
             int refractive_index);
     virtual void render() const;
 
+    virtual std::vector< SimpleTriangle* > get_triangles();
 };
 
 real_t solve_time(real_t a, real_t b, real_t c);

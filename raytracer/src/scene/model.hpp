@@ -35,6 +35,8 @@ public:
     Color3 color(Intersection intersect, Ray &ray, Scene &scene, int depth,
             int refractive_index);
     virtual bool initialize();
+
+    std::vector< SimpleTriangle* > get_triangles();
 };
 
 

@@ -22,50 +22,26 @@ Model::Model() : mesh( 0 ), material( 0 ) { }
 Model::~Model() { }
 
 /**
- * @brief Calculates time that a ray intersects with the shape
- * @param ray: Ray to calculate for
- * @return: Object representing the intersection, or null if there is no
- *        intersection.
+ * @brief Returns this object as a set of simple triangles.
  */
-Intersection Model::intersect(Ray &ray) {
-
-    // Transform ray to local space
-    Vector3 locale = (invMat * Vector4(ray.e, 1.0)).xyz();
-    Vector3 locald = (invMat * Vector4(ray.d, 0.0)).xyz();
-
-    // Find minimum intersection t for component triangles
-    real_t min_t = -1.0;
-    real_t beta;
-    real_t gamma;
-    unsigned int tri_num;
+std::vector< SimpleTriangle* > Model::get_triangles() {
+    std::vector< SimpleTriangle* > mytris;
 
     for (unsigned int i = 0; i < mesh->num_triangles(); i++) {
         MeshTriangle tri = mesh->get_triangles()[i];
 
-        Vector3 tv0 = mesh->get_vertices()[tri.vertices[0]].position;
-        Vector3 tv1 = mesh->get_vertices()[tri.vertices[1]].position;
-        Vector3 tv2 = mesh->get_vertices()[tri.vertices[2]].position;
+        Vector3 v1 = mesh->get_vertices()[tri.vertices[0]].position;
+        Vector3 v2 = mesh->get_vertices()[tri.vertices[1]].position;
+        Vector3 v3 = mesh->get_vertices()[tri.vertices[2]].position;
 
-        real_t tempBeta, tempGamma;
-        real_t t = tri_intersect(tv0, tv1, tv2, locald, locale, tempBeta,
-                tempGamma);
+        v1 = (mat * Vector4(v1, 1.0)).xyz();
+        v2 = (mat * Vector4(v2, 1.0)).xyz();
+        v3 = (mat * Vector4(v3, 1.0)).xyz();
 
-        if (t >= EPS && (min_t < EPS || t < min_t)) {
-            min_t = t;
-            beta = tempBeta;
-            gamma = tempGamma;
-            tri_num = i;
-        }
+        mytris.push_back(new SimpleTriangle(v1, v2, v3, this, i));
     }
 
-    Intersection intersect;
-    intersect.time = min_t;
-    intersect.shape = this;
-    intersect.tri = tri_num;
-    intersect.x = beta;
-    intersect.y = gamma;
-
-    return intersect;
+    return mytris;
 }
 
 /**

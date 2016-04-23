@@ -23,29 +23,18 @@ Triangle::Triangle()
 Triangle::~Triangle() { }
 
 /**
- * @brief Calculates time that a ray intersects with the shape
- * @param ray: Ray to calculate for
- * @return: Object representing the intersection, or null if there is no
- *        intersection.
+ * @brief Returns this object as a simple triangle.
  */
-Intersection Triangle::intersect(Ray &ray) {
+std::vector< SimpleTriangle* > Triangle::get_triangles() {
+    std::vector< SimpleTriangle* > mytris;
 
-    // Transform ray to local space
-    Vector3 locale = (invMat * Vector4(ray.e, 1.0)).xyz();
-    Vector3 locald = (invMat * Vector4(ray.d, 0.0)).xyz();
+    Vector3 v1 = (mat * Vector4(vertices[0].position, 1.0)).xyz();
+    Vector3 v2 = (mat * Vector4(vertices[1].position, 1.0)).xyz();
+    Vector3 v3 = (mat * Vector4(vertices[2].position, 1.0)).xyz();
 
-    real_t beta, gamma;
+    mytris.push_back(new SimpleTriangle(v1, v2, v3, this, -1));
 
-    real_t t = tri_intersect(vertices[0].position, vertices[1].position,
-        vertices[2].position, locald, locale, beta, gamma);
-
-    Intersection intersect;
-    intersect.time = t;
-    intersect.shape = this;
-    intersect.x = beta;
-    intersect.y = gamma;
-
-    return intersect;
+    return mytris;
 }
 
 /**
