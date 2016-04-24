@@ -218,7 +218,7 @@ Intersection Scene::cast_ray(Ray &ray) {
 
     long long num_tris = (long long) triangles.size();
 
-    #pragma omp atomic update
+    #pragma omp atomic
     intersections += num_tris;
 
     return min_inter;

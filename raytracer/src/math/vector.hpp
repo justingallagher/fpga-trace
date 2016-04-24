@@ -99,6 +99,7 @@ public:
     Vector2 operator=( const Vector2& rhs ) {
         x = rhs.x;
         y = rhs.y;
+        return *this;
     }
 
     // also uses default copy
@@ -342,6 +343,7 @@ public:
         x = rhs.x;
         y = rhs.y;
         z = rhs.z;
+        return *this;
     }
 
     // also uses default copy
@@ -610,6 +612,7 @@ public:
         y = rhs.y;
         z = rhs.z;
         w = rhs.w;
+        return *this;
     }
 
     // also uses default copy

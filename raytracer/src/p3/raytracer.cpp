@@ -169,7 +169,6 @@ bool Raytracer::raytrace(unsigned char* buffer, real_t* max_time)
             << " triangle intersections - " << tris_per_sec / 1000000.0
             << "M tris/sec" << std::endl;
 
-        #pragma omp atomic write
         scene->intersections = 0;
 
         tracetime = 0.0;
