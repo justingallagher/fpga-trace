@@ -200,6 +200,7 @@ Intersection Scene::cast_ray(Ray &ray) {
     Intersection min_inter;
     min_inter.time = -1.0;
 
+    /*
     for (unsigned int i = 0; i < triangles.size(); i++) {
         real_t temp_beta, temp_gamma, temp_t;
 
@@ -215,6 +216,9 @@ Intersection Scene::cast_ray(Ray &ray) {
             min_inter.tri = triangles[i]->num_tri;
         }
     }
+    */
+
+    min_inter = SimpleTriangle::simd_intersect(triangles, ray);
 
     long long num_tris = (long long) triangles.size();
 

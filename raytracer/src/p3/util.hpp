@@ -14,9 +14,6 @@ class Intersection;
 // max number of threads OpenMP can use. Change this if you like.
 #define MAX_THREADS 4
 
-// width of ARM NEON SIMD registers, in bytes.
-#define SIMD_WIDTH 16
-
 //maximum depth of the recursive (sampling) tracing
 #define MAX_DEPTH 10
 

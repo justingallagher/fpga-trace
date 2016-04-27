@@ -3,7 +3,7 @@ if(WIN32)
 endif()
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++0x -Wextra -g -O3 -fno-omit-frame-pointer -Wno-deprecated-declarations -Wno-unused-parameter -Wno-unused-function ")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpu=neon -Wall -std=c++0x -Wextra -g -O3 -fno-omit-frame-pointer -Wno-deprecated-declarations -Wno-unused-parameter -Wno-unused-function ")
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}")
 endif()
 

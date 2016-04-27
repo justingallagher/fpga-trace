@@ -5,6 +5,7 @@
  */
 
 #include "scene/simpletriangle.hpp"
+#include <limits>
 
 namespace _462 {
 
@@ -104,7 +105,7 @@ namespace _462 {
         float32x4_t reciprocal = vrecpeq_f32(x);
 
         for (int i = 0; i < NUM_REFINEMENTS; i++)
-            reciprocal = vmulq_f32(vrecpsq_f32(b, reciprocal), reciprocal);
+            reciprocal = vmulq_f32(vrecpsq_f32(x, reciprocal), reciprocal);
 
         return reciprocal;
     }
@@ -115,14 +116,14 @@ namespace _462 {
      * @param ray: Ray to test.
      * @return Best intersection.
      */
-    static Intersection simd_intersect(std::vector<SimpleTriangle*> &tris,
-            Ray &ray) {
+    Intersection SimpleTriangle::simd_intersect(
+            std::vector<SimpleTriangle*> &tris, Ray &ray) {
 
-        const int WIDTH = SIMD_WIDTH / sizeof(float);
+        const size_t WIDTH = SIMD_WIDTH / sizeof(float);
 
         // Tracks the closest intersection we've found so far
         Intersection result;
-        result.time = FLT_MAX;
+        result.time = std::numeric_limits<float>::infinity();
 
         // Loop in intervals of SIMD_WIDTH
         for (size_t x = 0; x < tris.size(); x += WIDTH) {
@@ -141,19 +142,19 @@ namespace _462 {
             float32x4_t v2x, v2y, v2z;
 
             for (size_t y = 0; y < WIDTH && x + y < tris.size(); y++) {
-                SimpleTriangle cur = tris[x + y];
+                SimpleTriangle* cur = tris[x + y];
 
-                tempv0x[y] = cur.vertices[0].x;
-                tempv0y[y] = cur.vertices[0].y;
-                tempv0z[y] = cur.vertices[0].z;
+                tempv0x[y] = cur->vertices[0].x;
+                tempv0y[y] = cur->vertices[0].y;
+                tempv0z[y] = cur->vertices[0].z;
 
-                tempv1x[y] = cur.vertices[1].x;
-                tempv1y[y] = cur.vertices[1].y;
-                tempv1z[y] = cur.vertices[1].z;
+                tempv1x[y] = cur->vertices[1].x;
+                tempv1y[y] = cur->vertices[1].y;
+                tempv1z[y] = cur->vertices[1].z;
 
-                tempv2x[y] = cur.vertices[2].x;
-                tempv2y[y] = cur.vertices[2].y;
-                tempv2z[y] = cur.vertices[2].z;
+                tempv2x[y] = cur->vertices[2].x;
+                tempv2y[y] = cur->vertices[2].y;
+                tempv2z[y] = cur->vertices[2].z;
             }
 
             v0x = vld1q_f32(tempv0x);
@@ -227,7 +228,7 @@ namespace _462 {
             float32x4_t beta1 = mult_diff(j, e, i, h, f);
             float32x4_t beta2 = mult_diff(k, g, f, d, i);
             float32x4_t beta3 = mult_diff(l, d, h, e, g);
-            float32x4_t beta = vmulq_f32(beta1, vmultq_f32(beta2, beta3));
+            float32x4_t beta = vmulq_f32(beta1, vmulq_f32(beta2, beta3));
             beta = vmulq_f32(beta, im);
 
             //=================================================================
@@ -242,20 +243,21 @@ namespace _462 {
             vst1q_f32(gammaresult, gamma);
             vst1q_f32(betaresult, beta);
 
-            for (int y = 0; y < WIDTH && x + y < tris.size(); y++) {
-                if (ESP < tresult[y] && tresult[y] < result.time &&
+            for (size_t y = 0; y < WIDTH && x + y < tris.size(); y++) {
+                if (EPS < tresult[y] && tresult[y] < result.time &&
                         0.0 <= gammaresult[y] && gammaresult[y] <= 1.0 &&
                         0.0 <= betaresult[y] && betaresult[y] <= 1.0) {
-                    result.time = tresult[t];
-                    result.shape = tris[x + y].parent;
-                    result.tri = tris[x + y].num_tri;
+                    result.time = tresult[y];
+                    result.shape = tris[x + y]->parent;
+                    result.tri = tris[x + y]->num_tri;
                     result.x = betaresult[y];
                     result.y = gammaresult[y];
                 }
             }
         }
 
-        if (result.time == FLT_MAX) result.time = -1.0;
+        if (result.time == std::numeric_limits<float>::infinity())
+            result.time = -1.0;
 
         return result;
     }

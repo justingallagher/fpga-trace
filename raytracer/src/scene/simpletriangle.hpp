@@ -9,12 +9,25 @@
 
 #include "math/vector.hpp"
 #include "scene/ray.hpp"
-#include "p3/util.hpp"
 #include <arm_neon.h>
+
+// width of ARM NEON SIMD registers, in bytes.
+#define SIMD_WIDTH 16
 
 namespace _462 {
 
 class Geometry;
+
+//represents an intersection between a ray and geometry
+struct Intersection {
+    real_t time;        // Time that the ray intersected with the shape
+    Geometry* shape;    // Shape that the ray intersected with
+    unsigned int tri;   // Triangle that the ray intersected with (model only)
+    real_t x;           // Longitude/beta for spheres/triangles
+    real_t y;           // Latitude/gamma for spheres/triangles
+};
+
+typedef struct Intersection Intersection;
 
 /* @brief Basic triangle used for common intersection tests. */
 class SimpleTriangle {
@@ -33,10 +46,9 @@ class SimpleTriangle {
         // a mesh.
         int num_tri;
 
-        static Intersection simd_intersect(std::vector<SimpleTriangle*> &tris,
-                Ray &ray);
+        static Intersection simd_intersect(std::vector<SimpleTriangle*>
+                &tris, Ray &ray);
 
-    private:
         // Points of each vertex, in absolute coordinates
         Vector3 vertices[3];
 };

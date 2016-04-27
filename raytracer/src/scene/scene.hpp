@@ -28,17 +28,6 @@ namespace _462 {
 class Geometry;
 class Scene;
 
-//represents an intersection between a ray and geometry
-struct Intersection {
-    real_t time;        // Time that the ray intersected with the shape
-    Geometry* shape;    // Shape that the ray intersected with
-    unsigned int tri;   // Triangle that the ray intersected with (model only)
-    real_t x;           // Longitude/beta for spheres/triangles
-    real_t y;           // Latitude/gamma for spheres/triangles
-};
-
-typedef struct Intersection Intersection;
-
 real_t solve_time(real_t a, real_t b, real_t c);
 
 class Geometry
