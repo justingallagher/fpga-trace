@@ -9,6 +9,8 @@
 
 #include "math/vector.hpp"
 #include "scene/ray.hpp"
+#include "p3/util.hpp"
+#include <arm_neon.h>
 
 namespace _462 {
 
@@ -30,6 +32,9 @@ class SimpleTriangle {
         // The index of the triangle in a mesh; do not use if parent is not
         // a mesh.
         int num_tri;
+
+        static Intersection simd_intersect(std::vector<SimpleTriangle*> &tris,
+                Ray &ray);
 
     private:
         // Points of each vertex, in absolute coordinates
