@@ -9,6 +9,8 @@
 
 namespace _462 {
 
+    const size_t WIDTH = SIMD_WIDTH / sizeof(float);
+
     SimpleTriangle::SimpleTriangle(Vector3 v1, Vector3 v2, Vector3 v3,
             Geometry* parent, int num_tri) {
 
@@ -110,6 +112,18 @@ namespace _462 {
         return reciprocal;
     }
 
+    static inline void print_simd(std::string name, float32x4_t x) {
+        float temp[WIDTH];
+
+        vst1q_f32(temp, x);
+
+        std::cout << name << ": (";
+        for (size_t i = 0; i < WIDTH; i++) {
+            std::cout << temp[i] << ", ";
+        }
+        std::cout << ")" << std::endl;
+    }
+
     /**
      * @brief Performs the intersection of many triangles with a ray using SIMD.
      * @param tris: List of triangles to test.
@@ -119,7 +133,6 @@ namespace _462 {
     Intersection SimpleTriangle::simd_intersect(
             std::vector<SimpleTriangle*> &tris, Ray &ray) {
 
-        const size_t WIDTH = SIMD_WIDTH / sizeof(float);
 
         // Tracks the closest intersection we've found so far
         Intersection result;
@@ -201,7 +214,7 @@ namespace _462 {
             float32x4_t m1 = mult_diff(a, e, i, h, f);
             float32x4_t m2 = mult_diff(b, g, f, d, i);
             float32x4_t m3 = mult_diff(c, d, h, e, g);
-            float32x4_t m = vmulq_f32(m1, vmulq_f32(m2, m3));
+            float32x4_t m = vaddq_f32(m1, vaddq_f32(m2, m3));
 
             // im = 1/m;
             float32x4_t im = reciprocal(m);
@@ -210,7 +223,7 @@ namespace _462 {
             float32x4_t t1 = mult_diff(f, a, k, f, b);
             float32x4_t t2 = mult_diff(e, j, c, a, l);
             float32x4_t t3 = mult_diff(d, b, l, k, c);
-            float32x4_t t = vmulq_f32(t1, vmulq_f32(t2, t3));
+            float32x4_t t = vaddq_f32(t1, vaddq_f32(t2, t3));
             t = vmulq_f32(vnegq_f32(t), im);
 
             //=================================================================
@@ -221,14 +234,14 @@ namespace _462 {
             float32x4_t gamma1 = mult_diff(i, a, k, j, b);
             float32x4_t gamma2 = mult_diff(h, j, c, a, l);
             float32x4_t gamma3 = mult_diff(g, b, l, k, c);
-            float32x4_t gamma = vmulq_f32(gamma1, vmulq_f32(gamma2, gamma3));
+            float32x4_t gamma = vaddq_f32(gamma1, vaddq_f32(gamma2, gamma3));
             gamma = vmulq_f32(gamma, im);
 
             // beta = (j*(e*i-h*f) + k*(g*f-d*i) + l*(d*h-e*g)) / m;
             float32x4_t beta1 = mult_diff(j, e, i, h, f);
             float32x4_t beta2 = mult_diff(k, g, f, d, i);
             float32x4_t beta3 = mult_diff(l, d, h, e, g);
-            float32x4_t beta = vmulq_f32(beta1, vmulq_f32(beta2, beta3));
+            float32x4_t beta = vaddq_f32(beta1, vaddq_f32(beta2, beta3));
             beta = vmulq_f32(beta, im);
 
             //=================================================================
