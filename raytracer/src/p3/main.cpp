@@ -294,7 +294,7 @@ void RaytracerApplication::toggle_raytracing( int width, int height )
 
         // initialize the raytracer (first make sure camera aspect is correct)
         scene.camera.aspect = real_t( width ) / real_t( height );
-        scene.simd_accel = opt->simd_accel;
+        scene.simd_accel = options.simd_accel;
 
         if (!raytracer.initialize(&scene, options.num_samples, width, height))
         {
