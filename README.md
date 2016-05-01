@@ -79,7 +79,7 @@ Tuesday April 19 (Checkpoint):
 
 Friday April 22:
 
-* Update ray-tracer with SIMD acceleration
+* Update ray-tracer with SIMD acceleration (DONE)
 * Benchmark ARM ray-tracer, recording (with and without SIMD):
 
 1. Average rendering time for each scene

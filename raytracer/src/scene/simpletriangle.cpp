@@ -259,7 +259,8 @@ namespace _462 {
             for (size_t y = 0; y < WIDTH && x + y < tris.size(); y++) {
                 if (EPS < tresult[y] && tresult[y] < result.time &&
                         0.0 <= gammaresult[y] && gammaresult[y] <= 1.0 &&
-                        0.0 <= betaresult[y] && betaresult[y] <= 1.0) {
+                        0.0 <= betaresult[y] &&
+                        betaresult[y] <= 1.0 - gammaresult[y]) {
                     result.time = tresult[y];
                     result.shape = tris[x + y]->parent;
                     result.tri = tris[x + y]->num_tri;

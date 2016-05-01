@@ -141,7 +141,7 @@ bool Raytracer::raytrace(unsigned char* buffer, real_t* max_time)
                 printf("Raytracing (Row %d)\n", c_row);
 
         // This tells OpenMP that this loop can be parallelized.
-#pragma omp parallel for schedule(dynamic, CHUNK_SIZE)
+//#pragma omp parallel for schedule(dynamic, CHUNK_SIZE)
             for (size_t x = 0; x < width; x++)
             {
                 // trace a pixel
