@@ -154,6 +154,9 @@ public:
 
     unsigned long long intersections;
 
+    // Whether we should use SIMD acceleration
+    bool simd_accel;
+
 private:
 
     typedef std::vector< SphereLight > SphereLightList;

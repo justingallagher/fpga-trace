@@ -60,6 +60,8 @@ struct Options
     // window dimensions
     int width, height;
     int num_samples;
+    // whether to use ARM NEON (SIMD) acceleration
+    bool simd_accel;
 };
 
 class RaytracerApplication : public Application
@@ -259,10 +261,6 @@ void RaytracerApplication::handle_event( const SDL_Event& event )
             get_dimension( &width, &height );
             toggle_raytracing( width, height );
             break;
-        case KEY_SEND_PHOTONS:
-            raytracer.initialize(&scene, options.num_samples, 0, 0);
-            queue_render_photon=true;
-
         case KEY_SCREENSHOT:
             output_image();
             break;
@@ -283,7 +281,7 @@ void RaytracerApplication::toggle_raytracing( int width, int height )
 
         // only re-allocate if the dimensions changed
         if ( buf_width != width || buf_height != height )
-    {
+        {
             free( buffer );
             buffer = (unsigned char*) malloc( BUFFER_SIZE( width, height ) );
             if ( !buffer ) {
@@ -296,9 +294,10 @@ void RaytracerApplication::toggle_raytracing( int width, int height )
 
         // initialize the raytracer (first make sure camera aspect is correct)
         scene.camera.aspect = real_t( width ) / real_t( height );
+        scene.simd_accel = opt->simd_accel;
 
         if (!raytracer.initialize(&scene, options.num_samples, width, height))
-    {
+        {
             std::cout << "Raytracer initialization failed.\n";
             return; // leave untoggled since initialization failed.
         }
@@ -463,6 +462,8 @@ static void print_usage( const char* progname )
         "\toutput_file:\n" \
         "\t\tThe output file in which to write the rendered images.\n" \
         "\t\tIf not specified, default timestamped filenames are used.\n" \
+        "\t-c:\n" \
+        "\t\tUse ARM NEON SIMD acceleration.\n" \
         "\n" \
         "Instructions:\n" \
         "\n" \
@@ -496,6 +497,7 @@ static bool parse_args( Options* opt, int argc, char* argv[] )
     opt->width = DEFAULT_WIDTH;
     opt->height = DEFAULT_HEIGHT;
     opt->num_samples = 1;
+    opt->simd_accel = false;
     for (int i = 2; i < argc; i++)
     {
         switch (argv[i][1])
@@ -521,6 +523,9 @@ static bool parse_args( Options* opt, int argc, char* argv[] )
         case 'o':
             if (i < argc - 1)
                 opt->output_filename = argv[++i];
+            break;
+        case 'c':
+            opt->simd_accel = true;
         }
     }
 

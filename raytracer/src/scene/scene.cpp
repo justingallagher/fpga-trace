@@ -200,25 +200,27 @@ Intersection Scene::cast_ray(Ray &ray) {
     Intersection min_inter;
     min_inter.time = -1.0;
 
-    /*
-    for (unsigned int i = 0; i < triangles.size(); i++) {
-        real_t temp_beta, temp_gamma, temp_t;
+    if (simd_accel) {
+        // Use SIMD accelerated triangle intersections
+        min_inter = SimpleTriangle::simd_intersect(triangles, ray);
+    } else {
+        // Use normal CPU triangle intersections
+        for (unsigned int i = 0; i < triangles.size(); i++) {
+            real_t temp_beta, temp_gamma, temp_t;
 
-        temp_t = triangles[i]->intersect(ray, temp_beta, temp_gamma);
+            temp_t = triangles[i]->intersect(ray, temp_beta, temp_gamma);
 
-        if (temp_t != -1 && temp_t >= EPS &&
-                (min_inter.time < EPS || temp_t < min_inter.time)) {
+            if (temp_t != -1 && temp_t >= EPS &&
+                    (min_inter.time < EPS || temp_t < min_inter.time)) {
 
-            min_inter.time = temp_t;
-            min_inter.x = temp_beta;
-            min_inter.y = temp_gamma;
-            min_inter.shape = triangles[i]->parent;
-            min_inter.tri = triangles[i]->num_tri;
+                min_inter.time = temp_t;
+                min_inter.x = temp_beta;
+                min_inter.y = temp_gamma;
+                min_inter.shape = triangles[i]->parent;
+                min_inter.tri = triangles[i]->num_tri;
+            }
         }
     }
-    */
-
-    min_inter = SimpleTriangle::simd_intersect(triangles, ray);
 
     long long num_tris = (long long) triangles.size();
 
