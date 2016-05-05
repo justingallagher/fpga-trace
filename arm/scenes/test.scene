@@ -1,0 +1,86 @@
+
+<scene>
+
+    <camera>
+        <fov v=".785"/>
+        <near_clip v=".01"/>
+        <far_clip v="100.0"/>
+        <position x="0.0" y="1.0" z="10.0"/>
+        <orientation a="0.0" x="0.0" y="1.0" z="0.0"/>
+    </camera>
+
+    <background_color r="0.0" g="0.0" b="0.0"/>
+
+    <refractive_index v="1.0"/>
+
+    <ambient_light r="0.2" g="0.2" b="0.2"/>
+
+    <point_light>
+        <position x="-10.0" y="-2.0" z="10.0"/>
+        <color r="1.0" g="1.0" b="1.0"/>
+    </point_light>
+
+    <material name="magenta">
+        <refractive_index v="0.0"/>
+        <ambient r="1.0" g="0.0" b="1.0"/>
+        <diffuse r="0.7" g="0.0" b="1.0"/>
+        <specular r="0.4" g="0.0" b="0.2"/>
+    </material>
+
+    <material name="cyan">
+        <refractive_index v="0.0"/>
+        <ambient r="0.0" g="1.0" b="1.0"/>
+        <diffuse r="0.2" g="0.9" b="0.8"/>
+        <specular r="0.4" g="0.4" b="1.0"/>
+    </material>
+
+    <material name="yellow">
+        <refractive_index v="0.0"/>
+        <ambient r="1.0" g="1.0" b="0.0"/>
+        <diffuse r="0.7" g="0.6" b="0.2"/>
+        <specular r="0.4" g="1.0" b="0.2"/>
+    </material>
+
+    <vertex name="1" material="magenta">
+        <position x="-1.0" y="-1.0" z="0.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="2" material="magenta">
+        <position x="1.0" y="-1.0" z="0.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="1.0" v="0.0"/>
+    </vertex>
+
+    <vertex name="3" material="magenta">
+        <position x="0.0" y="1.0" z="0.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="0.5" v="1.0"/>
+    </vertex>
+
+    <triangle material="magenta">
+        <position x="0.0" y="0.0" z="1.0"/>
+        <orientation a=".5" x="1.0" y="0.0" z="0.0"/>
+        <scale x="1.2" y="1.5" z="1.0"/>
+        <vertex name="1"/>
+        <vertex name="2"/>
+        <vertex name="3"/>
+    </triangle>
+
+    <sphere material="cyan">
+        <position x="2.1213" y="2.1213" z="0.0"/>
+        <orientation a="1.56" x="0.0" y="0.2" z="1.0"/>
+        <scale x="2.0" y="1.0" z="1.0"/>
+        <radius v="1.0"/>
+    </sphere>
+
+    <sphere material="yellow">
+        <position x="-2.1213" y="2.1213" z="0.0"/>
+        <orientation a="1.56" x="1.0" y="1.0" z="0.0"/>
+        <scale x="1.0" y="1.0" z="1.5"/>
+        <radius v="1.0"/>
+    </sphere>
+
+</scene>
+

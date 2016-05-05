@@ -1,0 +1,19 @@
+#!/bin/sh
+#calls cmake with proper compiler
+rm -rf build
+mkdir build
+cd build
+brew="/afs/cs.cmu.edu/academic/class/15462-s15/public/homebrew"
+macports="/opt/local"
+if [ -e $brew ] && [ -e /Applications ]; then
+    export CC=$brew/bin/gcc-4.9
+    export CXX=$brew/bin/g++-4.9
+    $brew/bin/cmake -DCMAKE_LIBRARY_PATH=$brew/lib -DCMAKE_PREFIX_PATH=$brew/include ../src
+elif [ -e $macports ] && [ -e /Applications ]; then
+    export CC=$macports/bin/gcc-mp-4.9
+    export CXX=$macports/bin/g++-mp-4.9
+    cmake -DCMAKE_LIBRARY_PATH=$macports/lib -DCMAKE_PREFIX_PATH=$macports/include ../src
+else
+    echo "Default cmake"
+    cmake ../src
+fi

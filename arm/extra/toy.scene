@@ -1,0 +1,156 @@
+<scene>
+    <camera>
+        <fov v=".785"/>
+        <near_clip v=".01"/>
+        <far_clip v="200.0"/>
+        <position x="0.0" y="-3.0" z="10.0"/>
+        <orientation a="0.10" x="1.0" y="0.0" z="0.0"/>
+    </camera>
+
+    <background_color r="0.1" g="0.0" b="0.1"/>
+
+    <refractive_index v="1.0"/>
+
+    <ambient_light r="0.15" g="0.15" b="0.15"/>
+
+    <point_light>
+        <position x="50.0" y="200.0" z="100.0"/>
+		<radius v="6.0"/>
+        <color r="1.0" g="1.0" b="1.0"/>
+    </point_light>
+
+    <material name="wood" texture="images/wood2.png">
+        <refractive_index v="0.0"/>
+        <ambient r="0.8" g="0.8" b="0.8"/>
+        <diffuse r="0.8" g="0.8" b="0.8"/>
+        <specular r="0.4" g="0.4" b="0.4"/>
+    </material>
+    <material name="floor" texture="images/stones.png">
+        <refractive_index v="0.0"/>
+        <ambient r="0.8" g="0.8" b="0.8"/>
+        <diffuse r="0.8" g="0.8" b="0.8"/>
+        <specular r="0.0" g="0.0" b="0.0"/>
+    </material> 
+    <material name="wall" texture="images/wall.png">
+        <refractive_index v="0.0"/>
+        <ambient r="0.8" g="0.8" b="0.8"/>
+        <diffuse r="0.8" g="0.8" b="0.8"/>
+        <specular r="0.0" g="0.0" b="0.0"/>
+    </material>
+ 
+
+    <mesh name="toyplane" filename="models/toyplane.obj"/>
+
+    <model material="wood" mesh="toyplane">
+        <position x="-3.0" y="0.0" z="0.0"/>
+        <scale x="0.1" y="0.1" z="0.1" />
+        <orientation a="-0.8" x="1.0" y="1.0" z="1.0"/>
+    </model> 
+
+
+
+
+
+    <vertex name="f1" material="floor">
+        <position x="-10.0" y="0.0" z="-7.5"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+    <vertex name="f2" material="floor">
+        <position x="-10.0" y="0.0" z="7.5"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="1.0" v="0.0"/>
+    </vertex>
+    <vertex name="f3" material="floor">
+        <position x="10.0" y="0.0" z="7.5"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="1.0" v="1.0"/>
+    </vertex>
+    <vertex name="f4" material="floor">
+        <position x="10.0" y="0.0" z="-7.5"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="1.0"/>
+    </vertex>
+ 
+    <triangle material="floor">
+        <position x="0.0" y="-5.0" z="0.0"/>
+        <vertex name="f1"/>
+        <vertex name="f2"/>
+        <vertex name="f3"/>
+    </triangle> 
+    <triangle material="floor">
+        <position x="0.0" y="-5.0" z="0.0"/>
+        <vertex name="f3"/>
+        <vertex name="f4"/>
+        <vertex name="f1"/>
+    </triangle> 
+
+
+
+
+    <vertex name="w1" material="wall">
+        <position x="-20.0" y="-15.0" z="0.0"/>
+        <normal x="0.0" y="1.0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+    <vertex name="w2" material="wall">
+        <position x="20.0" y="-15.0" z="0.0"/>
+        <normal x="0.0" y="1.0" z="1.0"/>
+        <tex_coord u="4" v="0.0"/>
+    </vertex>
+    <vertex name="w3" material="wall">
+        <position x="20.0" y="15.0" z="0.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="4" v="4"/>
+    </vertex>
+    <vertex name="w4" material="wall">
+        <position x="-20.0" y="15.0" z="0.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="0.0" v="4"/>
+    </vertex>
+ 
+    <triangle material="wall">
+        <position x="0.0" y="10" z="-7.5"/>
+        <vertex name="w1"/>
+        <vertex name="w2"/>
+        <vertex name="w3"/>
+    </triangle> 
+    <triangle material="wall">
+        <position x="0.0" y="10" z="-7.5"/>
+        <vertex name="w3"/>
+        <vertex name="w4"/>
+        <vertex name="w1"/>
+    </triangle> 
+
+    <triangle material="wall">
+        <position x="-10.0" y="10" z="0"/>
+        <orientation a="1.57" x=".0" y="1.0" z=".0"/>
+        <vertex name="w1"/>
+        <vertex name="w2"/>
+        <vertex name="w3"/>
+    </triangle> 
+    <triangle material="wall">
+        <position x="-10.0" y="10" z="0"/>
+        <orientation a="1.57" x=".0" y="1.0" z=".0"/>
+        <vertex name="w3"/>
+        <vertex name="w4"/>
+        <vertex name="w1"/>
+    </triangle> 
+
+    <triangle material="wall">
+        <position x="10.0" y="10" z="0"/>
+        <orientation a="-1.57" x=".0" y="1.0" z=".0"/>
+        <vertex name="w1"/>
+        <vertex name="w2"/>
+        <vertex name="w3"/>
+    </triangle> 
+    <triangle material="wall">
+        <position x="10.0" y="10" z="0"/>
+        <orientation a="-1.57" x=".0" y="1.0" z=".0"/>
+        <vertex name="w3"/>
+        <vertex name="w4"/>
+        <vertex name="w1"/>
+    </triangle> 
+ 
+</scene>
+

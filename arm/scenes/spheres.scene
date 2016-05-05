@@ -1,0 +1,75 @@
+
+<scene>
+    <camera>
+        <fov v=".785"/>
+        <near_clip v=".01"/>
+        <far_clip v="200.0"/>
+        <position x="0.0" y="0.0" z="5.0"/>
+        <orientation a="0.0" x="1.0" y="0.0" z="0.0"/>
+    </camera>
+
+    <background_color r="0.043" g="0.349" b="0.867"/>
+
+    <refractive_index v="1.0"/>
+
+    <ambient_light r="0.4" g="0.4" b="0.4"/>
+
+    <point_light>
+        <position x="12.0" y="10.0" z="8.0"/>
+        <color r="1.0" g="1.0" b="1.0"/>
+    </point_light>
+
+    <material name="default">
+        <ambient r="0.043" g="0.349" b="0.867"/>
+        <diffuse r="0.043" g="0.349" b="0.867"/>
+        <specular r="0.568" g="0.478" b="0.753"/>
+        <shininess v="100.0"/>
+    </material> 
+ 
+    <sphere material="default">
+        <position x="2.1213" y="1.825" z="-1.235"/>
+        <radius v="1.05"/>
+    </sphere>
+    <sphere material="default">
+        <position x="0.1213" y="-0.19" z="1.235"/>
+        <radius v="1.0"/>
+    </sphere>
+    <sphere material="default">
+        <position x="-1.5" y="0.825" z="-2.235"/>
+        <radius v="0.9"/>
+    </sphere>
+    <sphere material="default">
+        <position x="-1.3" y="-1.0" z="3.1"/>
+        <radius v="1.1"/>
+    </sphere>
+    <sphere material="default">
+        <position x="2.1213" y="1.825" z="-1.235"/>
+        <radius v="1.0"/>
+    </sphere>
+    <sphere material="default">
+        <position x="1.4" y="2.825" z="-6.235"/>
+        <radius v="1.0"/>
+    </sphere>
+    <sphere material="default">
+        <position x="2.1" y="0.0" z="-.235"/>
+        <radius v="1.0"/>
+    </sphere>
+    <sphere material="default">
+        <position x="2.9" y="2.425" z="-8.235"/>
+        <radius v="1.0"/>
+    </sphere>
+    <sphere material="default">
+        <position x="-.3" y="1.3" z="4.0"/>
+        <radius v="1.0"/>
+    </sphere>
+    <sphere material="default">
+        <position x="0.9" y="-1.75" z="-.246"/>
+        <radius v="1.1"/>
+    </sphere>
+    <sphere material="default">
+        <position x="-2.1213" y="1.325" z="-.23"/>
+        <radius v="1.0"/>
+    </sphere>
+
+</scene>
+
