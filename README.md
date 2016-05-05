@@ -88,7 +88,7 @@ Friday April 22:
 
 Monday April 26:
 
-* Test FPGA with basic logic controlled from the ARM processor (LED blink, adder, etc)
+* Test FPGA with basic logic controlled from the ARM processor (LED blink, adder, etc) (DONE)
 
 Friday April 29:
 
