@@ -1,0 +1,3 @@
+set_property SRC_FILE_INFO {cfile:c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_processing_system7_0_0/triangle_intersect_processing_system7_0_0.xdc rfile:../../../raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_processing_system7_0_0/triangle_intersect_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:triangle_intersect_i/processing_system7_0/inst} [current_design]
+set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
+set_input_jitter clk_fpga_0 0.3
