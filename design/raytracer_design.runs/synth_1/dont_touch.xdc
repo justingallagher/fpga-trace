@@ -25,6 +25,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==triangle_inters
 # IP: bd/triangle_intersect/ip/triangle_intersect_xlconcat_0_0/triangle_intersect_xlconcat_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==triangle_intersect_xlconcat_0_0 || ORIG_REF_NAME==triangle_intersect_xlconcat_0_0}]
 
+# IP: bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/triangle_intersect_tri_intersect_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==triangle_intersect_tri_intersect_0_1 || ORIG_REF_NAME==triangle_intersect_tri_intersect_0_1}]
+
 # IP: bd/triangle_intersect/ip/triangle_intersect_auto_pc_0/triangle_intersect_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==triangle_intersect_auto_pc_0 || ORIG_REF_NAME==triangle_intersect_auto_pc_0}]
 
@@ -60,6 +63,8 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: bd/triangle_intersect/ip/triangle_intersect_rst_processing_system7_0_100M_0/triangle_intersect_rst_processing_system7_0_100M_0_ooc.xdc
 
 # XDC: bd/triangle_intersect/ip/triangle_intersect_xbar_0/triangle_intersect_xbar_0_ooc.xdc
+
+# XDC: ipshared/xilinx.com/tri_intersect_v0_1/0b1d0305/constraints/tri_intersect_ooc.xdc
 
 # XDC: bd/triangle_intersect/ip/triangle_intersect_auto_pc_0/triangle_intersect_auto_pc_0_ooc.xdc
 

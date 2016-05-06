@@ -54,7 +54,10 @@ set rc [catch {
   set_property design_mode GateLvl [current_fileset]
   set_property webtalk.parent_dir C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.cache/wt [current_project]
   set_property parent.project_path C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.xpr [current_project]
-  set_property ip_repo_paths c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.cache/ip [current_project]
+  set_property ip_repo_paths {
+  c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.cache/ip
+  C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip
+} [current_project]
   set_property ip_output_repo c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.cache/ip [current_project]
   add_files -quiet C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.runs/synth_1/triangle_intersect_wrapper.dcp
   read_xdc -ref triangle_intersect_processing_system7_0_0 -cells inst c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_processing_system7_0_0/triangle_intersect_processing_system7_0_0.xdc

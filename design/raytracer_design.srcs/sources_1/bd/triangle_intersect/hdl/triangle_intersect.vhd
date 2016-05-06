@@ -1,7 +1,7 @@
 --Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2015.1 (win64) Build 1215546 Mon Apr 27 19:22:08 MDT 2015
---Date        : Thu May 05 19:33:37 2016
+--Date        : Thu May 05 21:01:42 2016
 --Host        : Win10Desktop running 64-bit major release  (build 9200)
 --Command     : generate_target triangle_intersect.bd
 --Design      : triangle_intersect
@@ -2891,7 +2891,7 @@ entity triangle_intersect is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of triangle_intersect : entity is "triangle_intersect,IP_Integrator,{x_ipProduct=Vivado 2015.1,x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=triangle_intersect,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=0,da_axi4_cnt=4,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of triangle_intersect : entity is "triangle_intersect,IP_Integrator,{x_ipProduct=Vivado 2015.1,x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=triangle_intersect,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=0,da_axi4_cnt=4,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of triangle_intersect : entity is "triangle_intersect.hwdef";
 end triangle_intersect;
@@ -3143,6 +3143,30 @@ architecture STRUCTURE of triangle_intersect is
     dout : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component triangle_intersect_xlconcat_0_0;
+  component triangle_intersect_tri_intersect_0_1 is
+  port (
+    ap_clk : in STD_LOGIC;
+    ap_rst_n : in STD_LOGIC;
+    A_TVALID : in STD_LOGIC;
+    A_TREADY : out STD_LOGIC;
+    A_TDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    A_TDEST : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    A_TKEEP : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    A_TSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    A_TUSER : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    A_TLAST : in STD_LOGIC_VECTOR ( 0 to 0 );
+    A_TID : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    B_TVALID : out STD_LOGIC;
+    B_TREADY : in STD_LOGIC;
+    B_TDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    B_TDEST : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    B_TKEEP : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    B_TSTRB : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    B_TUSER : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    B_TLAST : out STD_LOGIC_VECTOR ( 0 to 0 );
+    B_TID : out STD_LOGIC_VECTOR ( 4 downto 0 )
+  );
+  end component triangle_intersect_tri_intersect_0_1;
   signal GND_1 : STD_LOGIC;
   signal VCC_1 : STD_LOGIC;
   signal axi_dma_0_M_AXIS_MM2S_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -3327,6 +3351,11 @@ architecture STRUCTURE of triangle_intersect is
   signal processing_system7_0_axi_periph_M00_AXI_WVALID : STD_LOGIC;
   signal rst_processing_system7_0_100M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_processing_system7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal tri_intersect_0_B_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal tri_intersect_0_B_TKEEP : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal tri_intersect_0_B_TLAST : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal tri_intersect_0_B_TREADY : STD_LOGIC;
+  signal tri_intersect_0_B_TVALID : STD_LOGIC;
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_axi_dma_0_mm2s_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_dma_0_s2mm_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
@@ -3352,6 +3381,11 @@ architecture STRUCTURE of triangle_intersect is
   signal NLW_rst_processing_system7_0_100M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_processing_system7_0_100M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_processing_system7_0_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_tri_intersect_0_A_TSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal NLW_tri_intersect_0_B_TDEST_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal NLW_tri_intersect_0_B_TID_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
+  signal NLW_tri_intersect_0_B_TSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_tri_intersect_0_B_TUSER_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
 begin
 GND: unisim.vcomponents.GND
      port map (
@@ -3451,11 +3485,11 @@ axi_dma_0: component triangle_intersect_axi_dma_0_0
       s_axi_lite_wdata(31 downto 0) => processing_system7_0_axi_periph_M00_AXI_WDATA(31 downto 0),
       s_axi_lite_wready => processing_system7_0_axi_periph_M00_AXI_WREADY,
       s_axi_lite_wvalid => processing_system7_0_axi_periph_M00_AXI_WVALID,
-      s_axis_s2mm_tdata(31 downto 0) => axi_dma_0_M_AXIS_MM2S_TDATA(31 downto 0),
-      s_axis_s2mm_tkeep(3 downto 0) => axi_dma_0_M_AXIS_MM2S_TKEEP(3 downto 0),
-      s_axis_s2mm_tlast => axi_dma_0_M_AXIS_MM2S_TLAST,
-      s_axis_s2mm_tready => axi_dma_0_M_AXIS_MM2S_TREADY,
-      s_axis_s2mm_tvalid => axi_dma_0_M_AXIS_MM2S_TVALID
+      s_axis_s2mm_tdata(31 downto 0) => tri_intersect_0_B_TDATA(31 downto 0),
+      s_axis_s2mm_tkeep(3 downto 0) => tri_intersect_0_B_TKEEP(3 downto 0),
+      s_axis_s2mm_tlast => tri_intersect_0_B_TLAST(0),
+      s_axis_s2mm_tready => tri_intersect_0_B_TREADY,
+      s_axis_s2mm_tvalid => tri_intersect_0_B_TVALID
     );
 axi_mem_intercon: entity work.triangle_intersect_axi_mem_intercon_0
      port map (
@@ -3780,6 +3814,42 @@ rst_processing_system7_0_100M: component triangle_intersect_rst_processing_syste
       peripheral_aresetn(0) => rst_processing_system7_0_100M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_processing_system7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
+    );
+tri_intersect_0: component triangle_intersect_tri_intersect_0_1
+     port map (
+      A_TDATA(31 downto 0) => axi_dma_0_M_AXIS_MM2S_TDATA(31 downto 0),
+      A_TDEST(5) => GND_1,
+      A_TDEST(4) => GND_1,
+      A_TDEST(3) => GND_1,
+      A_TDEST(2) => GND_1,
+      A_TDEST(1) => GND_1,
+      A_TDEST(0) => GND_1,
+      A_TID(4) => GND_1,
+      A_TID(3) => GND_1,
+      A_TID(2) => GND_1,
+      A_TID(1) => GND_1,
+      A_TID(0) => GND_1,
+      A_TKEEP(3 downto 0) => axi_dma_0_M_AXIS_MM2S_TKEEP(3 downto 0),
+      A_TLAST(0) => axi_dma_0_M_AXIS_MM2S_TLAST,
+      A_TREADY => axi_dma_0_M_AXIS_MM2S_TREADY,
+      A_TSTRB(3) => NLW_tri_intersect_0_A_TSTRB_UNCONNECTED(3),
+      A_TSTRB(2) => VCC_1,
+      A_TSTRB(1) => VCC_1,
+      A_TSTRB(0) => VCC_1,
+      A_TUSER(1) => GND_1,
+      A_TUSER(0) => GND_1,
+      A_TVALID => axi_dma_0_M_AXIS_MM2S_TVALID,
+      B_TDATA(31 downto 0) => tri_intersect_0_B_TDATA(31 downto 0),
+      B_TDEST(5 downto 0) => NLW_tri_intersect_0_B_TDEST_UNCONNECTED(5 downto 0),
+      B_TID(4 downto 0) => NLW_tri_intersect_0_B_TID_UNCONNECTED(4 downto 0),
+      B_TKEEP(3 downto 0) => tri_intersect_0_B_TKEEP(3 downto 0),
+      B_TLAST(0) => tri_intersect_0_B_TLAST(0),
+      B_TREADY => tri_intersect_0_B_TREADY,
+      B_TSTRB(3 downto 0) => NLW_tri_intersect_0_B_TSTRB_UNCONNECTED(3 downto 0),
+      B_TUSER(1 downto 0) => NLW_tri_intersect_0_B_TUSER_UNCONNECTED(1 downto 0),
+      B_TVALID => tri_intersect_0_B_TVALID,
+      ap_clk => processing_system7_0_FCLK_CLK0,
+      ap_rst_n => rst_processing_system7_0_100M_peripheral_aresetn(0)
     );
 xlconcat_0: component triangle_intersect_xlconcat_0_0
      port map (

@@ -15,6 +15,7 @@ set_property parent.project_path C:/Users/Justin/Documents/GitHub/fpga-trace/des
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
+set_property ip_repo_paths c:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip [current_project]
 add_files C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/triangle_intersect.bd
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_processing_system7_0_0/triangle_intersect_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_axi_dma_0_0/triangle_intersect_axi_dma_0_0_ooc.xdc]
@@ -24,6 +25,7 @@ set_property used_in_implementation false [get_files -all c:/Users/Justin/Docume
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_rst_processing_system7_0_100M_0/triangle_intersect_rst_processing_system7_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_rst_processing_system7_0_100M_0/triangle_intersect_rst_processing_system7_0_100M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_xbar_0/triangle_intersect_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v0_1/0b1d0305/constraints/tri_intersect_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_auto_pc_0/triangle_intersect_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_auto_pc_1/triangle_intersect_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_auto_us_0/triangle_intersect_auto_us_0_ooc.xdc]
