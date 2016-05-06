@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'tri_intersect'
 ================================================================
-* Date:           Fri May 06 00:51:10 2016
+* Date:           Fri May 06 17:45:42 2016
 
 * Version:        2015.1 (Build 1215546 on Mon Apr 27 19:24:50 PM 2015)
 * Project:        triangle_intersect
@@ -20,7 +20,7 @@
     +---------+-------+----------+------------+
     |  Clock  | Target| Estimated| Uncertainty|
     +---------+-------+----------+------------+
-    |default  |   5.00|      2.44|        0.63|
+    |default  |   5.00|      4.35|        0.63|
     +---------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |  Latency  |  Interval | Pipeline|
     | min | max | min | max |   Type  |
     +-----+-----+-----+-----+---------+
-    |    1|    1|    2|    2|   none  |
+    |    9|    9|   10|   10|   none  |
     +-----+-----+-----+-----+---------+
 
     + Detail: 
@@ -115,7 +115,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 2
+* Number of FSM states: 10
 * Pipeline: 0
 * Dataflow Pipeline: 0
 
@@ -123,102 +123,158 @@ IsGatedGlobalClock: 0
 1 --> 
 	2  / true
 2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
 * FSM state operations: 
 
  <State 1>: 0.00ns
 ST_1: empty [1/1] 0.00ns
-:18  %empty = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %ins_data_V, i4* %ins_keep_V, i4* %ins_strb_V, i2* %ins_user_V, i1* %ins_last_V, i5* %ins_id_V, i6* %ins_dest_V)
+:18  %empty = call { float, i4, i4, i1, i1, i1, i1 } @_ssdm_op_Read.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %ins_data, i4* %ins_keep_V, i4* %ins_strb_V, i1* %ins_user_V, i1* %ins_last_V, i1* %ins_id_V, i1* %ins_dest_V)
 
-ST_1: ins_data_V_val [1/1] 0.00ns
-:19  %ins_data_V_val = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty, 0
+ST_1: ins_data_val [1/1] 0.00ns
+:19  %ins_data_val = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty, 0
 
 
- <State 2>: 2.44ns
-ST_2: stg_5 [1/1] 0.00ns
-:0  call void (...)* @_ssdm_op_SpecBitsMap(i32* %ins_data_V), !map !7
-
-ST_2: stg_6 [1/1] 0.00ns
-:1  call void (...)* @_ssdm_op_SpecBitsMap(i4* %ins_keep_V), !map !13
-
-ST_2: stg_7 [1/1] 0.00ns
-:2  call void (...)* @_ssdm_op_SpecBitsMap(i4* %ins_strb_V), !map !17
-
-ST_2: stg_8 [1/1] 0.00ns
-:3  call void (...)* @_ssdm_op_SpecBitsMap(i2* %ins_user_V), !map !21
-
-ST_2: stg_9 [1/1] 0.00ns
-:4  call void (...)* @_ssdm_op_SpecBitsMap(i1* %ins_last_V), !map !25
-
-ST_2: stg_10 [1/1] 0.00ns
-:5  call void (...)* @_ssdm_op_SpecBitsMap(i5* %ins_id_V), !map !29
-
-ST_2: stg_11 [1/1] 0.00ns
-:6  call void (...)* @_ssdm_op_SpecBitsMap(i6* %ins_dest_V), !map !33
-
-ST_2: stg_12 [1/1] 0.00ns
-:7  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outs_data_V), !map !37
-
-ST_2: stg_13 [1/1] 0.00ns
-:8  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outs_keep_V), !map !41
-
-ST_2: stg_14 [1/1] 0.00ns
-:9  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outs_strb_V), !map !45
-
-ST_2: stg_15 [1/1] 0.00ns
-:10  call void (...)* @_ssdm_op_SpecBitsMap(i2* %outs_user_V), !map !49
-
-ST_2: stg_16 [1/1] 0.00ns
-:11  call void (...)* @_ssdm_op_SpecBitsMap(i1* %outs_last_V), !map !53
-
-ST_2: stg_17 [1/1] 0.00ns
-:12  call void (...)* @_ssdm_op_SpecBitsMap(i5* %outs_id_V), !map !57
-
-ST_2: stg_18 [1/1] 0.00ns
-:13  call void (...)* @_ssdm_op_SpecBitsMap(i6* %outs_dest_V), !map !61
-
-ST_2: stg_19 [1/1] 0.00ns
-:14  call void (...)* @_ssdm_op_SpecTopModule([14 x i8]* @str) nounwind
-
-ST_2: stg_20 [1/1] 0.00ns
-:15  call void (...)* @_ssdm_op_SpecInterface(i32* %outs_data_V, i4* %outs_keep_V, i4* %outs_strb_V, i2* %outs_user_V, i1* %outs_last_V, i5* %outs_id_V, i6* %outs_dest_V, [5 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-
-ST_2: stg_21 [1/1] 0.00ns
-:16  call void (...)* @_ssdm_op_SpecInterface(i32* %ins_data_V, i4* %ins_keep_V, i4* %ins_strb_V, i2* %ins_user_V, i1* %ins_last_V, i5* %ins_id_V, i6* %ins_dest_V, [5 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-
-ST_2: stg_22 [1/1] 0.00ns
-:17  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-
+ <State 2>: 4.35ns
 ST_2: empty_2 [1/1] 0.00ns
-:20  %empty_2 = call { i32, i4, i4, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %ins_data_V, i4* %ins_keep_V, i4* %ins_strb_V, i2* %ins_user_V, i1* %ins_last_V, i5* %ins_id_V, i6* %ins_dest_V)
+:20  %empty_2 = call { float, i4, i4, i1, i1, i1, i1 } @_ssdm_op_Read.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %ins_data, i4* %ins_keep_V, i4* %ins_strb_V, i1* %ins_user_V, i1* %ins_last_V, i1* %ins_id_V, i1* %ins_dest_V)
 
-ST_2: ins_data_V_val1 [1/1] 0.00ns
-:21  %ins_data_V_val1 = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_2, 0
+ST_2: ins_data_val1 [1/1] 0.00ns
+:21  %ins_data_val1 = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty_2, 0
 
 ST_2: outs_keep_V_tmp [1/1] 0.00ns
-:22  %outs_keep_V_tmp = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_2, 1
+:22  %outs_keep_V_tmp = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty_2, 1
 
 ST_2: outs_strb_V_tmp [1/1] 0.00ns
-:23  %outs_strb_V_tmp = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_2, 2
+:23  %outs_strb_V_tmp = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty_2, 2
 
 ST_2: outs_user_V_tmp [1/1] 0.00ns
-:24  %outs_user_V_tmp = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_2, 3
+:24  %outs_user_V_tmp = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty_2, 3
 
 ST_2: outs_last_V_tmp [1/1] 0.00ns
-:25  %outs_last_V_tmp = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_2, 4
+:25  %outs_last_V_tmp = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty_2, 4
 
 ST_2: outs_id_V_tmp [1/1] 0.00ns
-:26  %outs_id_V_tmp = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_2, 5
+:26  %outs_id_V_tmp = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty_2, 5
 
 ST_2: outs_dest_V_tmp [1/1] 0.00ns
-:27  %outs_dest_V_tmp = extractvalue { i32, i4, i4, i2, i1, i5, i6 } %empty_2, 6
+:27  %outs_dest_V_tmp = extractvalue { float, i4, i4, i1, i1, i1, i1 } %empty_2, 6
 
-ST_2: outs_data_V_tmp [1/1] 2.44ns
-:28  %outs_data_V_tmp = add nsw i32 %ins_data_V_val1, %ins_data_V_val
+ST_2: outs_data_tmp [9/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
 
-ST_2: stg_32 [1/1] 0.00ns
-:29  call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i2P.i1P.i5P.i6P(i32* %outs_data_V, i4* %outs_keep_V, i4* %outs_strb_V, i2* %outs_user_V, i1* %outs_last_V, i5* %outs_id_V, i6* %outs_dest_V, i32 %outs_data_V_tmp, i4 %outs_keep_V_tmp, i4 %outs_strb_V_tmp, i2 %outs_user_V_tmp, i1 %outs_last_V_tmp, i5 %outs_id_V_tmp, i6 %outs_dest_V_tmp)
 
-ST_2: stg_33 [1/1] 0.00ns
+ <State 3>: 4.35ns
+ST_3: outs_data_tmp [8/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+
+ <State 4>: 4.35ns
+ST_4: outs_data_tmp [7/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+
+ <State 5>: 4.35ns
+ST_5: outs_data_tmp [6/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+
+ <State 6>: 4.35ns
+ST_6: outs_data_tmp [5/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+
+ <State 7>: 4.35ns
+ST_7: outs_data_tmp [4/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+
+ <State 8>: 4.35ns
+ST_8: outs_data_tmp [3/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+
+ <State 9>: 4.35ns
+ST_9: outs_data_tmp [2/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+
+ <State 10>: 4.35ns
+ST_10: stg_29 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(float* %ins_data), !map !7
+
+ST_10: stg_30 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i4* %ins_keep_V), !map !13
+
+ST_10: stg_31 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i4* %ins_strb_V), !map !17
+
+ST_10: stg_32 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i1* %ins_user_V), !map !21
+
+ST_10: stg_33 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i1* %ins_last_V), !map !25
+
+ST_10: stg_34 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i1* %ins_id_V), !map !29
+
+ST_10: stg_35 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i1* %ins_dest_V), !map !33
+
+ST_10: stg_36 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecBitsMap(float* %outs_data), !map !37
+
+ST_10: stg_37 [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outs_keep_V), !map !41
+
+ST_10: stg_38 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outs_strb_V), !map !45
+
+ST_10: stg_39 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecBitsMap(i1* %outs_user_V), !map !49
+
+ST_10: stg_40 [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecBitsMap(i1* %outs_last_V), !map !53
+
+ST_10: stg_41 [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecBitsMap(i1* %outs_id_V), !map !57
+
+ST_10: stg_42 [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecBitsMap(i1* %outs_dest_V), !map !61
+
+ST_10: stg_43 [1/1] 0.00ns
+:14  call void (...)* @_ssdm_op_SpecTopModule([14 x i8]* @str) nounwind
+
+ST_10: stg_44 [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecInterface(float* %outs_data, i4* %outs_keep_V, i4* %outs_strb_V, i1* %outs_user_V, i1* %outs_last_V, i1* %outs_id_V, i1* %outs_dest_V, [5 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+ST_10: stg_45 [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecInterface(float* %ins_data, i4* %ins_keep_V, i4* %ins_strb_V, i1* %ins_user_V, i1* %ins_last_V, i1* %ins_id_V, i1* %ins_dest_V, [5 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+ST_10: stg_46 [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_10: outs_data_tmp [1/9] 4.35ns
+:28  %outs_data_tmp = fadd float %ins_data_val, %ins_data_val1
+
+ST_10: stg_48 [1/1] 0.00ns
+:29  call void @_ssdm_op_Write.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %outs_data, i4* %outs_keep_V, i4* %outs_strb_V, i1* %outs_user_V, i1* %outs_last_V, i1* %outs_id_V, i1* %outs_dest_V, float %outs_data_tmp, i4 %outs_keep_V_tmp, i4 %outs_strb_V_tmp, i1 %outs_user_V_tmp, i1 %outs_last_V_tmp, i1 %outs_id_V_tmp, i1 %outs_dest_V_tmp)
+
+ST_10: stg_49 [1/1] 0.00ns
 :30  ret void
 
 
@@ -232,6 +288,14 @@ N/A
   - Chain level:
 	State 1
 	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
 
 
 ============================================================

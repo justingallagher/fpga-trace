@@ -11,6 +11,7 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
+#include "tri_intersect_fadd_32ns_32ns_32_9_full_dsp.h"
 
 namespace ap_rtl {
 
@@ -23,19 +24,19 @@ struct tri_intersect : public sc_module {
     sc_out< sc_logic > ins_TREADY;
     sc_in< sc_lv<4> > ins_TKEEP;
     sc_in< sc_lv<4> > ins_TSTRB;
-    sc_in< sc_lv<2> > ins_TUSER;
+    sc_in< sc_lv<1> > ins_TUSER;
     sc_in< sc_lv<1> > ins_TLAST;
-    sc_in< sc_lv<5> > ins_TID;
-    sc_in< sc_lv<6> > ins_TDEST;
+    sc_in< sc_lv<1> > ins_TID;
+    sc_in< sc_lv<1> > ins_TDEST;
     sc_out< sc_lv<32> > outs_TDATA;
     sc_out< sc_logic > outs_TVALID;
     sc_in< sc_logic > outs_TREADY;
     sc_out< sc_lv<4> > outs_TKEEP;
     sc_out< sc_lv<4> > outs_TSTRB;
-    sc_out< sc_lv<2> > outs_TUSER;
+    sc_out< sc_lv<1> > outs_TUSER;
     sc_out< sc_lv<1> > outs_TLAST;
-    sc_out< sc_lv<5> > outs_TID;
-    sc_out< sc_lv<6> > outs_TDEST;
+    sc_out< sc_lv<1> > outs_TID;
+    sc_out< sc_lv<1> > outs_TDEST;
 
 
     // Module declarations
@@ -48,31 +49,58 @@ struct tri_intersect : public sc_module {
 
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
+    tri_intersect_fadd_32ns_32ns_32_9_full_dsp<1,9,32,32,32>* tri_intersect_fadd_32ns_32ns_32_9_full_dsp_U0;
     sc_signal< sc_logic > ap_rst_n_inv;
-    sc_signal< sc_lv<32> > ins_data_V_val_reg_132;
-    sc_signal< sc_lv<2> > ap_CS_fsm;
+    sc_signal< sc_lv<32> > ins_data_val_reg_126;
+    sc_signal< sc_lv<10> > ap_CS_fsm;
     sc_signal< sc_logic > ap_sig_cseq_ST_st1_fsm_0;
-    sc_signal< bool > ap_sig_bdd_37;
+    sc_signal< bool > ap_sig_bdd_45;
     sc_signal< sc_logic > ap_sig_cseq_ST_st2_fsm_1;
-    sc_signal< bool > ap_sig_bdd_56;
-    sc_signal< sc_logic > ap_sig_ioackin_outs_TREADY;
+    sc_signal< bool > ap_sig_bdd_57;
+    sc_signal< sc_lv<4> > outs_keep_V_tmp_reg_136;
+    sc_signal< sc_lv<4> > outs_strb_V_tmp_reg_141;
+    sc_signal< sc_lv<1> > outs_user_V_tmp_reg_146;
+    sc_signal< sc_lv<1> > outs_last_V_tmp_reg_151;
+    sc_signal< sc_lv<1> > outs_id_V_tmp_reg_156;
+    sc_signal< sc_lv<1> > outs_dest_V_tmp_reg_161;
+    sc_signal< sc_lv<32> > grp_fu_92_p2;
+    sc_signal< sc_logic > ap_sig_cseq_ST_st10_fsm_9;
+    sc_signal< bool > ap_sig_bdd_88;
     sc_signal< sc_logic > ap_reg_ioackin_outs_TREADY;
-    sc_signal< sc_lv<2> > ap_NS_fsm;
+    sc_signal< sc_logic > ap_sig_ioackin_outs_TREADY;
+    sc_signal< sc_lv<32> > grp_fu_92_p0;
+    sc_signal< sc_lv<32> > grp_fu_92_p1;
+    sc_signal< sc_logic > grp_fu_92_ce;
+    sc_signal< sc_lv<10> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
     static const sc_logic ap_const_logic_0;
-    static const sc_lv<2> ap_ST_st1_fsm_0;
-    static const sc_lv<2> ap_ST_st2_fsm_1;
+    static const sc_lv<10> ap_ST_st1_fsm_0;
+    static const sc_lv<10> ap_ST_st2_fsm_1;
+    static const sc_lv<10> ap_ST_st3_fsm_2;
+    static const sc_lv<10> ap_ST_st4_fsm_3;
+    static const sc_lv<10> ap_ST_st5_fsm_4;
+    static const sc_lv<10> ap_ST_st6_fsm_5;
+    static const sc_lv<10> ap_ST_st7_fsm_6;
+    static const sc_lv<10> ap_ST_st8_fsm_7;
+    static const sc_lv<10> ap_ST_st9_fsm_8;
+    static const sc_lv<10> ap_ST_st10_fsm_9;
     static const sc_lv<32> ap_const_lv32_0;
     static const sc_lv<1> ap_const_lv1_1;
     static const sc_lv<32> ap_const_lv32_1;
+    static const sc_lv<32> ap_const_lv32_9;
     // Thread declarations
     void thread_ap_clk_no_reset_();
     void thread_ap_rst_n_inv();
-    void thread_ap_sig_bdd_37();
-    void thread_ap_sig_bdd_56();
+    void thread_ap_sig_bdd_45();
+    void thread_ap_sig_bdd_57();
+    void thread_ap_sig_bdd_88();
+    void thread_ap_sig_cseq_ST_st10_fsm_9();
     void thread_ap_sig_cseq_ST_st1_fsm_0();
     void thread_ap_sig_cseq_ST_st2_fsm_1();
     void thread_ap_sig_ioackin_outs_TREADY();
+    void thread_grp_fu_92_ce();
+    void thread_grp_fu_92_p0();
+    void thread_grp_fu_92_p1();
     void thread_ins_TREADY();
     void thread_outs_TDATA();
     void thread_outs_TDEST();

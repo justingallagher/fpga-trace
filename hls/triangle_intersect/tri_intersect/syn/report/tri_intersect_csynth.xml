@@ -17,24 +17,24 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.44</EstimatedClockPeriod>
+<EstimatedClockPeriod>4.35</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1</Best-caseLatency>
-<Average-caseLatency>1</Average-caseLatency>
-<Worst-caseLatency>1</Worst-caseLatency>
-<Interval-min>2</Interval-min>
-<Interval-max>2</Interval-max>
+<Best-caseLatency>9</Best-caseLatency>
+<Average-caseLatency>9</Average-caseLatency>
+<Worst-caseLatency>9</Worst-caseLatency>
+<Interval-min>10</Interval-min>
+<Interval-max>10</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<FF>35</FF>
-<LUT>34</LUT>
+<DSP48E>2</DSP48E>
+<FF>379</FF>
+<LUT>429</LUT>
 <BRAM_18K>0</BRAM_18K>
-<DSP48E>0</DSP48E>
 <SLICE>0</SLICE>
 </Resources>
 <AvailableResources>
@@ -71,7 +71,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ins_TDATA</name>
-<Object>ins_data_V</Object>
+<Object>ins_data</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -79,11 +79,11 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>data</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>ins_TVALID</name>
-<Object>ins_data_V</Object>
+<Object>ins_data</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -91,7 +91,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>ins_TREADY</name>
@@ -113,7 +113,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -149,7 +149,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>2</Bits>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -173,13 +173,13 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>5</Bits>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
 <name>outs_TDATA</name>
-<Object>outs_data_V</Object>
+<Object>outs_data</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -187,7 +187,7 @@
 <Dir>out</Dir>
 <Bits>32</Bits>
 <Attribute>data</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>outs_TVALID</name>
@@ -221,7 +221,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>6</Bits>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -257,7 +257,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>2</Bits>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -281,7 +281,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>5</Bits>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

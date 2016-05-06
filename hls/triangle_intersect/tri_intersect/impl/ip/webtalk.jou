@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Webtalk v2015.1 (64-bit)
+# SW Build 1215546 on Mon Apr 27 19:22:08 MDT 2015
+# IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
+# Start of session at: Fri May 06 17:47:40 2016
+# Process ID: 7200
+# Log file: C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/webtalk.log
+# Journal file: C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/tmp.hw/webtalk/labtool_webtalk.tcl -notrace

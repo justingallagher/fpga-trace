@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'tri_intersect'
 ================================================================
-* Date:           Fri May 06 00:51:11 2016
+* Date:           Fri May 06 17:45:42 2016
 
 * Version:        2015.1 (Build 1215546 on Mon Apr 27 19:24:50 PM 2015)
 * Project:        triangle_intersect
@@ -20,7 +20,7 @@
     +---------+-------+----------+------------+
     |  Clock  | Target| Estimated| Uncertainty|
     +---------+-------+----------+------------+
-    |default  |   5.00|      2.44|        0.63|
+    |default  |   5.00|      4.35|        0.63|
     +---------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |  Latency  |  Interval | Pipeline|
     | min | max | min | max |   Type  |
     +-----+-----+-----+-----+---------+
-    |    1|    1|    2|    2|   none  |
+    |    9|    9|   10|   10|   none  |
     +-----+-----+-----+-----+---------+
 
     + Detail: 
@@ -48,23 +48,29 @@
 +-----------------+---------+-------+--------+-------+
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
 +-----------------+---------+-------+--------+-------+
-|Expression       |        -|      -|       0|     32|
+|Expression       |        -|      -|       -|      -|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |        -|      -|       -|      -|
+|Instance         |        -|      2|     324|    424|
 |Memory           |        -|      -|       -|      -|
-|Multiplexer      |        -|      -|       -|      2|
-|Register         |        -|      -|      35|      -|
+|Multiplexer      |        -|      -|       -|      5|
+|Register         |        -|      -|      55|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        0|      0|      35|     34|
+|Total            |        0|      2|     379|    429|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |        0|      0|   ~0   |   ~0  |
+|Utilization (%)  |        0|   ~0  |   ~0   |   ~0  |
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
     * Instance: 
-    N/A
+    +-----------------------------------------------+--------------------------------------------+---------+-------+-----+-----+
+    |                    Instance                   |                   Module                   | BRAM_18K| DSP48E|  FF | LUT |
+    +-----------------------------------------------+--------------------------------------------+---------+-------+-----+-----+
+    |tri_intersect_fadd_32ns_32ns_32_9_full_dsp_U0  |tri_intersect_fadd_32ns_32ns_32_9_full_dsp  |        0|      2|  324|  424|
+    +-----------------------------------------------+--------------------------------------------+---------+-------+-----+-----+
+    |Total                                          |                                            |        0|      2|  324|  424|
+    +-----------------------------------------------+--------------------------------------------+---------+-------+-----+-----+
 
     * Memory: 
     N/A
@@ -73,33 +79,33 @@
     N/A
 
     * Expression: 
-    +--------------+----------+-------+---+----+------------+------------+
-    | Variable Name| Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +--------------+----------+-------+---+----+------------+------------+
-    |outs_TDATA    |     +    |      0|  0|  32|          32|          32|
-    +--------------+----------+-------+---+----+------------+------------+
-    |Total         |          |      0|  0|  32|          32|          32|
-    +--------------+----------+-------+---+----+------------+------------+
+    N/A
 
     * Multiplexer: 
     +----------------------------+----+-----------+-----+-----------+
     |            Name            | LUT| Input Size| Bits| Total Bits|
     +----------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                   |   1|          3|    1|          3|
+    |ap_NS_fsm                   |   4|         11|    1|         11|
     |ap_sig_ioackin_outs_TREADY  |   1|          2|    1|          2|
     +----------------------------+----+-----------+-----+-----------+
-    |Total                       |   2|          5|    2|          5|
+    |Total                       |   5|         13|    2|         13|
     +----------------------------+----+-----------+-----+-----------+
 
     * Register: 
     +----------------------------+----+----+-----+-----------+
     |            Name            | FF | LUT| Bits| Const Bits|
     +----------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                   |   2|   0|    2|          0|
+    |ap_CS_fsm                   |  10|   0|   10|          0|
     |ap_reg_ioackin_outs_TREADY  |   1|   0|    1|          0|
-    |ins_data_V_val_reg_132      |  32|   0|   32|          0|
+    |ins_data_val_reg_126        |  32|   0|   32|          0|
+    |outs_dest_V_tmp_reg_161     |   1|   0|    1|          0|
+    |outs_id_V_tmp_reg_156       |   1|   0|    1|          0|
+    |outs_keep_V_tmp_reg_136     |   4|   0|    4|          0|
+    |outs_last_V_tmp_reg_151     |   1|   0|    1|          0|
+    |outs_strb_V_tmp_reg_141     |   4|   0|    4|          0|
+    |outs_user_V_tmp_reg_146     |   1|   0|    1|          0|
     +----------------------------+----+----+-----+-----------+
-    |Total                       |  35|   0|   35|          0|
+    |Total                       |  55|   0|   55|          0|
     +----------------------------+----+----+-----+-----------+
 
 
@@ -113,23 +119,23 @@
 +-------------+-----+-----+--------------+---------------+--------------+
 |ap_clk       |  in |    1| ap_ctrl_none | tri_intersect | return value |
 |ap_rst_n     |  in |    1| ap_ctrl_none | tri_intersect | return value |
-|ins_TDATA    |  in |   32|     axis     |   ins_data_V  |    pointer   |
-|ins_TVALID   |  in |    1|     axis     |   ins_data_V  |    pointer   |
+|ins_TDATA    |  in |   32|     axis     |    ins_data   |    pointer   |
+|ins_TVALID   |  in |    1|     axis     |    ins_data   |    pointer   |
 |ins_TREADY   | out |    1|     axis     |   ins_dest_V  |    pointer   |
-|ins_TDEST    |  in |    6|     axis     |   ins_dest_V  |    pointer   |
+|ins_TDEST    |  in |    1|     axis     |   ins_dest_V  |    pointer   |
 |ins_TKEEP    |  in |    4|     axis     |   ins_keep_V  |    pointer   |
 |ins_TSTRB    |  in |    4|     axis     |   ins_strb_V  |    pointer   |
-|ins_TUSER    |  in |    2|     axis     |   ins_user_V  |    pointer   |
+|ins_TUSER    |  in |    1|     axis     |   ins_user_V  |    pointer   |
 |ins_TLAST    |  in |    1|     axis     |   ins_last_V  |    pointer   |
-|ins_TID      |  in |    5|     axis     |    ins_id_V   |    pointer   |
-|outs_TDATA   | out |   32|     axis     |  outs_data_V  |    pointer   |
+|ins_TID      |  in |    1|     axis     |    ins_id_V   |    pointer   |
+|outs_TDATA   | out |   32|     axis     |   outs_data   |    pointer   |
 |outs_TVALID  | out |    1|     axis     |  outs_dest_V  |    pointer   |
 |outs_TREADY  |  in |    1|     axis     |  outs_dest_V  |    pointer   |
-|outs_TDEST   | out |    6|     axis     |  outs_dest_V  |    pointer   |
+|outs_TDEST   | out |    1|     axis     |  outs_dest_V  |    pointer   |
 |outs_TKEEP   | out |    4|     axis     |  outs_keep_V  |    pointer   |
 |outs_TSTRB   | out |    4|     axis     |  outs_strb_V  |    pointer   |
-|outs_TUSER   | out |    2|     axis     |  outs_user_V  |    pointer   |
+|outs_TUSER   | out |    1|     axis     |  outs_user_V  |    pointer   |
 |outs_TLAST   | out |    1|     axis     |  outs_last_V  |    pointer   |
-|outs_TID     | out |    5|     axis     |   outs_id_V   |    pointer   |
+|outs_TID     | out |    1|     axis     |   outs_id_V   |    pointer   |
 +-------------+-----+-----+--------------+---------------+--------------+
 

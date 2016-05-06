@@ -34,7 +34,7 @@ set Library     "hls"
 set IPName      "tri_intersect"
 set Version     "0.1"
 set DisplayName "Triangle Intersect"
-set Revision    "1605060051"
+set Revision    "1605061747"
 set Description "Calculates the intersection point between a ray and a triangle."
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -79,16 +79,16 @@ set Interfaces {
         has_tready "1"
         ports {
             TDATA 32
-            TDEST 6
+            TDEST 1
             TKEEP 4
             TSTRB 4
-            TUSER 2
+            TUSER 1
             TLAST 1
-            TID 5
+            TID 1
         }
         ctype {
             TDATA {
-                Type "integer signed"
+                Type "real float"
                 Width "32"
                 Bits "32"
             }
@@ -104,8 +104,8 @@ set Interfaces {
             }
             TDEST {
                 Type "integer unsigned"
-                Width "6"
-                Bits "6"
+                Width "1"
+                Bits "1"
             }
             TKEEP {
                 Type "integer unsigned"
@@ -119,8 +119,8 @@ set Interfaces {
             }
             TUSER {
                 Type "integer unsigned"
-                Width "2"
-                Bits "2"
+                Width "1"
+                Bits "1"
             }
             TLAST {
                 Type "integer unsigned"
@@ -129,8 +129,8 @@ set Interfaces {
             }
             TID {
                 Type "integer unsigned"
-                Width "5"
-                Bits "5"
+                Width "1"
+                Bits "1"
             }
         }
     }
@@ -141,16 +141,16 @@ set Interfaces {
         has_tready "1"
         ports {
             TDATA 32
-            TDEST 6
+            TDEST 1
             TKEEP 4
             TSTRB 4
-            TUSER 2
+            TUSER 1
             TLAST 1
-            TID 5
+            TID 1
         }
         ctype {
             TDATA {
-                Type "integer signed"
+                Type "real float"
                 Width "32"
                 Bits "32"
             }
@@ -166,8 +166,8 @@ set Interfaces {
             }
             TDEST {
                 Type "integer unsigned"
-                Width "6"
-                Bits "6"
+                Width "1"
+                Bits "1"
             }
             TKEEP {
                 Type "integer unsigned"
@@ -181,8 +181,8 @@ set Interfaces {
             }
             TUSER {
                 Type "integer unsigned"
-                Width "2"
-                Bits "2"
+                Width "1"
+                Bits "1"
             }
             TLAST {
                 Type "integer unsigned"
@@ -191,8 +191,8 @@ set Interfaces {
             }
             TID {
                 Type "integer unsigned"
-                Width "5"
-                Bits "5"
+                Width "1"
+                Bits "1"
             }
         }
     }
@@ -1610,7 +1610,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_version match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 5.000000 machine 64 combinational 0 latency 1 II x}
+set user_parameters_list {clk_period 5.000000 machine 64 combinational 0 latency 9 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

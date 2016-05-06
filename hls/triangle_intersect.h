@@ -6,7 +6,22 @@
  * @since 05-05-2016
  */
 
-#include "ap_axi_sdata.h"
+#ifndef _HLS_TRIANGLE_INTERSECT_H_
+#define _HLS_TRIANGLE_INTERSECT_H_
+
+#include "ap_int.h"
+
+typedef struct {
+	float data;
+	ap_uint<4> keep;
+	ap_uint<4> strb;
+	ap_uint<1> user;
+	ap_uint<1> last;
+	ap_uint<1> id;
+	ap_uint<1> dest;
+} data_t;
 
 // Performs a triangle intersection
-void tri_intersect(ap_axis<32, 2, 5, 6> ins[2], ap_axis<32, 2, 5, 6> outs[1]);
+void tri_intersect(data_t ins[2], data_t outs[1]);
+
+#endif /* _HLS_TRIANGLE_INTERSECT_H_ */

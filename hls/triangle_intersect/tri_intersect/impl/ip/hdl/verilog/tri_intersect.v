@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="tri_intersect,hls_ip_2015_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.440000,HLS_SYN_LAT=1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=35,HLS_SYN_LUT=34}" *)
+(* CORE_GENERATION_INFO="tri_intersect,hls_ip_2015_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=4.348000,HLS_SYN_LAT=9,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=2,HLS_SYN_FF=379,HLS_SYN_LUT=429}" *)
 
 module tri_intersect (
         ap_clk,
@@ -34,11 +34,20 @@ module tri_intersect (
 
 parameter    ap_const_logic_1 = 1'b1;
 parameter    ap_const_logic_0 = 1'b0;
-parameter    ap_ST_st1_fsm_0 = 2'b1;
-parameter    ap_ST_st2_fsm_1 = 2'b10;
+parameter    ap_ST_st1_fsm_0 = 10'b1;
+parameter    ap_ST_st2_fsm_1 = 10'b10;
+parameter    ap_ST_st3_fsm_2 = 10'b100;
+parameter    ap_ST_st4_fsm_3 = 10'b1000;
+parameter    ap_ST_st5_fsm_4 = 10'b10000;
+parameter    ap_ST_st6_fsm_5 = 10'b100000;
+parameter    ap_ST_st7_fsm_6 = 10'b1000000;
+parameter    ap_ST_st8_fsm_7 = 10'b10000000;
+parameter    ap_ST_st9_fsm_8 = 10'b100000000;
+parameter    ap_ST_st10_fsm_9 = 10'b1000000000;
 parameter    ap_const_lv32_0 = 32'b00000000000000000000000000000000;
 parameter    ap_const_lv1_1 = 1'b1;
 parameter    ap_const_lv32_1 = 32'b1;
+parameter    ap_const_lv32_9 = 32'b1001;
 parameter    ap_true = 1'b1;
 
 input   ap_clk;
@@ -48,33 +57,60 @@ input   ins_TVALID;
 output   ins_TREADY;
 input  [3:0] ins_TKEEP;
 input  [3:0] ins_TSTRB;
-input  [1:0] ins_TUSER;
+input  [0:0] ins_TUSER;
 input  [0:0] ins_TLAST;
-input  [4:0] ins_TID;
-input  [5:0] ins_TDEST;
+input  [0:0] ins_TID;
+input  [0:0] ins_TDEST;
 output  [31:0] outs_TDATA;
 output   outs_TVALID;
 input   outs_TREADY;
 output  [3:0] outs_TKEEP;
 output  [3:0] outs_TSTRB;
-output  [1:0] outs_TUSER;
+output  [0:0] outs_TUSER;
 output  [0:0] outs_TLAST;
-output  [4:0] outs_TID;
-output  [5:0] outs_TDEST;
+output  [0:0] outs_TID;
+output  [0:0] outs_TDEST;
 
 reg ins_TREADY;
 reg outs_TVALID;
 reg    ap_rst_n_inv;
-reg   [31:0] ins_data_V_val_reg_132;
-(* fsm_encoding = "none" *) reg   [1:0] ap_CS_fsm = 2'b1;
+reg   [31:0] ins_data_val_reg_126;
+(* fsm_encoding = "none" *) reg   [9:0] ap_CS_fsm = 10'b1;
 reg    ap_sig_cseq_ST_st1_fsm_0;
-reg    ap_sig_bdd_37;
+reg    ap_sig_bdd_45;
 reg    ap_sig_cseq_ST_st2_fsm_1;
-reg    ap_sig_bdd_56;
-reg    ap_sig_ioackin_outs_TREADY;
+reg    ap_sig_bdd_57;
+reg   [3:0] outs_keep_V_tmp_reg_136;
+reg   [3:0] outs_strb_V_tmp_reg_141;
+reg   [0:0] outs_user_V_tmp_reg_146;
+reg   [0:0] outs_last_V_tmp_reg_151;
+reg   [0:0] outs_id_V_tmp_reg_156;
+reg   [0:0] outs_dest_V_tmp_reg_161;
+wire   [31:0] grp_fu_92_p2;
+reg    ap_sig_cseq_ST_st10_fsm_9;
+reg    ap_sig_bdd_88;
 reg    ap_reg_ioackin_outs_TREADY = 1'b0;
-reg   [1:0] ap_NS_fsm;
+reg    ap_sig_ioackin_outs_TREADY;
+wire   [31:0] grp_fu_92_p0;
+wire   [31:0] grp_fu_92_p1;
+reg    grp_fu_92_ce;
+reg   [9:0] ap_NS_fsm;
 
+
+tri_intersect_fadd_32ns_32ns_32_9_full_dsp #(
+    .ID( 1 ),
+    .NUM_STAGE( 9 ),
+    .din0_WIDTH( 32 ),
+    .din1_WIDTH( 32 ),
+    .dout_WIDTH( 32 ))
+tri_intersect_fadd_32ns_32ns_32_9_full_dsp_U0(
+    .clk( ap_clk ),
+    .reset( ap_rst_n_inv ),
+    .din0( grp_fu_92_p0 ),
+    .din1( grp_fu_92_p1 ),
+    .ce( grp_fu_92_ce ),
+    .dout( grp_fu_92_p2 )
+);
 
 
 
@@ -94,9 +130,9 @@ begin : ap_ret_ap_reg_ioackin_outs_TREADY
     if (ap_rst_n_inv == 1'b1) begin
         ap_reg_ioackin_outs_TREADY <= ap_const_logic_0;
     end else begin
-        if (((ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~((ins_TVALID == ap_const_logic_0) | (ap_const_logic_0 == ap_sig_ioackin_outs_TREADY)))) begin
+        if (((ap_const_logic_1 == ap_sig_cseq_ST_st10_fsm_9) & ~(ap_const_logic_0 == ap_sig_ioackin_outs_TREADY))) begin
             ap_reg_ioackin_outs_TREADY <= ap_const_logic_0;
-        end else if ((~(ins_TVALID == ap_const_logic_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & (ap_const_logic_1 == outs_TREADY))) begin
+        end else if (((ap_const_logic_1 == ap_sig_cseq_ST_st10_fsm_9) & (ap_const_logic_1 == outs_TREADY))) begin
             ap_reg_ioackin_outs_TREADY <= ap_const_logic_1;
         end
     end
@@ -106,14 +142,37 @@ end
 always @(posedge ap_clk)
 begin
     if (((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ins_TVALID == ap_const_logic_0))) begin
-        ins_data_V_val_reg_132 <= ins_TDATA;
+        ins_data_val_reg_126 <= ins_TDATA;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if ((~(ins_TVALID == ap_const_logic_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1))) begin
+        outs_dest_V_tmp_reg_161 <= ins_TDEST;
+        outs_id_V_tmp_reg_156 <= ins_TID;
+        outs_keep_V_tmp_reg_136 <= ins_TKEEP;
+        outs_last_V_tmp_reg_151 <= ins_TLAST;
+        outs_strb_V_tmp_reg_141 <= ins_TSTRB;
+        outs_user_V_tmp_reg_146 <= ins_TUSER;
+    end
+end
+
+/// ap_sig_cseq_ST_st10_fsm_9 assign process. ///
+always @ (ap_sig_bdd_88)
+begin
+    if (ap_sig_bdd_88) begin
+        ap_sig_cseq_ST_st10_fsm_9 = ap_const_logic_1;
+    end else begin
+        ap_sig_cseq_ST_st10_fsm_9 = ap_const_logic_0;
     end
 end
 
 /// ap_sig_cseq_ST_st1_fsm_0 assign process. ///
-always @ (ap_sig_bdd_37)
+always @ (ap_sig_bdd_45)
 begin
-    if (ap_sig_bdd_37) begin
+    if (ap_sig_bdd_45) begin
         ap_sig_cseq_ST_st1_fsm_0 = ap_const_logic_1;
     end else begin
         ap_sig_cseq_ST_st1_fsm_0 = ap_const_logic_0;
@@ -121,9 +180,9 @@ begin
 end
 
 /// ap_sig_cseq_ST_st2_fsm_1 assign process. ///
-always @ (ap_sig_bdd_56)
+always @ (ap_sig_bdd_57)
 begin
-    if (ap_sig_bdd_56) begin
+    if (ap_sig_bdd_57) begin
         ap_sig_cseq_ST_st2_fsm_1 = ap_const_logic_1;
     end else begin
         ap_sig_cseq_ST_st2_fsm_1 = ap_const_logic_0;
@@ -140,10 +199,20 @@ begin
     end
 end
 
-/// ins_TREADY assign process. ///
-always @ (ins_TVALID or ap_sig_cseq_ST_st1_fsm_0 or ap_sig_cseq_ST_st2_fsm_1 or ap_sig_ioackin_outs_TREADY)
+/// grp_fu_92_ce assign process. ///
+always @ (ins_TVALID or ap_sig_cseq_ST_st1_fsm_0 or ap_sig_cseq_ST_st2_fsm_1 or ap_sig_cseq_ST_st10_fsm_9 or ap_sig_ioackin_outs_TREADY)
 begin
-    if ((((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ins_TVALID == ap_const_logic_0)) | ((ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & ~((ins_TVALID == ap_const_logic_0) | (ap_const_logic_0 == ap_sig_ioackin_outs_TREADY))))) begin
+    if (((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) | ((ins_TVALID == ap_const_logic_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1)) | ((ap_const_logic_1 == ap_sig_cseq_ST_st10_fsm_9) & (ap_const_logic_0 == ap_sig_ioackin_outs_TREADY)))) begin
+        grp_fu_92_ce = ap_const_logic_0;
+    end else begin
+        grp_fu_92_ce = ap_const_logic_1;
+    end
+end
+
+/// ins_TREADY assign process. ///
+always @ (ins_TVALID or ap_sig_cseq_ST_st1_fsm_0 or ap_sig_cseq_ST_st2_fsm_1)
+begin
+    if ((((ap_const_logic_1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ins_TVALID == ap_const_logic_0)) | (~(ins_TVALID == ap_const_logic_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1)))) begin
         ins_TREADY = ap_const_logic_1;
     end else begin
         ins_TREADY = ap_const_logic_0;
@@ -151,9 +220,9 @@ begin
 end
 
 /// outs_TVALID assign process. ///
-always @ (ins_TVALID or ap_sig_cseq_ST_st2_fsm_1 or ap_reg_ioackin_outs_TREADY)
+always @ (ap_sig_cseq_ST_st10_fsm_9 or ap_reg_ioackin_outs_TREADY)
 begin
-    if ((~(ins_TVALID == ap_const_logic_0) & (ap_const_logic_1 == ap_sig_cseq_ST_st2_fsm_1) & (ap_const_logic_0 == ap_reg_ioackin_outs_TREADY))) begin
+    if (((ap_const_logic_1 == ap_sig_cseq_ST_st10_fsm_9) & (ap_const_logic_0 == ap_reg_ioackin_outs_TREADY))) begin
         outs_TVALID = ap_const_logic_1;
     end else begin
         outs_TVALID = ap_const_logic_0;
@@ -173,10 +242,46 @@ begin
         end
         ap_ST_st2_fsm_1 : 
         begin
-            if (~((ins_TVALID == ap_const_logic_0) | (ap_const_logic_0 == ap_sig_ioackin_outs_TREADY))) begin
-                ap_NS_fsm = ap_ST_st1_fsm_0;
+            if (~(ins_TVALID == ap_const_logic_0)) begin
+                ap_NS_fsm = ap_ST_st3_fsm_2;
             end else begin
                 ap_NS_fsm = ap_ST_st2_fsm_1;
+            end
+        end
+        ap_ST_st3_fsm_2 : 
+        begin
+            ap_NS_fsm = ap_ST_st4_fsm_3;
+        end
+        ap_ST_st4_fsm_3 : 
+        begin
+            ap_NS_fsm = ap_ST_st5_fsm_4;
+        end
+        ap_ST_st5_fsm_4 : 
+        begin
+            ap_NS_fsm = ap_ST_st6_fsm_5;
+        end
+        ap_ST_st6_fsm_5 : 
+        begin
+            ap_NS_fsm = ap_ST_st7_fsm_6;
+        end
+        ap_ST_st7_fsm_6 : 
+        begin
+            ap_NS_fsm = ap_ST_st8_fsm_7;
+        end
+        ap_ST_st8_fsm_7 : 
+        begin
+            ap_NS_fsm = ap_ST_st9_fsm_8;
+        end
+        ap_ST_st9_fsm_8 : 
+        begin
+            ap_NS_fsm = ap_ST_st10_fsm_9;
+        end
+        ap_ST_st10_fsm_9 : 
+        begin
+            if (~(ap_const_logic_0 == ap_sig_ioackin_outs_TREADY)) begin
+                ap_NS_fsm = ap_ST_st1_fsm_0;
+            end else begin
+                ap_NS_fsm = ap_ST_st10_fsm_9;
             end
         end
         default : 
@@ -193,24 +298,32 @@ begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-/// ap_sig_bdd_37 assign process. ///
+/// ap_sig_bdd_45 assign process. ///
 always @ (ap_CS_fsm)
 begin
-    ap_sig_bdd_37 = (ap_CS_fsm[ap_const_lv32_0] == ap_const_lv1_1);
+    ap_sig_bdd_45 = (ap_CS_fsm[ap_const_lv32_0] == ap_const_lv1_1);
 end
 
-/// ap_sig_bdd_56 assign process. ///
+/// ap_sig_bdd_57 assign process. ///
 always @ (ap_CS_fsm)
 begin
-    ap_sig_bdd_56 = (ap_const_lv1_1 == ap_CS_fsm[ap_const_lv32_1]);
+    ap_sig_bdd_57 = (ap_const_lv1_1 == ap_CS_fsm[ap_const_lv32_1]);
 end
-assign outs_TDATA = (ins_TDATA + ins_data_V_val_reg_132);
-assign outs_TDEST = ins_TDEST;
-assign outs_TID = ins_TID;
-assign outs_TKEEP = ins_TKEEP;
-assign outs_TLAST = ins_TLAST;
-assign outs_TSTRB = ins_TSTRB;
-assign outs_TUSER = ins_TUSER;
+
+/// ap_sig_bdd_88 assign process. ///
+always @ (ap_CS_fsm)
+begin
+    ap_sig_bdd_88 = (ap_const_lv1_1 == ap_CS_fsm[ap_const_lv32_9]);
+end
+assign grp_fu_92_p0 = ins_data_val_reg_126;
+assign grp_fu_92_p1 = ins_TDATA;
+assign outs_TDATA = grp_fu_92_p2;
+assign outs_TDEST = outs_dest_V_tmp_reg_161;
+assign outs_TID = outs_id_V_tmp_reg_156;
+assign outs_TKEEP = outs_keep_V_tmp_reg_136;
+assign outs_TLAST = outs_last_V_tmp_reg_151;
+assign outs_TSTRB = outs_strb_V_tmp_reg_141;
+assign outs_TUSER = outs_user_V_tmp_reg_146;
 
 
 endmodule //tri_intersect

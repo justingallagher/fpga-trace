@@ -18,49 +18,102 @@ port (
     ins_TREADY : OUT STD_LOGIC;
     ins_TKEEP : IN STD_LOGIC_VECTOR (3 downto 0);
     ins_TSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
-    ins_TUSER : IN STD_LOGIC_VECTOR (1 downto 0);
+    ins_TUSER : IN STD_LOGIC_VECTOR (0 downto 0);
     ins_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
-    ins_TID : IN STD_LOGIC_VECTOR (4 downto 0);
-    ins_TDEST : IN STD_LOGIC_VECTOR (5 downto 0);
+    ins_TID : IN STD_LOGIC_VECTOR (0 downto 0);
+    ins_TDEST : IN STD_LOGIC_VECTOR (0 downto 0);
     outs_TDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
     outs_TVALID : OUT STD_LOGIC;
     outs_TREADY : IN STD_LOGIC;
     outs_TKEEP : OUT STD_LOGIC_VECTOR (3 downto 0);
     outs_TSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
-    outs_TUSER : OUT STD_LOGIC_VECTOR (1 downto 0);
+    outs_TUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
     outs_TLAST : OUT STD_LOGIC_VECTOR (0 downto 0);
-    outs_TID : OUT STD_LOGIC_VECTOR (4 downto 0);
-    outs_TDEST : OUT STD_LOGIC_VECTOR (5 downto 0) );
+    outs_TID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    outs_TDEST : OUT STD_LOGIC_VECTOR (0 downto 0) );
 end;
 
 
 architecture behav of tri_intersect is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "tri_intersect,hls_ip_2015_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.440000,HLS_SYN_LAT=1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=35,HLS_SYN_LUT=34}";
+    "tri_intersect,hls_ip_2015_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=4.348000,HLS_SYN_LAT=9,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=2,HLS_SYN_FF=379,HLS_SYN_LUT=429}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_ST_st1_fsm_0 : STD_LOGIC_VECTOR (1 downto 0) := "01";
-    constant ap_ST_st2_fsm_1 : STD_LOGIC_VECTOR (1 downto 0) := "10";
+    constant ap_ST_st1_fsm_0 : STD_LOGIC_VECTOR (9 downto 0) := "0000000001";
+    constant ap_ST_st2_fsm_1 : STD_LOGIC_VECTOR (9 downto 0) := "0000000010";
+    constant ap_ST_st3_fsm_2 : STD_LOGIC_VECTOR (9 downto 0) := "0000000100";
+    constant ap_ST_st4_fsm_3 : STD_LOGIC_VECTOR (9 downto 0) := "0000001000";
+    constant ap_ST_st5_fsm_4 : STD_LOGIC_VECTOR (9 downto 0) := "0000010000";
+    constant ap_ST_st6_fsm_5 : STD_LOGIC_VECTOR (9 downto 0) := "0000100000";
+    constant ap_ST_st7_fsm_6 : STD_LOGIC_VECTOR (9 downto 0) := "0001000000";
+    constant ap_ST_st8_fsm_7 : STD_LOGIC_VECTOR (9 downto 0) := "0010000000";
+    constant ap_ST_st9_fsm_8 : STD_LOGIC_VECTOR (9 downto 0) := "0100000000";
+    constant ap_ST_st10_fsm_9 : STD_LOGIC_VECTOR (9 downto 0) := "1000000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
+    constant ap_const_lv32_9 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001001";
 
     signal ap_rst_n_inv : STD_LOGIC;
-    signal ins_data_V_val_reg_132 : STD_LOGIC_VECTOR (31 downto 0);
-    signal ap_CS_fsm : STD_LOGIC_VECTOR (1 downto 0) := "01";
+    signal ins_data_val_reg_126 : STD_LOGIC_VECTOR (31 downto 0);
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (9 downto 0) := "0000000001";
     attribute fsm_encoding : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_sig_cseq_ST_st1_fsm_0 : STD_LOGIC;
-    signal ap_sig_bdd_37 : BOOLEAN;
+    signal ap_sig_bdd_45 : BOOLEAN;
     signal ap_sig_cseq_ST_st2_fsm_1 : STD_LOGIC;
-    signal ap_sig_bdd_56 : BOOLEAN;
-    signal ap_sig_ioackin_outs_TREADY : STD_LOGIC;
+    signal ap_sig_bdd_57 : BOOLEAN;
+    signal outs_keep_V_tmp_reg_136 : STD_LOGIC_VECTOR (3 downto 0);
+    signal outs_strb_V_tmp_reg_141 : STD_LOGIC_VECTOR (3 downto 0);
+    signal outs_user_V_tmp_reg_146 : STD_LOGIC_VECTOR (0 downto 0);
+    signal outs_last_V_tmp_reg_151 : STD_LOGIC_VECTOR (0 downto 0);
+    signal outs_id_V_tmp_reg_156 : STD_LOGIC_VECTOR (0 downto 0);
+    signal outs_dest_V_tmp_reg_161 : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_fu_92_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal ap_sig_cseq_ST_st10_fsm_9 : STD_LOGIC;
+    signal ap_sig_bdd_88 : BOOLEAN;
     signal ap_reg_ioackin_outs_TREADY : STD_LOGIC := '0';
-    signal ap_NS_fsm : STD_LOGIC_VECTOR (1 downto 0);
+    signal ap_sig_ioackin_outs_TREADY : STD_LOGIC;
+    signal grp_fu_92_p0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_92_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_92_ce : STD_LOGIC;
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (9 downto 0);
+
+    component tri_intersect_fadd_32ns_32ns_32_9_full_dsp IS
+    generic (
+        ID : INTEGER;
+        NUM_STAGE : INTEGER;
+        din0_WIDTH : INTEGER;
+        din1_WIDTH : INTEGER;
+        dout_WIDTH : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        din0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        din1 : IN STD_LOGIC_VECTOR (31 downto 0);
+        ce : IN STD_LOGIC;
+        dout : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
 
 
 begin
+    tri_intersect_fadd_32ns_32ns_32_9_full_dsp_U0 : component tri_intersect_fadd_32ns_32ns_32_9_full_dsp
+    generic map (
+        ID => 1,
+        NUM_STAGE => 9,
+        din0_WIDTH => 32,
+        din1_WIDTH => 32,
+        dout_WIDTH => 32)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        din0 => grp_fu_92_p0,
+        din1 => grp_fu_92_p1,
+        ce => grp_fu_92_ce,
+        dout => grp_fu_92_p2);
+
 
 
 
@@ -85,9 +138,9 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_outs_TREADY <= ap_const_logic_0;
             else
-                if ((((ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1) and not(((ins_TVALID = ap_const_logic_0) or (ap_const_logic_0 = ap_sig_ioackin_outs_TREADY)))))) then 
+                if ((((ap_const_logic_1 = ap_sig_cseq_ST_st10_fsm_9) and not((ap_const_logic_0 = ap_sig_ioackin_outs_TREADY))))) then 
                     ap_reg_ioackin_outs_TREADY <= ap_const_logic_0;
-                elsif (((not((ins_TVALID = ap_const_logic_0)) and (ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1) and (ap_const_logic_1 = outs_TREADY)))) then 
+                elsif ((((ap_const_logic_1 = ap_sig_cseq_ST_st10_fsm_9) and (ap_const_logic_1 = outs_TREADY)))) then 
                     ap_reg_ioackin_outs_TREADY <= ap_const_logic_1;
                 end if; 
             end if;
@@ -100,7 +153,22 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_logic_1 = ap_sig_cseq_ST_st1_fsm_0) and not((ins_TVALID = ap_const_logic_0)))) then
-                ins_data_V_val_reg_132 <= ins_TDATA;
+                ins_data_val_reg_126 <= ins_TDATA;
+            end if;
+        end if;
+    end process;
+
+    -- assign process. --
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if ((not((ins_TVALID = ap_const_logic_0)) and (ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1))) then
+                outs_dest_V_tmp_reg_161 <= ins_TDEST;
+                outs_id_V_tmp_reg_156 <= ins_TID;
+                outs_keep_V_tmp_reg_136 <= ins_TKEEP;
+                outs_last_V_tmp_reg_151 <= ins_TLAST;
+                outs_strb_V_tmp_reg_141 <= ins_TSTRB;
+                outs_user_V_tmp_reg_146 <= ins_TUSER;
             end if;
         end if;
     end process;
@@ -116,13 +184,33 @@ begin
                     ap_NS_fsm <= ap_ST_st1_fsm_0;
                 end if;
             when ap_ST_st2_fsm_1 => 
-                if (not(((ins_TVALID = ap_const_logic_0) or (ap_const_logic_0 = ap_sig_ioackin_outs_TREADY)))) then
-                    ap_NS_fsm <= ap_ST_st1_fsm_0;
+                if (not((ins_TVALID = ap_const_logic_0))) then
+                    ap_NS_fsm <= ap_ST_st3_fsm_2;
                 else
                     ap_NS_fsm <= ap_ST_st2_fsm_1;
                 end if;
+            when ap_ST_st3_fsm_2 => 
+                ap_NS_fsm <= ap_ST_st4_fsm_3;
+            when ap_ST_st4_fsm_3 => 
+                ap_NS_fsm <= ap_ST_st5_fsm_4;
+            when ap_ST_st5_fsm_4 => 
+                ap_NS_fsm <= ap_ST_st6_fsm_5;
+            when ap_ST_st6_fsm_5 => 
+                ap_NS_fsm <= ap_ST_st7_fsm_6;
+            when ap_ST_st7_fsm_6 => 
+                ap_NS_fsm <= ap_ST_st8_fsm_7;
+            when ap_ST_st8_fsm_7 => 
+                ap_NS_fsm <= ap_ST_st9_fsm_8;
+            when ap_ST_st9_fsm_8 => 
+                ap_NS_fsm <= ap_ST_st10_fsm_9;
+            when ap_ST_st10_fsm_9 => 
+                if (not((ap_const_logic_0 = ap_sig_ioackin_outs_TREADY))) then
+                    ap_NS_fsm <= ap_ST_st1_fsm_0;
+                else
+                    ap_NS_fsm <= ap_ST_st10_fsm_9;
+                end if;
             when others =>  
-                ap_NS_fsm <= "XX";
+                ap_NS_fsm <= "XXXXXXXXXX";
         end case;
     end process;
 
@@ -133,24 +221,42 @@ begin
     end process;
 
 
-    -- ap_sig_bdd_37 assign process. --
-    ap_sig_bdd_37_assign_proc : process(ap_CS_fsm)
+    -- ap_sig_bdd_45 assign process. --
+    ap_sig_bdd_45_assign_proc : process(ap_CS_fsm)
     begin
-                ap_sig_bdd_37 <= (ap_CS_fsm(0 downto 0) = ap_const_lv1_1);
+                ap_sig_bdd_45 <= (ap_CS_fsm(0 downto 0) = ap_const_lv1_1);
     end process;
 
 
-    -- ap_sig_bdd_56 assign process. --
-    ap_sig_bdd_56_assign_proc : process(ap_CS_fsm)
+    -- ap_sig_bdd_57 assign process. --
+    ap_sig_bdd_57_assign_proc : process(ap_CS_fsm)
     begin
-                ap_sig_bdd_56 <= (ap_const_lv1_1 = ap_CS_fsm(1 downto 1));
+                ap_sig_bdd_57 <= (ap_const_lv1_1 = ap_CS_fsm(1 downto 1));
+    end process;
+
+
+    -- ap_sig_bdd_88 assign process. --
+    ap_sig_bdd_88_assign_proc : process(ap_CS_fsm)
+    begin
+                ap_sig_bdd_88 <= (ap_const_lv1_1 = ap_CS_fsm(9 downto 9));
+    end process;
+
+
+    -- ap_sig_cseq_ST_st10_fsm_9 assign process. --
+    ap_sig_cseq_ST_st10_fsm_9_assign_proc : process(ap_sig_bdd_88)
+    begin
+        if (ap_sig_bdd_88) then 
+            ap_sig_cseq_ST_st10_fsm_9 <= ap_const_logic_1;
+        else 
+            ap_sig_cseq_ST_st10_fsm_9 <= ap_const_logic_0;
+        end if; 
     end process;
 
 
     -- ap_sig_cseq_ST_st1_fsm_0 assign process. --
-    ap_sig_cseq_ST_st1_fsm_0_assign_proc : process(ap_sig_bdd_37)
+    ap_sig_cseq_ST_st1_fsm_0_assign_proc : process(ap_sig_bdd_45)
     begin
-        if (ap_sig_bdd_37) then 
+        if (ap_sig_bdd_45) then 
             ap_sig_cseq_ST_st1_fsm_0 <= ap_const_logic_1;
         else 
             ap_sig_cseq_ST_st1_fsm_0 <= ap_const_logic_0;
@@ -159,9 +265,9 @@ begin
 
 
     -- ap_sig_cseq_ST_st2_fsm_1 assign process. --
-    ap_sig_cseq_ST_st2_fsm_1_assign_proc : process(ap_sig_bdd_56)
+    ap_sig_cseq_ST_st2_fsm_1_assign_proc : process(ap_sig_bdd_57)
     begin
-        if (ap_sig_bdd_56) then 
+        if (ap_sig_bdd_57) then 
             ap_sig_cseq_ST_st2_fsm_1 <= ap_const_logic_1;
         else 
             ap_sig_cseq_ST_st2_fsm_1 <= ap_const_logic_0;
@@ -180,28 +286,41 @@ begin
     end process;
 
 
-    -- ins_TREADY assign process. --
-    ins_TREADY_assign_proc : process(ins_TVALID, ap_sig_cseq_ST_st1_fsm_0, ap_sig_cseq_ST_st2_fsm_1, ap_sig_ioackin_outs_TREADY)
+    -- grp_fu_92_ce assign process. --
+    grp_fu_92_ce_assign_proc : process(ins_TVALID, ap_sig_cseq_ST_st1_fsm_0, ap_sig_cseq_ST_st2_fsm_1, ap_sig_cseq_ST_st10_fsm_9, ap_sig_ioackin_outs_TREADY)
     begin
-        if ((((ap_const_logic_1 = ap_sig_cseq_ST_st1_fsm_0) and not((ins_TVALID = ap_const_logic_0))) or ((ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1) and not(((ins_TVALID = ap_const_logic_0) or (ap_const_logic_0 = ap_sig_ioackin_outs_TREADY)))))) then 
+        if (((ap_const_logic_1 = ap_sig_cseq_ST_st1_fsm_0) or ((ins_TVALID = ap_const_logic_0) and (ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1)) or ((ap_const_logic_1 = ap_sig_cseq_ST_st10_fsm_9) and (ap_const_logic_0 = ap_sig_ioackin_outs_TREADY)))) then 
+            grp_fu_92_ce <= ap_const_logic_0;
+        else 
+            grp_fu_92_ce <= ap_const_logic_1;
+        end if; 
+    end process;
+
+    grp_fu_92_p0 <= ins_data_val_reg_126;
+    grp_fu_92_p1 <= ins_TDATA;
+
+    -- ins_TREADY assign process. --
+    ins_TREADY_assign_proc : process(ins_TVALID, ap_sig_cseq_ST_st1_fsm_0, ap_sig_cseq_ST_st2_fsm_1)
+    begin
+        if ((((ap_const_logic_1 = ap_sig_cseq_ST_st1_fsm_0) and not((ins_TVALID = ap_const_logic_0))) or (not((ins_TVALID = ap_const_logic_0)) and (ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1)))) then 
             ins_TREADY <= ap_const_logic_1;
         else 
             ins_TREADY <= ap_const_logic_0;
         end if; 
     end process;
 
-    outs_TDATA <= std_logic_vector(unsigned(ins_TDATA) + unsigned(ins_data_V_val_reg_132));
-    outs_TDEST <= ins_TDEST;
-    outs_TID <= ins_TID;
-    outs_TKEEP <= ins_TKEEP;
-    outs_TLAST <= ins_TLAST;
-    outs_TSTRB <= ins_TSTRB;
-    outs_TUSER <= ins_TUSER;
+    outs_TDATA <= grp_fu_92_p2;
+    outs_TDEST <= outs_dest_V_tmp_reg_161;
+    outs_TID <= outs_id_V_tmp_reg_156;
+    outs_TKEEP <= outs_keep_V_tmp_reg_136;
+    outs_TLAST <= outs_last_V_tmp_reg_151;
+    outs_TSTRB <= outs_strb_V_tmp_reg_141;
+    outs_TUSER <= outs_user_V_tmp_reg_146;
 
     -- outs_TVALID assign process. --
-    outs_TVALID_assign_proc : process(ins_TVALID, ap_sig_cseq_ST_st2_fsm_1, ap_reg_ioackin_outs_TREADY)
+    outs_TVALID_assign_proc : process(ap_sig_cseq_ST_st10_fsm_9, ap_reg_ioackin_outs_TREADY)
     begin
-        if (((not((ins_TVALID = ap_const_logic_0)) and (ap_const_logic_1 = ap_sig_cseq_ST_st2_fsm_1) and (ap_const_logic_0 = ap_reg_ioackin_outs_TREADY)))) then 
+        if ((((ap_const_logic_1 = ap_sig_cseq_ST_st10_fsm_9) and (ap_const_logic_0 = ap_reg_ioackin_outs_TREADY)))) then 
             outs_TVALID <= ap_const_logic_1;
         else 
             outs_TVALID <= ap_const_logic_0;

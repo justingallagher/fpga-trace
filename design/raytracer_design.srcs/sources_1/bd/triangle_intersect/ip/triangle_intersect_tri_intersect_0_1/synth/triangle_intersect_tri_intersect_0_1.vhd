@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:tri_intersect:0.1
--- IP Revision: 1605060051
+-- IP Revision: 1605061747
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -60,21 +60,21 @@ ENTITY triangle_intersect_tri_intersect_0_1 IS
     ins_TVALID : IN STD_LOGIC;
     ins_TREADY : OUT STD_LOGIC;
     ins_TDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    ins_TDEST : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    ins_TDEST : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     ins_TKEEP : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     ins_TSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    ins_TUSER : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+    ins_TUSER : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     ins_TLAST : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ins_TID : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+    ins_TID : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     outs_TVALID : OUT STD_LOGIC;
     outs_TREADY : IN STD_LOGIC;
     outs_TDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    outs_TDEST : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+    outs_TDEST : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     outs_TKEEP : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     outs_TSTRB : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    outs_TUSER : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    outs_TUSER : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     outs_TLAST : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    outs_TID : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
+    outs_TID : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
 END triangle_intersect_tri_intersect_0_1;
 
@@ -89,21 +89,21 @@ ARCHITECTURE triangle_intersect_tri_intersect_0_1_arch OF triangle_intersect_tri
       ins_TVALID : IN STD_LOGIC;
       ins_TREADY : OUT STD_LOGIC;
       ins_TDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      ins_TDEST : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+      ins_TDEST : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       ins_TKEEP : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       ins_TSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      ins_TUSER : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+      ins_TUSER : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       ins_TLAST : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      ins_TID : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+      ins_TID : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       outs_TVALID : OUT STD_LOGIC;
       outs_TREADY : IN STD_LOGIC;
       outs_TDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      outs_TDEST : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+      outs_TDEST : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       outs_TKEEP : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       outs_TSTRB : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      outs_TUSER : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      outs_TUSER : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       outs_TLAST : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-      outs_TID : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
+      outs_TID : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
     );
   END COMPONENT tri_intersect;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -111,7 +111,7 @@ ARCHITECTURE triangle_intersect_tri_intersect_0_1_arch OF triangle_intersect_tri
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF triangle_intersect_tri_intersect_0_1_arch : ARCHITECTURE IS "triangle_intersect_tri_intersect_0_1,tri_intersect,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF triangle_intersect_tri_intersect_0_1_arch: ARCHITECTURE IS "triangle_intersect_tri_intersect_0_1,tri_intersect,{x_ipProduct=Vivado 2015.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=tri_intersect,x_ipVersion=0.1,x_ipCoreRevision=1605060051,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF triangle_intersect_tri_intersect_0_1_arch: ARCHITECTURE IS "triangle_intersect_tri_intersect_0_1,tri_intersect,{x_ipProduct=Vivado 2015.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=tri_intersect,x_ipVersion=0.1,x_ipCoreRevision=1605061747,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF ap_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 ap_clk CLK";
   ATTRIBUTE X_INTERFACE_INFO OF ap_rst_n: SIGNAL IS "xilinx.com:signal:reset:1.0 ap_rst_n RST";

@@ -23,7 +23,7 @@ set Pointer00 "0"
 set Reference00 "0"
 set Dims00 [list 0]
 set Interface00 "wire"
-set DataType00 "[list ap_int 32 ]"
+set DataType00 "float"
 set Port00 [list $PortName00 $Interface00 $DataType00 $Pointer00 $Dims00 $Const00 $Volatile00 $ArrayOpt00]
 lappend structMem0 $Port00
 set PortName01 "keep"
@@ -59,7 +59,7 @@ set Pointer03 "0"
 set Reference03 "0"
 set Dims03 [list 0]
 set Interface03 "wire"
-set DataType03 "[list ap_uint 2 ]"
+set DataType03 "[list ap_uint 1 ]"
 set Port03 [list $PortName03 $Interface03 $DataType03 $Pointer03 $Dims03 $Const03 $Volatile03 $ArrayOpt03]
 lappend structMem0 $Port03
 set PortName04 "last"
@@ -83,7 +83,7 @@ set Pointer05 "0"
 set Reference05 "0"
 set Dims05 [list 0]
 set Interface05 "wire"
-set DataType05 "[list ap_uint 5 ]"
+set DataType05 "[list ap_uint 1 ]"
 set Port05 [list $PortName05 $Interface05 $DataType05 $Pointer05 $Dims05 $Const05 $Volatile05 $ArrayOpt05]
 lappend structMem0 $Port05
 set PortName06 "dest"
@@ -95,18 +95,14 @@ set Pointer06 "0"
 set Reference06 "0"
 set Dims06 [list 0]
 set Interface06 "wire"
-set DataType06 "[list ap_uint 6 ]"
+set DataType06 "[list ap_uint 1 ]"
 set Port06 [list $PortName06 $Interface06 $DataType06 $Pointer06 $Dims06 $Const06 $Volatile06 $ArrayOpt06]
 lappend structMem0 $Port06
-set DataType0tp0 "int"
-set DataType0tp1 "int"
-set DataType0tp2 "int"
-set DataType0tp3 "int"
-set structParameter0 [list [list $DataType0tp0 D] [list $DataType0tp1 U] [list $DataType0tp2 TI] [list $DataType0tp3 TD] ]
-set structArgument0 [list 32 2 5 6 ]
+set structParameter0 [list ]
+set structArgument0 [list ]
 set NameSpace0 [list ]
 set structIsPacked0 "0"
-set DataType0 [list "ap_axis<32, 2, 5, 6>" "struct ap_axis" $structMem0 1 0 $structParameter0 $structArgument0 $NameSpace0 $structIsPacked0]
+set DataType0 [list "data_t" "struct " $structMem0 0 0 $structParameter0 $structArgument0 $NameSpace0 $structIsPacked0]
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set PortName1 "outs"
@@ -128,7 +124,7 @@ set Pointer10 "0"
 set Reference10 "0"
 set Dims10 [list 0]
 set Interface10 "wire"
-set DataType10 "[list ap_int 32 ]"
+set DataType10 "float"
 set Port10 [list $PortName10 $Interface10 $DataType10 $Pointer10 $Dims10 $Const10 $Volatile10 $ArrayOpt10]
 lappend structMem1 $Port10
 set PortName11 "keep"
@@ -164,7 +160,7 @@ set Pointer13 "0"
 set Reference13 "0"
 set Dims13 [list 0]
 set Interface13 "wire"
-set DataType13 "[list ap_uint 2 ]"
+set DataType13 "[list ap_uint 1 ]"
 set Port13 [list $PortName13 $Interface13 $DataType13 $Pointer13 $Dims13 $Const13 $Volatile13 $ArrayOpt13]
 lappend structMem1 $Port13
 set PortName14 "last"
@@ -188,7 +184,7 @@ set Pointer15 "0"
 set Reference15 "0"
 set Dims15 [list 0]
 set Interface15 "wire"
-set DataType15 "[list ap_uint 5 ]"
+set DataType15 "[list ap_uint 1 ]"
 set Port15 [list $PortName15 $Interface15 $DataType15 $Pointer15 $Dims15 $Const15 $Volatile15 $ArrayOpt15]
 lappend structMem1 $Port15
 set PortName16 "dest"
@@ -200,18 +196,14 @@ set Pointer16 "0"
 set Reference16 "0"
 set Dims16 [list 0]
 set Interface16 "wire"
-set DataType16 "[list ap_uint 6 ]"
+set DataType16 "[list ap_uint 1 ]"
 set Port16 [list $PortName16 $Interface16 $DataType16 $Pointer16 $Dims16 $Const16 $Volatile16 $ArrayOpt16]
 lappend structMem1 $Port16
-set DataType1tp0 "int"
-set DataType1tp1 "int"
-set DataType1tp2 "int"
-set DataType1tp3 "int"
-set structParameter1 [list [list $DataType1tp0 D] [list $DataType1tp1 U] [list $DataType1tp2 TI] [list $DataType1tp3 TD] ]
-set structArgument1 [list 32 2 5 6 ]
+set structParameter1 [list ]
+set structArgument1 [list ]
 set NameSpace1 [list ]
 set structIsPacked1 "0"
-set DataType1 [list "ap_axis<32, 2, 5, 6>" "struct ap_axis" $structMem1 1 0 $structParameter1 $structArgument1 $NameSpace1 $structIsPacked1]
+set DataType1 [list "data_t" "struct " $structMem1 0 0 $structParameter1 $structArgument1 $NameSpace1 $structIsPacked1]
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set globalAPint "" 

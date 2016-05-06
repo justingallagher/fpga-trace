@@ -9,25 +9,30 @@
 #include <stdio.h>
 #include "triangle_intersect.h"
 
-int main() {
-    int i;
-    ap_axis<32,2,5,6> A[2];
-    ap_axis<32,2,5,6> B[1];
+bool float_equal(float a, float b) {
+	const float TOLERANCE = 0.0001;
 
-    for(i=0; i < 2; i++){
-        A[i].data = i + 1;
-        A[i].keep = 1;
-        A[i].strb = 1;
-        A[i].user = 1;
-        A[i].last = 0;
-        A[i].id = 0;
-        A[i].dest = 1;
+	return (a - TOLERANCE < b && a + TOLERANCE > b);
+}
+
+int main() {
+    data_t A[2];
+    data_t B[1];
+
+    for (int i = 0; i < 2; i ++) {
+    	A[i].data = 1.1f * ((float) (i + 3));
+		A[i].keep = 1;
+		A[i].strb = 1;
+		A[i].user = 1;
+		A[i].last = 0;
+		A[i].id = 0;
+		A[i].dest = 1;
     }
 
-    tri_intersect(A,B);
+    tri_intersect(A, B);
 
-    if (B[0].data.to_int() != 3) {
-        printf("ERROR: HW and SW results mismatch\n");
+    if (!float_equal(A[0].data + A[1].data, B[0].data)) {
+        printf("ERROR: HW and SW results mismatch. SW: %f HW: %f\n", 4.1f, B[0].data);
         return -1;
     }
 

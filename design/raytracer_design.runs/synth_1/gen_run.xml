@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1462510388">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1462571376">
   <File Type="RDS-DCP" Name="triangle_intersect_wrapper.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <File Type="RDS-UTIL-PB" Name="triangle_intersect_wrapper_utilization_synth.pb"/>
@@ -27,6 +27,7 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/triangle_intersect_tri_intersect_0_1.upgrade_log"/>
+    <File Path="$PSRCDIR/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_0/triangle_intersect_tri_intersect_0_0.upgrade_log"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="triangle_intersect_wrapper"/>
@@ -40,9 +41,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tri_intersect'" level="0">
-<item name = "Date">Fri May 06 00:51:10 2016
+<item name = "Date">Fri May 06 17:45:42 2016
 </item>
 <item name = "Version">2015.1 (Build 1215546 on Mon Apr 27 19:24:50 PM 2015)</item>
 <item name = "Project">triangle_intersect</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="default">5.00, 2.44, 0.63</column>
+<column name="default">5.00, 4.35, 0.63</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1, 1, 2, 2, none</column>
+<column name="">9, 9, 10, 10, none</column>
 </table>
 </item>
 <item name = "Detail">

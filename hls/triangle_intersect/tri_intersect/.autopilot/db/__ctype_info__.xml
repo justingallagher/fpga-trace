@@ -1,12 +1,12 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>ins_data_V</name>
+<name>ins_data</name>
 <CType>
-<TypeName>ap_int 32</TypeName>
+<TypeName>float</TypeName>
 <TypeWidth>32</TypeWidth>
 <PhysicalWidth>32</PhysicalWidth>
 </CType>
-<CFractionWidth>0</CFractionWidth>
+<CFractionWidth>24</CFractionWidth>
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
@@ -32,9 +32,9 @@
 <RtlPorts>
 <name>ins_user_V</name>
 <CType>
-<TypeName>ap_uint 2</TypeName>
-<TypeWidth>2</TypeWidth>
-<PhysicalWidth>2</PhysicalWidth>
+<TypeName>ap_uint 1</TypeName>
+<TypeWidth>1</TypeWidth>
+<PhysicalWidth>1</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -52,9 +52,9 @@
 <RtlPorts>
 <name>ins_id_V</name>
 <CType>
-<TypeName>ap_uint 5</TypeName>
-<TypeWidth>5</TypeWidth>
-<PhysicalWidth>5</PhysicalWidth>
+<TypeName>ap_uint 1</TypeName>
+<TypeWidth>1</TypeWidth>
+<PhysicalWidth>1</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -62,21 +62,21 @@
 <RtlPorts>
 <name>ins_dest_V</name>
 <CType>
-<TypeName>ap_uint 6</TypeName>
-<TypeWidth>6</TypeWidth>
-<PhysicalWidth>6</PhysicalWidth>
+<TypeName>ap_uint 1</TypeName>
+<TypeWidth>1</TypeWidth>
+<PhysicalWidth>1</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>outs_data_V</name>
+<name>outs_data</name>
 <CType>
-<TypeName>ap_int 32</TypeName>
+<TypeName>float</TypeName>
 <TypeWidth>32</TypeWidth>
 <PhysicalWidth>32</PhysicalWidth>
 </CType>
-<CFractionWidth>0</CFractionWidth>
+<CFractionWidth>24</CFractionWidth>
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
@@ -102,9 +102,9 @@
 <RtlPorts>
 <name>outs_user_V</name>
 <CType>
-<TypeName>ap_uint 2</TypeName>
-<TypeWidth>2</TypeWidth>
-<PhysicalWidth>2</PhysicalWidth>
+<TypeName>ap_uint 1</TypeName>
+<TypeWidth>1</TypeWidth>
+<PhysicalWidth>1</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -122,9 +122,9 @@
 <RtlPorts>
 <name>outs_id_V</name>
 <CType>
-<TypeName>ap_uint 5</TypeName>
-<TypeWidth>5</TypeWidth>
-<PhysicalWidth>5</PhysicalWidth>
+<TypeName>ap_uint 1</TypeName>
+<TypeWidth>1</TypeWidth>
+<PhysicalWidth>1</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -132,9 +132,9 @@
 <RtlPorts>
 <name>outs_dest_V</name>
 <CType>
-<TypeName>ap_uint 6</TypeName>
-<TypeWidth>6</TypeWidth>
-<PhysicalWidth>6</PhysicalWidth>
+<TypeName>ap_uint 1</TypeName>
+<TypeWidth>1</TypeWidth>
+<PhysicalWidth>1</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
