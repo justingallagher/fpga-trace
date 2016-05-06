@@ -1,6 +1,6 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>A_data_V</name>
+<name>ins_data_V</name>
 <CType>
 <TypeName>ap_int 32</TypeName>
 <TypeWidth>32</TypeWidth>
@@ -10,7 +10,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>A_keep_V</name>
+<name>ins_keep_V</name>
 <CType>
 <TypeName>ap_uint 4</TypeName>
 <TypeWidth>4</TypeWidth>
@@ -20,7 +20,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>A_strb_V</name>
+<name>ins_strb_V</name>
 <CType>
 <TypeName>ap_uint 4</TypeName>
 <TypeWidth>4</TypeWidth>
@@ -30,7 +30,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>A_user_V</name>
+<name>ins_user_V</name>
 <CType>
 <TypeName>ap_uint 2</TypeName>
 <TypeWidth>2</TypeWidth>
@@ -40,7 +40,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>A_last_V</name>
+<name>ins_last_V</name>
 <CType>
 <TypeName>ap_uint 1</TypeName>
 <TypeWidth>1</TypeWidth>
@@ -50,7 +50,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>A_id_V</name>
+<name>ins_id_V</name>
 <CType>
 <TypeName>ap_uint 5</TypeName>
 <TypeWidth>5</TypeWidth>
@@ -60,7 +60,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>A_dest_V</name>
+<name>ins_dest_V</name>
 <CType>
 <TypeName>ap_uint 6</TypeName>
 <TypeWidth>6</TypeWidth>
@@ -70,7 +70,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>B_data_V</name>
+<name>outs_data_V</name>
 <CType>
 <TypeName>ap_int 32</TypeName>
 <TypeWidth>32</TypeWidth>
@@ -80,7 +80,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>B_keep_V</name>
+<name>outs_keep_V</name>
 <CType>
 <TypeName>ap_uint 4</TypeName>
 <TypeWidth>4</TypeWidth>
@@ -90,7 +90,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>B_strb_V</name>
+<name>outs_strb_V</name>
 <CType>
 <TypeName>ap_uint 4</TypeName>
 <TypeWidth>4</TypeWidth>
@@ -100,7 +100,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>B_user_V</name>
+<name>outs_user_V</name>
 <CType>
 <TypeName>ap_uint 2</TypeName>
 <TypeWidth>2</TypeWidth>
@@ -110,7 +110,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>B_last_V</name>
+<name>outs_last_V</name>
 <CType>
 <TypeName>ap_uint 1</TypeName>
 <TypeWidth>1</TypeWidth>
@@ -120,7 +120,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>B_id_V</name>
+<name>outs_id_V</name>
 <CType>
 <TypeName>ap_uint 5</TypeName>
 <TypeWidth>5</TypeWidth>
@@ -130,7 +130,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>B_dest_V</name>
+<name>outs_dest_V</name>
 <CType>
 <TypeName>ap_uint 6</TypeName>
 <TypeWidth>6</TypeWidth>

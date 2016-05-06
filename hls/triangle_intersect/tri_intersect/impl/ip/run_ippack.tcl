@@ -34,7 +34,7 @@ set Library     "hls"
 set IPName      "tri_intersect"
 set Version     "0.1"
 set DisplayName "Triangle Intersect"
-set Revision    "1605052059"
+set Revision    "1605060051"
 set Description "Calculates the intersection point between a ray and a triangle."
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -59,7 +59,7 @@ set Interfaces {
                 Bits "1"
             }
         }
-        buses "A B"
+        buses "ins outs"
     }
     ap_rst_n {
         type "reset"
@@ -72,10 +72,10 @@ set Interfaces {
             }
         }
     }
-    A {
+    ins {
         type "axi4stream"
         mode "slave"
-        port_prefix "A"
+        port_prefix "ins"
         has_tready "1"
         ports {
             TDATA 32
@@ -134,10 +134,10 @@ set Interfaces {
             }
         }
     }
-    B {
+    outs {
         type "axi4stream"
         mode "master"
-        port_prefix "B"
+        port_prefix "outs"
         has_tready "1"
         ports {
             TDATA 32
@@ -1610,7 +1610,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_version match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 5.000000 machine 64 combinational 0 latency 51 II x}
+set user_parameters_list {clk_period 5.000000 machine 64 combinational 0 latency 1 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

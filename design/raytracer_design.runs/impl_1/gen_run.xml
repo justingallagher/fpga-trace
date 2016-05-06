@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1462496503">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1462510388">
   <File Type="OPT-DCP" Name="triangle_intersect_wrapper_opt.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
@@ -63,6 +63,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/triangle_intersect_tri_intersect_0_1.upgrade_log"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="triangle_intersect_wrapper"/>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tri_intersect'" level="0">
-<item name = "Date">Thu May 05 20:58:52 2016
+<item name = "Date">Fri May 06 00:51:10 2016
 </item>
 <item name = "Version">2015.1 (Build 1215546 on Mon Apr 27 19:24:50 PM 2015)</item>
 <item name = "Project">triangle_intersect</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">51, 51, 52, 52, none</column>
+<column name="">1, 1, 2, 2, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,6 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">50, 50, 1, -, -, 50, no</column>
 </table>
 </item>
 </section>

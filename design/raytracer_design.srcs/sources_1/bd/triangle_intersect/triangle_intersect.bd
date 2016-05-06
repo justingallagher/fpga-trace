@@ -139,12 +139,12 @@
       <spirit:interconnection>
         <spirit:name>axi_dma_0_M_AXIS_MM2S</spirit:name>
         <spirit:activeInterface spirit:busRef="M_AXIS_MM2S" spirit:componentRef="axi_dma_0"/>
-        <spirit:activeInterface spirit:busRef="A" spirit:componentRef="tri_intersect_0"/>
+        <spirit:activeInterface spirit:busRef="ins" spirit:componentRef="tri_intersect_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>tri_intersect_0_B</spirit:name>
         <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_dma_0"/>
-        <spirit:activeInterface spirit:busRef="B" spirit:componentRef="tri_intersect_0"/>
+        <spirit:activeInterface spirit:busRef="outs" spirit:componentRef="tri_intersect_0"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>

@@ -9,4 +9,4 @@
 #include "ap_axi_sdata.h"
 
 // Performs a triangle intersection
-void tri_intersect(ap_axis<32, 2, 5, 6> A[50], ap_axis<32, 2, 5, 6> B[50]);
+void tri_intersect(ap_axis<32, 2, 5, 6> ins[2], ap_axis<32, 2, 5, 6> outs[1]);
