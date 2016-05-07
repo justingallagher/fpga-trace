@@ -62,6 +62,8 @@ struct Options
     int num_samples;
     // whether to use ARM NEON (SIMD) acceleration
     bool simd_accel;
+    // whether to use FPGA hardware acceleration
+    bool fpga_accel;
 };
 
 class RaytracerApplication : public Application
@@ -295,6 +297,7 @@ void RaytracerApplication::toggle_raytracing( int width, int height )
         // initialize the raytracer (first make sure camera aspect is correct)
         scene.camera.aspect = real_t( width ) / real_t( height );
         scene.simd_accel = options.simd_accel;
+        scene.fpga_accel = options.fpga_accel;
 
         if (!raytracer.initialize(&scene, options.num_samples, width, height))
         {
@@ -464,6 +467,8 @@ static void print_usage( const char* progname )
         "\t\tIf not specified, default timestamped filenames are used.\n" \
         "\t-c:\n" \
         "\t\tUse ARM NEON SIMD acceleration.\n" \
+        "\t-f:\n" \
+        "\t\tUse FPGA hardware acceleration.\n" \
         "\n" \
         "Instructions:\n" \
         "\n" \
@@ -498,6 +503,8 @@ static bool parse_args( Options* opt, int argc, char* argv[] )
     opt->height = DEFAULT_HEIGHT;
     opt->num_samples = 1;
     opt->simd_accel = false;
+    opt->fpga_accel = false;
+
     for (int i = 2; i < argc; i++)
     {
         switch (argv[i][1])
@@ -526,6 +533,10 @@ static bool parse_args( Options* opt, int argc, char* argv[] )
             break;
         case 'c':
             opt->simd_accel = true;
+            break;
+        case 'f':
+            opt->fpga_accel = true;
+            break;
         }
     }
 

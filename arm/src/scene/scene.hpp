@@ -157,6 +157,9 @@ public:
     // Whether we should use SIMD acceleration
     bool simd_accel;
 
+    // Whether we should use FPGA acceleration
+    bool fpga_accel;
+
 private:
 
     typedef std::vector< SphereLight > SphereLightList;
