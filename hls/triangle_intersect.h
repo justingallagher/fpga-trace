@@ -22,6 +22,6 @@ typedef struct {
 } data_t;
 
 // Performs a triangle intersection
-void tri_intersect(data_t ins[2], data_t outs[1]);
+void tri_intersect(data_t ins[15], data_t outs[3]);
 
 #endif /* _HLS_TRIANGLE_INTERSECT_H_ */

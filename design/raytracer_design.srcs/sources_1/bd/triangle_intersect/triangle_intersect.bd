@@ -99,7 +99,7 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>tri_intersect_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="tri_intersect" spirit:vendor="xilinx.com" spirit:version="0.1"/>
+        <spirit:componentRef spirit:library="hls" spirit:name="tri_intersect" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">triangle_intersect_tri_intersect_0_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>

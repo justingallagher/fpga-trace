@@ -1,2 +1,4 @@
-tri_intersect_fadd_32ns_32ns_32_9_full_dsp
+tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp
+tri_intersect_fmul_32ns_32ns_32_5_max_dsp
+tri_intersect_fdiv_32ns_32ns_32_30
 tri_intersect

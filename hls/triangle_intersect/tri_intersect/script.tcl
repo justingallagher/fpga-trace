@@ -5,8 +5,8 @@
 ############################################################
 open_project triangle_intersect
 set_top tri_intersect
-add_files triangle_intersect.h
 add_files triangle_intersect.cpp
+add_files triangle_intersect.h
 add_files -tb testbench.cpp
 open_solution "tri_intersect"
 set_part {xc7z020clg484-1}
@@ -15,4 +15,4 @@ source "./triangle_intersect/tri_intersect/directives.tcl"
 csim_design
 csynth_design
 cosim_design
-export_design -format ip_catalog -description "Calculates the intersection point between a ray and a triangle." -version "0.1" -display_name "Triangle Intersect"
+export_design -format ip_catalog

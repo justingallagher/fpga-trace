@@ -169,7 +169,7 @@ proc create_root_design { parentCell } {
   set rst_processing_system7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_processing_system7_0_100M ]
 
   # Create instance: tri_intersect_0, and set properties
-  set tri_intersect_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:tri_intersect:0.1 tri_intersect_0 ]
+  set tri_intersect_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:tri_intersect:1.0 tri_intersect_0 ]
 
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
