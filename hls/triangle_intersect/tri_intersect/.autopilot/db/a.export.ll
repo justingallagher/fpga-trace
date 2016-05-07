@@ -137,8 +137,8 @@ define void @tri_intersect(float* %ins_data, i4* %ins_keep_V, i4* %ins_strb_V, i
   %tmp_35 = fmul float %l, %tmp_10
   %tmp_36 = fadd float %tmp_34, %tmp_35
   %beta = fmul float %tmp_36, %im
-  call void @_ssdm_op_Write.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %outs_data, i4* %outs_keep_V, i4* %outs_strb_V, i1* %outs_user_V, i1* %outs_last_V, i1* %outs_id_V, i1* %outs_dest_V, float %t, i4 %ins_keep_V_val, i4 %ins_strb_V_val, i1 %ins_user_V_val, i1 %ins_last_V_val, i1 %ins_id_V_val, i1 %ins_dest_V_val)
-  call void @_ssdm_op_Write.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %outs_data, i4* %outs_keep_V, i4* %outs_strb_V, i1* %outs_user_V, i1* %outs_last_V, i1* %outs_id_V, i1* %outs_dest_V, float %gamma, i4 %ins_keep_V_val, i4 %ins_strb_V_val, i1 %ins_user_V_val, i1 %ins_last_V_val, i1 %ins_id_V_val, i1 %ins_dest_V_val)
+  call void @_ssdm_op_Write.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %outs_data, i4* %outs_keep_V, i4* %outs_strb_V, i1* %outs_user_V, i1* %outs_last_V, i1* %outs_id_V, i1* %outs_dest_V, float %t, i4 %ins_keep_V_val, i4 %ins_strb_V_val, i1 %ins_user_V_val, i1 false, i1 %ins_id_V_val, i1 %ins_dest_V_val)
+  call void @_ssdm_op_Write.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %outs_data, i4* %outs_keep_V, i4* %outs_strb_V, i1* %outs_user_V, i1* %outs_last_V, i1* %outs_id_V, i1* %outs_dest_V, float %gamma, i4 %ins_keep_V_val, i4 %ins_strb_V_val, i1 %ins_user_V_val, i1 false, i1 %ins_id_V_val, i1 %ins_dest_V_val)
   call void @_ssdm_op_Write.axis.volatile.floatP.i4P.i4P.i1P.i1P.i1P.i1P(float* %outs_data, i4* %outs_keep_V, i4* %outs_strb_V, i1* %outs_user_V, i1* %outs_last_V, i1* %outs_id_V, i1* %outs_dest_V, float %beta, i4 %ins_keep_V_val, i4 %ins_strb_V_val, i1 %ins_user_V_val, i1 %ins_last_V_val, i1 %ins_id_V_val, i1 %ins_dest_V_val)
   ret void
 }

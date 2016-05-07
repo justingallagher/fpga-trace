@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tri_intersect'" level="0">
-<item name = "Date">Sat May 07 03:54:15 2016
+<item name = "Date">Sat May 07 17:06:36 2016
 </item>
 <item name = "Version">2015.1 (Build 1215546 on Mon Apr 27 19:24:50 PM 2015)</item>
 <item name = "Project">triangle_intersect</item>
@@ -50,7 +50,7 @@
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, 24, 3314, 4248</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 850</column>
+<column name="Multiplexer">-, -, -, 851</column>
 <column name="Register">-, -, 1256, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">0, 10, 4, 9</specialColumn>
@@ -82,79 +82,80 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="tmp_26_neg_fu_279_p2">xor, 0, 0, 45, 32, 33</column>
+<column name="tmp_26_neg_fu_282_p2">xor, 0, 0, 45, 32, 33</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">203, 92, 1, 92</column>
 <column name="ap_sig_ioackin_outs_TREADY">1, 2, 1, 2</column>
-<column name="grp_fu_100_opcode">2, 3, 2, 6</column>
-<column name="grp_fu_100_p0">64, 8, 32, 256</column>
-<column name="grp_fu_100_p1">32, 7, 32, 224</column>
-<column name="grp_fu_104_opcode">2, 3, 2, 6</column>
-<column name="grp_fu_104_p0">32, 3, 32, 96</column>
-<column name="grp_fu_104_p1">32, 3, 32, 96</column>
-<column name="grp_fu_108_p0">32, 7, 32, 224</column>
-<column name="grp_fu_108_p1">64, 9, 32, 288</column>
-<column name="grp_fu_112_p0">32, 7, 32, 224</column>
-<column name="grp_fu_112_p1">64, 8, 32, 256</column>
-<column name="grp_fu_116_p0">32, 5, 32, 160</column>
-<column name="grp_fu_116_p1">32, 6, 32, 192</column>
-<column name="grp_fu_120_p0">32, 5, 32, 160</column>
-<column name="grp_fu_120_p1">32, 5, 32, 160</column>
-<column name="grp_fu_96_opcode">2, 3, 2, 6</column>
-<column name="grp_fu_96_p0">64, 9, 32, 288</column>
-<column name="grp_fu_96_p1">64, 10, 32, 320</column>
+<column name="grp_fu_103_opcode">2, 3, 2, 6</column>
+<column name="grp_fu_103_p0">64, 8, 32, 256</column>
+<column name="grp_fu_103_p1">32, 7, 32, 224</column>
+<column name="grp_fu_107_opcode">2, 3, 2, 6</column>
+<column name="grp_fu_107_p0">32, 3, 32, 96</column>
+<column name="grp_fu_107_p1">32, 3, 32, 96</column>
+<column name="grp_fu_111_p0">32, 7, 32, 224</column>
+<column name="grp_fu_111_p1">64, 9, 32, 288</column>
+<column name="grp_fu_115_p0">32, 7, 32, 224</column>
+<column name="grp_fu_115_p1">64, 8, 32, 256</column>
+<column name="grp_fu_119_p0">32, 5, 32, 160</column>
+<column name="grp_fu_119_p1">32, 6, 32, 192</column>
+<column name="grp_fu_123_p0">32, 5, 32, 160</column>
+<column name="grp_fu_123_p1">32, 5, 32, 160</column>
+<column name="grp_fu_99_opcode">2, 3, 2, 6</column>
+<column name="grp_fu_99_p0">64, 9, 32, 288</column>
+<column name="grp_fu_99_p1">64, 10, 32, 320</column>
 <column name="outs_TDATA">32, 4, 32, 128</column>
+<column name="outs_TLAST">1, 3, 1, 3</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">91, 0, 91, 0</column>
 <column name="ap_reg_ioackin_outs_TREADY">1, 0, 1, 0</column>
-<column name="c_reg_411">32, 0, 32, 0</column>
-<column name="im_reg_447">32, 0, 32, 0</column>
-<column name="ins_dest_V_val_reg_399">1, 0, 1, 0</column>
-<column name="ins_id_V_val_reg_394">1, 0, 1, 0</column>
-<column name="ins_keep_V_val_reg_374">4, 0, 4, 0</column>
-<column name="ins_last_V_val_reg_389">1, 0, 1, 0</column>
-<column name="ins_strb_V_val_reg_379">4, 0, 4, 0</column>
-<column name="ins_user_V_val_reg_384">1, 0, 1, 0</column>
-<column name="k_reg_404">32, 0, 32, 0</column>
-<column name="l_reg_418">32, 0, 32, 0</column>
-<column name="rdx_reg_338">32, 0, 32, 0</column>
-<column name="rdy_reg_345">32, 0, 32, 0</column>
-<column name="rdz_reg_352">32, 0, 32, 0</column>
-<column name="reg_144">32, 0, 32, 0</column>
-<column name="reg_151">32, 0, 32, 0</column>
-<column name="reg_160">32, 0, 32, 0</column>
-<column name="reg_168">32, 0, 32, 0</column>
-<column name="reg_178">32, 0, 32, 0</column>
-<column name="reg_187">32, 0, 32, 0</column>
-<column name="reg_195">32, 0, 32, 0</column>
-<column name="reg_200">32, 0, 32, 0</column>
-<column name="reg_206">32, 0, 32, 0</column>
-<column name="reg_212">32, 0, 32, 0</column>
-<column name="reg_217">32, 0, 32, 0</column>
-<column name="reg_223">32, 0, 32, 0</column>
-<column name="reg_229">32, 0, 32, 0</column>
-<column name="reg_234">32, 0, 32, 0</column>
-<column name="reg_239">32, 0, 32, 0</column>
-<column name="reg_245">32, 0, 32, 0</column>
-<column name="tmp_26_neg_reg_454">32, 0, 32, 0</column>
-<column name="tmp_2_reg_425">32, 0, 32, 0</column>
-<column name="tmp_32_reg_437">32, 0, 32, 0</column>
-<column name="tmp_33_reg_442">32, 0, 32, 0</column>
-<column name="tmp_6_reg_431">32, 0, 32, 0</column>
-<column name="v0x_reg_289">32, 0, 32, 0</column>
-<column name="v0y_reg_295">32, 0, 32, 0</column>
-<column name="v0z_reg_301">32, 0, 32, 0</column>
-<column name="v1x_reg_308">32, 0, 32, 0</column>
-<column name="v1y_reg_313">32, 0, 32, 0</column>
-<column name="v1z_reg_318">32, 0, 32, 0</column>
-<column name="v2x_reg_323">32, 0, 32, 0</column>
-<column name="v2y_reg_328">32, 0, 32, 0</column>
+<column name="c_reg_414">32, 0, 32, 0</column>
+<column name="im_reg_450">32, 0, 32, 0</column>
+<column name="ins_dest_V_val_reg_402">1, 0, 1, 0</column>
+<column name="ins_id_V_val_reg_397">1, 0, 1, 0</column>
+<column name="ins_keep_V_val_reg_377">4, 0, 4, 0</column>
+<column name="ins_last_V_val_reg_392">1, 0, 1, 0</column>
+<column name="ins_strb_V_val_reg_382">4, 0, 4, 0</column>
+<column name="ins_user_V_val_reg_387">1, 0, 1, 0</column>
+<column name="k_reg_407">32, 0, 32, 0</column>
+<column name="l_reg_421">32, 0, 32, 0</column>
+<column name="rdx_reg_341">32, 0, 32, 0</column>
+<column name="rdy_reg_348">32, 0, 32, 0</column>
+<column name="rdz_reg_355">32, 0, 32, 0</column>
+<column name="reg_147">32, 0, 32, 0</column>
+<column name="reg_154">32, 0, 32, 0</column>
+<column name="reg_163">32, 0, 32, 0</column>
+<column name="reg_171">32, 0, 32, 0</column>
+<column name="reg_181">32, 0, 32, 0</column>
+<column name="reg_190">32, 0, 32, 0</column>
+<column name="reg_198">32, 0, 32, 0</column>
+<column name="reg_203">32, 0, 32, 0</column>
+<column name="reg_209">32, 0, 32, 0</column>
+<column name="reg_215">32, 0, 32, 0</column>
+<column name="reg_220">32, 0, 32, 0</column>
+<column name="reg_226">32, 0, 32, 0</column>
+<column name="reg_232">32, 0, 32, 0</column>
+<column name="reg_237">32, 0, 32, 0</column>
+<column name="reg_242">32, 0, 32, 0</column>
+<column name="reg_248">32, 0, 32, 0</column>
+<column name="tmp_26_neg_reg_457">32, 0, 32, 0</column>
+<column name="tmp_2_reg_428">32, 0, 32, 0</column>
+<column name="tmp_32_reg_440">32, 0, 32, 0</column>
+<column name="tmp_33_reg_445">32, 0, 32, 0</column>
+<column name="tmp_6_reg_434">32, 0, 32, 0</column>
+<column name="v0x_reg_292">32, 0, 32, 0</column>
+<column name="v0y_reg_298">32, 0, 32, 0</column>
+<column name="v0z_reg_304">32, 0, 32, 0</column>
+<column name="v1x_reg_311">32, 0, 32, 0</column>
+<column name="v1y_reg_316">32, 0, 32, 0</column>
+<column name="v1z_reg_321">32, 0, 32, 0</column>
+<column name="v2x_reg_326">32, 0, 32, 0</column>
+<column name="v2y_reg_331">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

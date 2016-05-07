@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'tri_intersect'" level="0">
-<item name = "Date">Sat May 07 03:54:15 2016
+<item name = "Date">Sat May 07 17:06:36 2016
 </item>
 <item name = "Version">2015.1 (Build 1215546 on Mon Apr 27 19:24:50 PM 2015)</item>
 <item name = "Project">triangle_intersect</item>

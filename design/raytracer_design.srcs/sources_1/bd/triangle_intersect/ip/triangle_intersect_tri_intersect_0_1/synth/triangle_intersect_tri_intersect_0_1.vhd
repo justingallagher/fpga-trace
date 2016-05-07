@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:tri_intersect:1.0
--- IP Revision: 1605070354
+-- IP Revision: 1605071708
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -111,7 +111,7 @@ ARCHITECTURE triangle_intersect_tri_intersect_0_1_arch OF triangle_intersect_tri
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF triangle_intersect_tri_intersect_0_1_arch : ARCHITECTURE IS "triangle_intersect_tri_intersect_0_1,tri_intersect,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF triangle_intersect_tri_intersect_0_1_arch: ARCHITECTURE IS "triangle_intersect_tri_intersect_0_1,tri_intersect,{x_ipProduct=Vivado 2015.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=tri_intersect,x_ipVersion=1.0,x_ipCoreRevision=1605070354,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF triangle_intersect_tri_intersect_0_1_arch: ARCHITECTURE IS "triangle_intersect_tri_intersect_0_1,tri_intersect,{x_ipProduct=Vivado 2015.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=tri_intersect,x_ipVersion=1.0,x_ipCoreRevision=1605071708,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF ap_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 ap_clk CLK";
   ATTRIBUTE X_INTERFACE_INFO OF ap_rst_n: SIGNAL IS "xilinx.com:signal:reset:1.0 ap_rst_n RST";

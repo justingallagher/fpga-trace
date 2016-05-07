@@ -2,8 +2,8 @@
 # Vivado v2015.1 (64-bit)
 # SW Build 1215546 on Mon Apr 27 19:22:08 MDT 2015
 # IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
-# Start of session at: Sat May 07 03:54:32 2016
-# Process ID: 6008
+# Start of session at: Sat May 07 17:08:15 2016
+# Process ID: 19508
 # Log file: C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/vivado.log
 # Journal file: C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip\vivado.jou
 #-----------------------------------------------------------
@@ -25,9 +25,9 @@ INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tri_intersect_ap_
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
 source C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/tmp.hw/webtalk/labtool_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/tmp.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Sat May 07 03:54:41 2016. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sat May 07 03:54:41 2016...
+INFO: [Common 17-186] 'C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/tmp.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Sat May 07 17:08:23 2016. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat May 07 17:08:23 2016...
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.1/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Sat May 07 03:54:42 2016...
+INFO: [Common 17-206] Exiting Vivado at Sat May 07 17:08:23 2016...

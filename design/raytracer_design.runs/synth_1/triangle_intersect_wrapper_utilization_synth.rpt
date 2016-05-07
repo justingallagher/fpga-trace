@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.1 (win64) Build 1215546 Mon Apr 27 19:22:08 MDT 2015
-| Date         : Sat May 07 04:02:58 2016
+| Date         : Sat May 07 17:15:30 2016
 | Host         : Win10Desktop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file triangle_intersect_wrapper_utilization_synth.rpt -pb triangle_intersect_wrapper_utilization_synth.pb
 | Design       : triangle_intersect_wrapper
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                |  8224 |     0 |     53200 | 15.46 |
-|   LUT as Logic             |  7851 |     0 |     53200 | 14.76 |
+| Slice LUTs*                |  8225 |     0 |     53200 | 15.46 |
+|   LUT as Logic             |  7852 |     0 |     53200 | 14.76 |
 |   LUT as Memory            |   373 |     0 |     17400 |  2.14 |
 |     LUT as Distributed RAM |    18 |     0 |           |       |
 |     LUT as Shift Register  |   355 |     0 |           |       |
@@ -155,7 +155,7 @@ Table of Contents
 | LUT3     |  2402 |                  LUT |
 | LUT5     |  1495 |                  LUT |
 | LUT4     |  1089 |                  LUT |
-| LUT2     |   953 |                  LUT |
+| LUT2     |   954 |                  LUT |
 | CARRY4   |   378 |           CarryLogic |
 | LUT1     |   340 |                  LUT |
 | SRLC32E  |   181 |   Distributed Memory |

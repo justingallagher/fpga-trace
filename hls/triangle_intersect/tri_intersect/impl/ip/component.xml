@@ -1033,8 +1033,8 @@
         <xilinx:taxonomy>/VIVADO_HLS_IP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Tri_intersect</xilinx:displayName>
-      <xilinx:coreRevision>1605070354</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2016-05-07T07:54:42Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1605071708</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2016-05-07T21:08:23Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2015.1</xilinx:xilinxVersion>

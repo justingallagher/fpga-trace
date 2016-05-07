@@ -5,8 +5,8 @@
 ############################################################
 open_project triangle_intersect
 set_top tri_intersect
-add_files triangle_intersect.cpp
 add_files triangle_intersect.h
+add_files triangle_intersect.cpp
 add_files -tb testbench.cpp
 open_solution "tri_intersect"
 set_part {xc7z020clg484-1}

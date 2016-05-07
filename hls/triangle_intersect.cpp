@@ -67,7 +67,7 @@ void tri_intersect(data_t ins[15], data_t outs[3]) {
 	outs[0].dest = ins[14].dest;
 	outs[0].id = ins[14].id;
 	outs[0].keep = ins[14].keep;
-	outs[0].last = ins[14].last;
+	outs[0].last = 0;
 	outs[0].strb = ins[14].strb;
 	outs[0].user = ins[14].user;
 
@@ -75,7 +75,7 @@ void tri_intersect(data_t ins[15], data_t outs[3]) {
 	outs[1].dest = ins[14].dest;
 	outs[1].id = ins[14].id;
 	outs[1].keep = ins[14].keep;
-	outs[1].last = ins[14].last;
+	outs[1].last = 0;
 	outs[1].strb = ins[14].strb;
 	outs[1].user = ins[14].user;
 

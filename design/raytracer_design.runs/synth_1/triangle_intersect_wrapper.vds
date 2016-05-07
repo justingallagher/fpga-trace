@@ -2,8 +2,8 @@
 # Vivado v2015.1 (64-bit)
 # SW Build 1215546 on Mon Apr 27 19:22:08 MDT 2015
 # IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
-# Start of session at: Sat May 07 03:56:09 2016
-# Process ID: 12988
+# Start of session at: Sat May 07 17:09:11 2016
+# Process ID: 848
 # Log file: C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.runs/synth_1/triangle_intersect_wrapper.vds
 # Journal file: C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
@@ -16,7 +16,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 332.605 ; gain = 155.590
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 332.055 ; gain = 155.516
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'triangle_intersect_wrapper' [C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/hdl/triangle_intersect_wrapper.vhd:40]
 INFO: [Synth 8-3491] module 'triangle_intersect' declared at 'C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/hdl/triangle_intersect.vhd:2869' bound to instance 'triangle_intersect_i' of component 'triangle_intersect' [C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/hdl/triangle_intersect_wrapper.vhd:67]
@@ -1078,14 +1078,14 @@ INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (175#1) [c:/Users/
 INFO: [Synth 8-256] done synthesizing module 'triangle_intersect_rst_processing_system7_0_100M_0' (176#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_rst_processing_system7_0_100M_0/synth/triangle_intersect_rst_processing_system7_0_100M_0.vhd:74]
 INFO: [Synth 8-3491] module 'triangle_intersect_tri_intersect_0_1' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/synth/triangle_intersect_tri_intersect_0_1.vhd:56' bound to instance 'tri_intersect_0' of component 'triangle_intersect_tri_intersect_0_1' [C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/hdl/triangle_intersect.vhd:3818]
 INFO: [Synth 8-638] synthesizing module 'triangle_intersect_tri_intersect_0_1' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/synth/triangle_intersect_tri_intersect_0_1.vhd:81]
-INFO: [Synth 8-3491] module 'tri_intersect' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect.vhd:12' bound to instance 'U0' of component 'tri_intersect' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/synth/triangle_intersect_tri_intersect_0_1.vhd:137]
-INFO: [Synth 8-638] synthesizing module 'tri_intersect' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect.vhd:37]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect.vhd:229]
-INFO: [Synth 8-3491] module 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:11' bound to instance 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp_U0' of component 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect.vhd:548]
-INFO: [Synth 8-638] synthesizing module 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:30]
-INFO: [Synth 8-3491] module 'tri_intersect_ap_faddfsub_7_full_dsp_32' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:59' bound to instance 'tri_intersect_ap_faddfsub_7_full_dsp_32_u' of component 'tri_intersect_ap_faddfsub_7_full_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:62]
-INFO: [Synth 8-638] synthesizing module 'tri_intersect_ap_faddfsub_7_full_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:74]
-INFO: [Synth 8-3491] module 'floating_point_v7_0' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:84893' bound to instance 'U0' of component 'floating_point_v7_0' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:199]
+INFO: [Synth 8-3491] module 'tri_intersect' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect.vhd:12' bound to instance 'U0' of component 'tri_intersect' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/synth/triangle_intersect_tri_intersect_0_1.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'tri_intersect' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect.vhd:37]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect.vhd:230]
+INFO: [Synth 8-3491] module 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:11' bound to instance 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp_U0' of component 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect.vhd:549]
+INFO: [Synth 8-638] synthesizing module 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:30]
+INFO: [Synth 8-3491] module 'tri_intersect_ap_faddfsub_7_full_dsp_32' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:59' bound to instance 'tri_intersect_ap_faddfsub_7_full_dsp_32_u' of component 'tri_intersect_ap_faddfsub_7_full_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'tri_intersect_ap_faddfsub_7_full_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:74]
+INFO: [Synth 8-3491] module 'floating_point_v7_0' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:84893' bound to instance 'U0' of component 'floating_point_v7_0' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:199]
 INFO: [Synth 8-638] synthesizing module 'floating_point_v7_0' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:85009]
 INFO: [Synth 8-3491] module 'floating_point_v7_0_viv' declared at 'c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83233' bound to instance 'i_synth' of component 'floating_point_v7_0_viv' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:85018]
 INFO: [Synth 8-638] synthesizing module 'floating_point_v7_0_viv' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83361]
@@ -1665,10 +1665,10 @@ WARNING: [Synth 8-3848] Net m_axis_result_tuser_not_abs in module/entity floatin
 WARNING: [Synth 8-3848] Net m_axis_result_tlast_not_abs in module/entity floating_point_v7_0_viv does not have driver. [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83701]
 INFO: [Synth 8-256] done synthesizing module 'floating_point_v7_0_viv' (192#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83361]
 INFO: [Synth 8-256] done synthesizing module 'floating_point_v7_0' (193#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:85009]
-INFO: [Synth 8-256] done synthesizing module 'tri_intersect_ap_faddfsub_7_full_dsp_32' (194#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:74]
-INFO: [Synth 8-256] done synthesizing module 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' (195#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:30]
-INFO: [Synth 8-638] synthesizing module 'tri_intersect_fmul_32ns_32ns_32_5_max_dsp' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.vhd:29]
-INFO: [Synth 8-638] synthesizing module 'tri_intersect_ap_fmul_3_max_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'tri_intersect_ap_faddfsub_7_full_dsp_32' (194#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp' (195#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd:30]
+INFO: [Synth 8-638] synthesizing module 'tri_intersect_fmul_32ns_32ns_32_5_max_dsp' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.vhd:29]
+INFO: [Synth 8-638] synthesizing module 'tri_intersect_ap_fmul_3_max_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd:72]
 INFO: [Synth 8-638] synthesizing module 'floating_point_v7_0__parameterized1' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:85009]
 INFO: [Synth 8-638] synthesizing module 'floating_point_v7_0_viv__parameterized1' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83361]
 INFO: [Synth 8-63] RTL assertion: "in get_registers " [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:12544]
@@ -1972,10 +1972,10 @@ WARNING: [Synth 8-3848] Net m_axis_result_tuser_not_abs in module/entity floatin
 WARNING: [Synth 8-3848] Net m_axis_result_tlast_not_abs in module/entity floating_point_v7_0_viv__parameterized1 does not have driver. [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83701]
 INFO: [Synth 8-256] done synthesizing module 'floating_point_v7_0_viv__parameterized1' (202#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83361]
 INFO: [Synth 8-256] done synthesizing module 'floating_point_v7_0__parameterized1' (202#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:85009]
-INFO: [Synth 8-256] done synthesizing module 'tri_intersect_ap_fmul_3_max_dsp_32' (203#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'tri_intersect_fmul_32ns_32ns_32_5_max_dsp' (204#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.vhd:29]
-INFO: [Synth 8-638] synthesizing module 'tri_intersect_fdiv_32ns_32ns_32_30' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_fdiv_32ns_32ns_32_30.vhd:29]
-INFO: [Synth 8-638] synthesizing module 'tri_intersect_ap_fdiv_28_no_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_fdiv_28_no_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'tri_intersect_ap_fmul_3_max_dsp_32' (203#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'tri_intersect_fmul_32ns_32ns_32_5_max_dsp' (204#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.vhd:29]
+INFO: [Synth 8-638] synthesizing module 'tri_intersect_fdiv_32ns_32ns_32_30' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_fdiv_32ns_32ns_32_30.vhd:29]
+INFO: [Synth 8-638] synthesizing module 'tri_intersect_ap_fdiv_28_no_dsp_32' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_fdiv_28_no_dsp_32.vhd:72]
 INFO: [Synth 8-638] synthesizing module 'floating_point_v7_0__parameterized3' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:85009]
 INFO: [Synth 8-638] synthesizing module 'floating_point_v7_0_viv__parameterized3' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83361]
 INFO: [Synth 8-63] RTL assertion: "in get_registers " [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:12544]
@@ -2471,9 +2471,9 @@ WARNING: [Synth 8-3848] Net m_axis_result_tuser_not_abs in module/entity floatin
 WARNING: [Synth 8-3848] Net m_axis_result_tlast_not_abs in module/entity floating_point_v7_0_viv__parameterized3 does not have driver. [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83701]
 INFO: [Synth 8-256] done synthesizing module 'floating_point_v7_0_viv__parameterized3' (210#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:83361]
 INFO: [Synth 8-256] done synthesizing module 'floating_point_v7_0__parameterized3' (210#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/floating_point_v7_0/18022bbe/hdl/floating_point_v7_0_vh_rfs.vhd:85009]
-INFO: [Synth 8-256] done synthesizing module 'tri_intersect_ap_fdiv_28_no_dsp_32' (211#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/ip/tri_intersect_ap_fdiv_28_no_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'tri_intersect_fdiv_32ns_32ns_32_30' (212#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect_fdiv_32ns_32ns_32_30.vhd:29]
-INFO: [Synth 8-256] done synthesizing module 'tri_intersect' (213#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/a189f713/hdl/vhdl/tri_intersect.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'tri_intersect_ap_fdiv_28_no_dsp_32' (211#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_fdiv_28_no_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'tri_intersect_fdiv_32ns_32ns_32_30' (212#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_fdiv_32ns_32ns_32_30.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'tri_intersect' (213#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect.vhd:37]
 INFO: [Synth 8-256] done synthesizing module 'triangle_intersect_tri_intersect_0_1' (214#1) [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_tri_intersect_0_1/synth/triangle_intersect_tri_intersect_0_1.vhd:81]
 INFO: [Synth 8-638] synthesizing module 'triangle_intersect_xlconcat_0_0' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/ip/triangle_intersect_xlconcat_0_0/synth/triangle_intersect_xlconcat_0_0.vhd:67]
 INFO: [Synth 8-638] synthesizing module 'xlconcat' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/xlconcat_v2_1/21a398c4/xlconcat.vhd:100]
@@ -2483,7 +2483,7 @@ WARNING: [Synth 8-3848] Net NLW_tri_intersect_0_ins_TSTRB_UNCONNECTED in module/
 INFO: [Synth 8-256] done synthesizing module 'triangle_intersect' (217#1) [C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/hdl/triangle_intersect.vhd:2899]
 INFO: [Synth 8-256] done synthesizing module 'triangle_intersect_wrapper' (218#1) [C:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/bd/triangle_intersect/hdl/triangle_intersect_wrapper.vhd:40]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:04:33 ; elapsed = 00:04:37 . Memory (MB): peak = 684.914 ; gain = 507.898
+Finished RTL Elaboration : Time (s): cpu = 00:04:13 ; elapsed = 00:04:17 . Memory (MB): peak = 685.211 ; gain = 508.672
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2594,7 +2594,7 @@ INFO: [Synth 8-3295] tying undriven pin \prim_noinit.ram :DINA[6] to constant 0 
 INFO: [Synth 8-3295] tying undriven pin \prim_noinit.ram :DINA[5] to constant 0 [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/blk_mem_gen_v8_2/834889ee/hdl/blk_mem_gen_v8_2_vhsyn_rfs.vhd:183501]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:35 ; elapsed = 00:04:39 . Memory (MB): peak = 684.914 ; gain = 507.898
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:15 ; elapsed = 00:04:18 . Memory (MB): peak = 685.211 ; gain = 508.672
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 834 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2643,16 +2643,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDR => FDRE: 24 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 936.605 ; gain = 0.953
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 936.141 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:04:52 ; elapsed = 00:04:58 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished Constraint Validation : Time (s): cpu = 00:04:31 ; elapsed = 00:04:35 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:04:52 ; elapsed = 00:04:58 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished Loading Part and Timing Information : Time (s): cpu = 00:04:31 ; elapsed = 00:04:35 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -2677,7 +2677,7 @@ Applied set_property DONT_TOUCH = true for triangle_intersect_i/rst_processing_s
 Applied set_property DONT_TOUCH = true for triangle_intersect_i/tri_intersect_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for triangle_intersect_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:53 ; elapsed = 00:04:58 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:31 ; elapsed = 00:04:36 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4471] merging register 'GEN_SYNC_WRITE.rst_wvalid_re_reg' into 'GEN_SYNC_WRITE.bvalid_i_reg' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/axi_dma_v7_1/0728269d/hdl/src/vhdl/axi_dma_lite_if.vhd:271]
 INFO: [Synth 8-4471] merging register 'GEN_SYNC_READ.rst_rvalid_re_reg' into 'GEN_SYNC_READ.s_axi_lite_rvalid_i_reg' [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/axi_dma_v7_1/0728269d/hdl/src/vhdl/axi_dma_lite_if.vhd:1042]
@@ -2895,9 +2895,9 @@ INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because addres
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "grp_fu_96_opcode" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "grp_fu_100_opcode" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "grp_fu_104_opcode" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "grp_fu_99_opcode" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "grp_fu_103_opcode" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "grp_fu_107_opcode" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                     Old Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -2944,7 +2944,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_axic_reg_srl_fifo__parameterized1'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:05:08 ; elapsed = 00:05:19 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:45 ; elapsed = 00:04:54 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2952,7 +2952,7 @@ Report RTL Partitions:
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
 |1     |triangle_intersect__GB0 |           1|     29007|
-|2     |triangle_intersect__GB1 |           1|     24442|
+|2     |triangle_intersect__GB1 |           1|     24443|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -2975,7 +2975,7 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:05:09 ; elapsed = 00:05:20 . Memory (MB): peak = 936.609 ; gain = 759.594
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:04:46 ; elapsed = 00:04:55 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -3073,16 +3073,16 @@ INFO: [Synth 8-3936] Found unconnected internal register 'DIV_OP.SPD.OP/MANT_DIV
 INFO: [Synth 8-3936] Found unconnected internal register 'DIV_OP.SPD.OP/MANT_DIV/RT[2].Q_DEL/i_pipe/opt_has_pipe.first_q_reg' and it is trimmed from '26' to '2' bits. [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/xbip_pipe_v3_0/06034905/hdl/xbip_pipe_v3_0_vh_rfs.vhd:420]
 INFO: [Synth 8-3936] Found unconnected internal register 'DIV_OP.SPD.OP/MANT_DIV/RT[1].Q_DEL/i_pipe/opt_has_pipe.first_q_reg' and it is trimmed from '26' to '1' bits. [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/xbip_pipe_v3_0/06034905/hdl/xbip_pipe_v3_0_vh_rfs.vhd:420]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:05:17 ; elapsed = 00:05:28 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished Cross Boundary Optimization : Time (s): cpu = 00:04:54 ; elapsed = 00:05:03 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:05:17 ; elapsed = 00:05:28 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished Parallel Reinference  : Time (s): cpu = 00:04:54 ; elapsed = 00:05:03 . Memory (MB): peak = 936.141 ; gain = 759.602
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
 |1     |triangle_intersect__GB0 |           1|     30542|
-|2     |triangle_intersect__GB1 |           1|     25061|
+|2     |triangle_intersect__GB1 |           1|     25062|
 +------+------------------------+------------+----------+
 INFO: [Synth 8-3332] Sequential element (\I_SG_FETCH_MNGR/I_FTCH_PNTR_MNGR/GEN_PNTR_FOR_CH2.eof_latch_reg ) is unused and will be removed from module axi_sg.
 INFO: [Synth 8-3332] Sequential element (\I_SG_FETCH_MNGR/I_FTCH_PNTR_MNGR/GEN_PNTR_FOR_CH2.first_reg ) is unused and will be removed from module axi_sg.
@@ -3189,18 +3189,18 @@ INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instan
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:05:35 ; elapsed = 00:05:48 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished Area Optimization : Time (s): cpu = 00:05:09 ; elapsed = 00:05:21 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:05:35 ; elapsed = 00:05:48 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished Parallel Area Optimization  : Time (s): cpu = 00:05:09 ; elapsed = 00:05:21 . Memory (MB): peak = 936.141 ; gain = 759.602
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
 |1     |triangle_intersect__GB0 |           1|     26296|
-|2     |triangle_intersect__GB1 |           1|     24820|
+|2     |triangle_intersect__GB1 |           1|     24821|
 +------+------------------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:05:35 ; elapsed = 00:05:48 . Memory (MB): peak = 936.609 ; gain = 759.594
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:05:09 ; elapsed = 00:05:21 . Memory (MB): peak = 936.141 ; gain = 759.602
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -3208,10 +3208,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:47 ; elapsed = 00:06:02 . Memory (MB): peak = 1072.117 ; gain = 895.102
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:22 ; elapsed = 00:05:34 . Memory (MB): peak = 1074.598 ; gain = 898.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:05:51 ; elapsed = 00:06:05 . Memory (MB): peak = 1098.418 ; gain = 921.402
+Finished Timing Optimization : Time (s): cpu = 00:05:25 ; elapsed = 00:05:37 . Memory (MB): peak = 1100.734 ; gain = 924.195
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3219,13 +3219,13 @@ Report RTL Partitions:
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
 |1     |triangle_intersect__GB0 |           1|     26296|
-|2     |triangle_intersect__GB1 |           1|     24820|
+|2     |triangle_intersect__GB1 |           1|     24821|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:06:13 ; elapsed = 00:06:31 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Finished Technology Mapping : Time (s): cpu = 00:05:47 ; elapsed = 00:06:02 . Memory (MB): peak = 1176.043 ; gain = 999.504
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3366,7 +3366,7 @@ WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/
 WARNING: [Synth 8-5396] Clock pin CLK has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [c:/Users/Justin/Documents/GitHub/fpga-trace/design/raytracer_design.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_command_fifo.v:340]
 INFO: [Common 17-14] Message 'Synth 8-5396' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:06:16 ; elapsed = 00:06:33 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Finished IO Insertion : Time (s): cpu = 00:05:49 ; elapsed = 00:06:04 . Memory (MB): peak = 1176.043 ; gain = 999.504
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3379,7 +3379,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:06:16 ; elapsed = 00:06:33 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:49 ; elapsed = 00:06:04 . Memory (MB): peak = 1176.043 ; gain = 999.504
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3391,13 +3391,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:06:19 ; elapsed = 00:06:36 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:52 ; elapsed = 00:06:07 . Memory (MB): peak = 1176.043 ; gain = 999.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:06:19 ; elapsed = 00:06:36 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Start Renaming Generated Ports : Time (s): cpu = 00:05:52 ; elapsed = 00:06:07 . Memory (MB): peak = 1176.043 ; gain = 999.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:06:19 ; elapsed = 00:06:36 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:52 ; elapsed = 00:06:07 . Memory (MB): peak = 1176.043 ; gain = 999.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -3423,7 +3423,7 @@ Report Cell Usage:
 |8     |DSP48E1_4 |     6|
 |9     |GND       |     4|
 |10    |LUT1      |   340|
-|11    |LUT2      |   953|
+|11    |LUT2      |   954|
 |12    |LUT3      |  2402|
 |13    |LUT4      |  1089|
 |14    |LUT5      |  1495|
@@ -3448,11 +3448,11 @@ Report Cell Usage:
 |33    |FDSE      |   158|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:06:20 ; elapsed = 00:06:37 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:53 ; elapsed = 00:06:08 . Memory (MB): peak = 1176.043 ; gain = 999.504
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1349 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:30 ; elapsed = 00:06:17 . Memory (MB): peak = 1173.422 ; gain = 648.484
-Synthesis Optimization Complete : Time (s): cpu = 00:06:20 ; elapsed = 00:06:37 . Memory (MB): peak = 1173.422 ; gain = 996.406
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:25 ; elapsed = 00:05:49 . Memory (MB): peak = 1176.043 ; gain = 651.336
+Synthesis Optimization Complete : Time (s): cpu = 00:05:53 ; elapsed = 00:06:08 . Memory (MB): peak = 1176.043 ; gain = 999.504
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1067 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -3471,6 +3471,6 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 2905 Infos, 221 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:06:24 ; elapsed = 00:06:41 . Memory (MB): peak = 1173.422 ; gain = 900.180
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.289 . Memory (MB): peak = 1173.422 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat May 07 04:02:58 2016...
+synth_design: Time (s): cpu = 00:05:56 ; elapsed = 00:06:11 . Memory (MB): peak = 1176.043 ; gain = 902.266
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.243 . Memory (MB): peak = 1176.043 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat May 07 17:15:31 2016...

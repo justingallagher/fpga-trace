@@ -26,24 +26,24 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_us_2/triangle_intersect_auto_us_2.xci"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_axi_dma_0_0/triangle_intersect_axi_dma_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_processing_system7_0_0/triangle_intersect_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_rst_processing_system7_0_100M_0/triangle_intersect_rst_processing_system7_0_100M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_processing_system7_0_axi_periph_0/triangle_intersect_processing_system7_0_axi_periph_0.xci"/>
         <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_tri_intersect_0_1/triangle_intersect_tri_intersect_0_1.xci"/>
         <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_xlconcat_0_0/triangle_intersect_xlconcat_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_xbar_0/triangle_intersect_xbar_0.xci"/>
         <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_axi_mem_intercon_0/triangle_intersect_axi_mem_intercon_0.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_rst_processing_system7_0_100M_0/triangle_intersect_rst_processing_system7_0_100M_0.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_processing_system7_0_axi_periph_0/triangle_intersect_processing_system7_0_axi_periph_0.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_axi_dma_0_0/triangle_intersect_axi_dma_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_processing_system7_0_0/triangle_intersect_processing_system7_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="hdl/triangle_intersect.vhd"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_pc_0/triangle_intersect_auto_pc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="triangle_intersect_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_us_2/triangle_intersect_auto_us_2.xci"/>
         <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_us_1/triangle_intersect_auto_us_1.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_us_0/triangle_intersect_auto_us_0.xci"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_pc_1/triangle_intersect_auto_pc_1.xci"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="triangle_intersect_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="hw_handoff/triangle_intersect.hwh"/>
         <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="hdl/triangle_intersect.hwdef"/>
         <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="hw_handoff/triangle_intersect_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="hw_handoff/triangle_intersect.hwh"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_pc_1/triangle_intersect_auto_pc_1.xci"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_us_0/triangle_intersect_auto_us_0.xci"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="hdl/triangle_intersect.vhd"/>
+        <CompFileExtendedInfo CompFileName="triangle_intersect.bd" FileRelPathName="ip/triangle_intersect_auto_pc_0/triangle_intersect_auto_pc_0.xci"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/triangle_intersect/hdl/triangle_intersect_wrapper.vhd">
         <FileInfo>
