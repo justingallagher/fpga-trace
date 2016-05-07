@@ -203,6 +203,8 @@ Intersection Scene::cast_ray(Ray &ray) {
     if (simd_accel) {
         // Use SIMD accelerated triangle intersections
         min_inter = SimpleTriangle::simd_intersect(triangles, ray);
+    } else if (fpga_accel) {
+        min_inter = SimpleTriangle::fpga_intersect(triangles, ray);
     } else {
         // Use normal CPU triangle intersections
         for (unsigned int i = 0; i < triangles.size(); i++) {

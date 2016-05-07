@@ -275,4 +275,18 @@ namespace _462 {
 
         return result;
     }
+
+    /**
+     * @brief Performs the intersection of many triangles with a ray using SIMD.
+     * @param tris: List of triangles to test.
+     * @param ray: Ray to test.
+     * @return Best intersection.
+     */
+    Intersection SimpleTriangle::fpga_intersect(std::vector<SimpleTriangle*>
+            &tris, Ray &ray) {
+
+        Intersection result;
+
+        return result;
+    }
 }

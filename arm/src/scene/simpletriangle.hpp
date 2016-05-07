@@ -49,6 +49,9 @@ class SimpleTriangle {
         static Intersection simd_intersect(std::vector<SimpleTriangle*>
                 &tris, Ray &ray);
 
+        static Intersection fpga_intersect(std::vector<SimpleTriangle*> &tris,
+                Ray &ray);
+
         // Points of each vertex, in absolute coordinates
         Vector3 vertices[3];
 };
