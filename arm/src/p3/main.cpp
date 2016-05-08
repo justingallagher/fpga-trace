@@ -546,11 +546,6 @@ static bool parse_args( Options* opt, int argc, char* argv[] )
 
 int main( int argc, char* argv[] )
 {
-#ifdef OPENMP
-    omp_set_num_threads(MAX_THREADS);
-#endif
-
-
     Options opt;
 
     Matrix3 mat;
@@ -563,6 +558,10 @@ int main( int argc, char* argv[] )
     if ( !parse_args( &opt, argc, argv ) ) {
         return 1;
     }
+
+#ifdef OPENMP
+    omp_set_num_threads(opt.fpga_accel ? 1 : MAX_THREADS);
+#endif
 
     RaytracerApplication app( opt );
 

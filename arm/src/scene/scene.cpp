@@ -122,9 +122,12 @@ bool Scene::initialize()
     }
 
     if (fpga_accel) {
+        size_t rounded_tris = triangles.size() + PARALLEL_TESTS
+            - 1 - (triangles.size() - 1) % PARALLEL_TESTS;
+        std::cout << rounded_tris << std::endl;
         axidma_interface =
-            new AxiDma(triangles.size() * sizeof(float) * 15,
-                    triangles.size() * sizeof(float) * 3);
+            new AxiDma(rounded_tris * 15 * sizeof(float), rounded_tris
+                    * 3 * sizeof(float));
     }
 
     return res;

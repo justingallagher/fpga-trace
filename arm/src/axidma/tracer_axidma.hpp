@@ -17,6 +17,8 @@ extern "C" {
     #include "axidma/dma_util.h"
 }
 
+#define PARALLEL_TESTS 20
+
 namespace _462 {
 
     class AxiDma {

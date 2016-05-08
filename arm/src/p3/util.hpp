@@ -12,7 +12,7 @@ namespace _462 {
 class Intersection;
 
 // max number of threads OpenMP can use. Change this if you like.
-#define MAX_THREADS 1
+#define MAX_THREADS 4
 
 //maximum depth of the recursive (sampling) tracing
 #define MAX_DEPTH 10
