@@ -782,7 +782,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd</spirit:name>
+        <spirit:name>hdl/ip/tri_intersect_ap_fadd_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -791,6 +791,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ip/tri_intersect_ap_fsub_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -805,7 +809,11 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.v</spirit:name>
+        <spirit:name>hdl/verilog/tri_intersect_data_array.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/tri_intersect_fadd_32ns_32ns_32_9_full_dsp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -814,6 +822,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/tri_intersect_fsub_32ns_32ns_32_9_full_dsp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -834,7 +846,11 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.v</spirit:name>
+        <spirit:name>hdl/verilog/tri_intersect_data_array.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/tri_intersect_fadd_32ns_32ns_32_9_full_dsp.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -846,7 +862,11 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd</spirit:name>
+        <spirit:name>hdl/verilog/tri_intersect_fsub_32ns_32ns_32_9_full_dsp.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ip/tri_intersect_ap_fadd_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -855,6 +875,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ip/tri_intersect_ap_fsub_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -871,7 +895,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd</spirit:name>
+        <spirit:name>hdl/ip/tri_intersect_ap_fadd_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -880,6 +904,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ip/tri_intersect_ap_fsub_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -894,7 +922,11 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/tri_intersect_data_array.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/tri_intersect_fadd_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -904,7 +936,11 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b6d51752</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/tri_intersect_fsub_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_72d47d36</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -924,7 +960,11 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/tri_intersect_data_array.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/tri_intersect_fadd_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -936,7 +976,11 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/tri_intersect_fsub_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ip/tri_intersect_ap_fadd_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -945,6 +989,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ip/tri_intersect_ap_fsub_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1017,7 +1065,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:resolve="immediate" spirit:id="PARAM_VALUE.latency" spirit:order="5">90</spirit:value>
+      <spirit:value spirit:resolve="immediate" spirit:id="PARAM_VALUE.latency" spirit:order="5">463</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -1033,8 +1081,8 @@
         <xilinx:taxonomy>/VIVADO_HLS_IP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Tri_intersect</xilinx:displayName>
-      <xilinx:coreRevision>1605071708</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2016-05-07T21:08:23Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1605081815</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2016-05-08T22:15:27Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2015.1</xilinx:xilinxVersion>

@@ -18,6 +18,144 @@
                 <option name="port" value="outs" positionalBoolean="4"/>
             </pragma>
         </directive>
+        <directive functionName="tri_intersect" label="LOAD" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="tri_intersect" label="READ" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="tri_intersect" label="WORK" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="tri_intersect" label="WRITE" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v1x" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v0y" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v0x" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v2z" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="rez" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="beta" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v1z" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="t" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v1y" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="rey" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="rdy" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="rdx" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v2x" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="rex" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v0z" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="v2y" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="rdz" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
+        <directive functionName="tri_intersect" label="" functionLabel="">
+            <pragma name="ARRAY_MAP">
+                <option name="variable" value="gamma" positionalBoolean="4"/>
+                <option name="instance" value="data_array"/>
+                <option name="vertical" value="" positionalBoolean="mode"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

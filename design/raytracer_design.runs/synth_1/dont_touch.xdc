@@ -64,7 +64,7 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/triangle_intersect/ip/triangle_intersect_xbar_0/triangle_intersect_xbar_0_ooc.xdc
 
-# XDC: ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/constraints/tri_intersect_ooc.xdc
+# XDC: ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/constraints/tri_intersect_ooc.xdc
 
 # XDC: bd/triangle_intersect/ip/triangle_intersect_auto_pc_0/triangle_intersect_auto_pc_0_ooc.xdc
 

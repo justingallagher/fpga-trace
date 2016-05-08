@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="triangle_intersect.h" path="C:\Users\Justin\Documents\GitHub\fpga-trace\hls\triangle_intersect.h"/>
     <originFiles name="triangle_intersect.cpp" path="C:\Users\Justin\Documents\GitHub\fpga-trace\hls\triangle_intersect.cpp"/>
+    <originFiles name="triangle_intersect.h" path="C:\Users\Justin\Documents\GitHub\fpga-trace\hls\triangle_intersect.h"/>
   </source>
   <testbench>
     <originFiles name="testbench.cpp" path="C:\Users\Justin\Documents\GitHub\fpga-trace\hls\testbench.cpp"/>

@@ -1,5 +1,4 @@
-   Compiling ../../../../triangle_intersect.cpp in debug mode
-   Generating csim.exe
+make: `csim.exe' is up to date.
 HW results: t = 0.094291 gamma = -0.168109 beta = 1.038188
 HW results: t = 0.094291 gamma = -0.168109 beta = 1.038188
 Success: HW and SW results match

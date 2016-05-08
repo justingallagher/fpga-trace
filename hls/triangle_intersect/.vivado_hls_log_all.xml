@@ -11,7 +11,9 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="@W [HLS-40] Directive 'UNROLL' cannot be applied: Label 'LOAD' does not exist in function 'tri_intersect'. " projectName="triangle_intersect" solutionName="tri_intersect" date="2016-05-08T18:13:56.295-0400" type="Warning"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>

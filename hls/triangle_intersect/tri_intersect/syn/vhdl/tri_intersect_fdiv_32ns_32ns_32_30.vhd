@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 
 entity tri_intersect_fdiv_32ns_32ns_32_30 is
     generic (
-        ID         : integer := 9;
+        ID         : integer := 50;
         NUM_STAGE  : integer := 30;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;

@@ -6,7 +6,7 @@
 <Project Version="7" Minor="5" Path="C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="9c28e18dd2cf4df79807dba0eb2a51c6"/>
+    <Option Name="Id" Val="0b9d3c16d7e4473ebf26a561d10758b0"/>
     <Option Name="Part" Val="xc7z020clg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="TargetLanguage" Val="VHDL"/>
@@ -25,7 +25,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd">
+      <File Path="$PPRDIR/tri_intersect_data_array.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/tri_intersect_fadd_32ns_32ns_32_9_full_dsp.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -43,7 +49,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_faddfsub_7_full_dsp_32/tri_intersect_ap_faddfsub_7_full_dsp_32.xci">
+      <File Path="$PPRDIR/tri_intersect_fsub_32ns_32ns_32_9_full_dsp.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_fadd_7_full_dsp_32/tri_intersect_ap_fadd_7_full_dsp_32.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -58,6 +70,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_fmul_3_max_dsp_32/tri_intersect_ap_fmul_3_max_dsp_32.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_fsub_7_full_dsp_32/tri_intersect_ap_fsub_7_full_dsp_32.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 
 entity tri_intersect_fmul_32ns_32ns_32_5_max_dsp is
     generic (
-        ID         : integer := 3;
+        ID         : integer := 23;
         NUM_STAGE  : integer := 5;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;

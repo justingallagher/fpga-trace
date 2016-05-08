@@ -89,11 +89,11 @@ void tri_intersect_sw(data_t ins[15], data_t outs[3]) {
 }
 
 int main() {
-    data_t A[15];
-    data_t B[3];
-    data_t Bsw[3];
+    data_t A[60];
+    data_t B[12];
+    data_t Bsw[12];
 
-    for (int i = 0; i < 15; i ++) {
+    for (int i = 0; i < 60; i ++) {
     	A[i].data = ((float) rand());
 		A[i].keep = 1;
 		A[i].strb = 1;

@@ -369,7 +369,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>e5f43548</spirit:value>
+            <spirit:value>90df4d9b</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -385,7 +385,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat May 07 21:09:07 UTC 2016</spirit:value>
+            <spirit:value>Sun May 08 22:17:52 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -404,7 +404,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>e5f43548</spirit:value>
+            <spirit:value>90df4d9b</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -420,7 +420,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat May 07 21:09:07 UTC 2016</spirit:value>
+            <spirit:value>Sun May 08 22:17:52 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -904,38 +904,50 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_faddfsub_7_full_dsp_32.vhd</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/ip/tri_intersect_ap_fadd_7_full_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_fdiv_28_no_dsp_32.vhd</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/ip/tri_intersect_ap_fdiv_28_no_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/ip/tri_intersect_ap_fmul_3_max_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/constraints/tri_intersect_ooc.xdc</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/ip/tri_intersect_ap_fsub_7_full_dsp_32.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/constraints/tri_intersect_ooc.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
         <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
         <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect.vhd</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/vhdl/tri_intersect.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_faddfsub_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/vhdl/tri_intersect_data_array.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_fdiv_32ns_32ns_32_30.vhd</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/vhdl/tri_intersect_fadd_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/6afd80c4/hdl/vhdl/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.vhd</spirit:name>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/vhdl/tri_intersect_fdiv_32ns_32ns_32_30.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/vhdl/tri_intersect_fmul_32ns_32ns_32_5_max_dsp.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../../../ipshared/xilinx.com/tri_intersect_v1_0/845b1dd4/hdl/vhdl/tri_intersect_fsub_32ns_32ns_32_9_full_dsp.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1129,7 +1141,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:resolve="immediate" spirit:id="PARAM_VALUE.latency" spirit:order="5">90</spirit:value>
+      <spirit:value spirit:resolve="immediate" spirit:id="PARAM_VALUE.latency" spirit:order="5">463</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1159,8 +1171,8 @@
         <xilinx:taxonomy>/VIVADO_HLS_IP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Tri_intersect</xilinx:displayName>
-      <xilinx:coreRevision>1605071708</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2016-05-07T21:08:23Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1605081815</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2016-05-08T22:15:27Z</xilinx:coreCreationDateTime>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INS.HAS_TREADY" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INS.HAS_TSTRB" xilinx:valueSource="constant"/>

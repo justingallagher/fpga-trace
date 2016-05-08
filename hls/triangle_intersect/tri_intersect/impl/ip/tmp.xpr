@@ -6,7 +6,7 @@
 <Project Version="7" Minor="5" Path="C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/tmp.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="75e50696fe0442f98beb7e468911d4f1"/>
+    <Option Name="Id" Val="847c0092cbb14306974b18faac0ae36a"/>
     <Option Name="Part" Val="xc7vx485tffg1157-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="TargetLanguage" Val="VHDL"/>
@@ -19,7 +19,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_faddfsub_7_full_dsp_32/tri_intersect_ap_faddfsub_7_full_dsp_32.xci">
+      <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_fadd_7_full_dsp_32/tri_intersect_ap_fadd_7_full_dsp_32.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -34,6 +34,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_fmul_3_max_dsp_32/tri_intersect_ap_fmul_3_max_dsp_32.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/tri_intersect_ap_fsub_7_full_dsp_32/tri_intersect_ap_fsub_7_full_dsp_32.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

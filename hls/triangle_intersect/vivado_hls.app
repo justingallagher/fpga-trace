@@ -6,8 +6,8 @@
     </Simulation>
     <files xmlns="">
         <file name="../../testbench.cpp" sc="0" tb="1" cflags=" "/>
-        <file name="triangle_intersect.cpp" sc="0" tb="false" cflags=""/>
         <file name="triangle_intersect.h" sc="0" tb="false" cflags=""/>
+        <file name="triangle_intersect.cpp" sc="0" tb="false" cflags=""/>
     </files>
     <solutions xmlns="">
         <solution name="tri_intersect" status="active"/>

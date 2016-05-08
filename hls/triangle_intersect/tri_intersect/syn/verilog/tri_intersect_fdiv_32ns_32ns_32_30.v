@@ -10,7 +10,7 @@
 
 module tri_intersect_fdiv_32ns_32ns_32_30
 #(parameter
-    ID         = 9,
+    ID         = 50,
     NUM_STAGE  = 30,
     din0_WIDTH = 32,
     din1_WIDTH = 32,
