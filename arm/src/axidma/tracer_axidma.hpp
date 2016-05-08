@@ -9,7 +9,13 @@
 #ifndef _AXIDMA_TRACERAXIDMA_HPP_
 #define _AXIDMA_TRACERAXIDMA_HPP_
 
-#include "axidma/libaxidma.h"
+#include <sys/mman.h>
+#include <stdio.h>
+
+extern "C" {
+    #include "axidma/libaxidma.h"
+    #include "axidma/dma_util.h"
+}
 
 namespace _462 {
 
@@ -30,7 +36,7 @@ namespace _462 {
         private:
             axidma_dev_t axidma_dev;
             int tx_channel, rx_channel;
-    }
+    };
 }
 
 #endif /* _AXIDMA_TRACERAXIDMA_HPP_ */

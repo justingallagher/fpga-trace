@@ -297,7 +297,8 @@ namespace _462 {
         // Loop in intervals of tx_size
         for (size_t i = 0; i < tris.size(); i += tris_per_transfer) {
 
-            for (size_t j = 0; j < tris_per_transfer; j++) {
+            for (size_t j = 0; i + j < tris.size() && j < tris_per_transfer;
+                    j++) {
                 SimpleTriangle* cur = tris[i + j];
 
                 size_t txi = j * 15;
@@ -328,7 +329,8 @@ namespace _462 {
             interface->transfer();
 
             // Examine results
-            for (size_t j = 0; j < tris_per_transfer; j++) {
+            for (size_t j = 0; i + j < tris.size() && j < tris_per_transfer;
+                    j++) {
                 size_t rxi = j * 3;
 
                 float t = receive_buffer[rxi];
@@ -340,8 +342,8 @@ namespace _462 {
                         0.0 <= beta &&
                         beta <= 1.0 - gamma) {
                     result.time = t;
-                    result.shape = tris[i + j].parent;
-                    result.tri = tris[i + j].num_tri;
+                    result.shape = tris[i + j]->parent;
+                    result.tri = tris[i + j]->num_tri;
                     result.x = beta;
                     result.y = gamma;
                 }

@@ -14,6 +14,7 @@
 #ifndef AXIDMA_IOCTL_H_
 #define AXIDMA_IOCTL_H_
 
+#include <stdlib.h>                 // size_t
 #include <asm/ioctl.h>              // IOCTL macros
 
 /*----------------------------------------------------------------------------

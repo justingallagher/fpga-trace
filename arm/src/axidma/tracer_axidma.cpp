@@ -11,6 +11,7 @@
 namespace _462 {
 
     AxiDma::AxiDma(size_t tx_size, size_t rx_size) {
+        int num_tx, num_rx;
 
         this->tx_size = tx_size;
         this->rx_size = rx_size;
@@ -23,24 +24,24 @@ namespace _462 {
         }
 
         // Map memory regions for the transmit and receive buffers
-        tx_buf = axidma_malloc(axidma_dev, tx_size);
+        tx_buf = (char*) axidma_malloc(axidma_dev, tx_size);
         if (tx_buf == NULL) {
             perror("Unable to allocatememory region from AXI DMA device");
             return;
         }
-        rx_buf = axidma_malloc(axidma_dev, rx_size);
+        rx_buf = (char*) axidma_malloc(axidma_dev, rx_size);
         if (rx_buf == MAP_FAILED) {
             perror("Unable to allocate memory region from AXI DMA device");
             return;
         }
 
         // Get all the transmit and receive channels
-        tx_chans = axidma_get_dma_tx(axidma_dev, &num_tx);
+        int* tx_chans = axidma_get_dma_tx(axidma_dev, &num_tx);
         if (num_tx < 1) {
             fprintf(stderr, "Error: No transmit channels were found.\n");
             return;
         }
-        rx_chans = axidma_get_dma_rx(axidma_dev, &num_rx);
+        int* rx_chans = axidma_get_dma_rx(axidma_dev, &num_rx);
         if (num_rx < 1) {
             fprintf(stderr, "Error: No receive channels were found.\n");
             return;
@@ -77,7 +78,8 @@ namespace _462 {
 
         // Stop all the remainder transactions
 stop_rem:
-        stop_remainder_transactions(dev, tx_channel, rx_channel, tx_size);
+        stop_remainder_transactions(axidma_dev, tx_channel, rx_channel,
+                tx_size);
 
         return rc;
     }

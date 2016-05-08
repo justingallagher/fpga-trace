@@ -121,6 +121,12 @@ bool Scene::initialize()
         triangles.insert(triangles.end(), newtris.begin(), newtris.end());
     }
 
+    if (fpga_accel) {
+        axidma_interface =
+            new AxiDma(triangles.size() * sizeof(float) * 15,
+                    triangles.size() * sizeof(float) * 3);
+    }
+
     return res;
 }
 
@@ -204,7 +210,8 @@ Intersection Scene::cast_ray(Ray &ray) {
         // Use SIMD accelerated triangle intersections
         min_inter = SimpleTriangle::simd_intersect(triangles, ray);
     } else if (fpga_accel) {
-        min_inter = SimpleTriangle::fpga_intersect(triangles, ray);
+        min_inter = SimpleTriangle::fpga_intersect(triangles, ray,
+                axidma_interface);
     } else {
         // Use normal CPU triangle intersections
         for (unsigned int i = 0; i < triangles.size(); i++) {

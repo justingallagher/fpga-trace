@@ -7,6 +7,7 @@
 #ifndef _SCENE_SIMPLETRIANGLE_HPP_
 #define _SCENE_SIMPLETRIANGLE_HPP_
 
+#include "axidma/tracer_axidma.hpp"
 #include "math/vector.hpp"
 #include "scene/ray.hpp"
 #include <arm_neon.h>

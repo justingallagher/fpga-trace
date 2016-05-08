@@ -23,6 +23,7 @@
 #include "scene/mesh.hpp"
 #include "scene/ray.hpp"
 #include "scene/simpletriangle.hpp"
+#include "axidma/tracer_axidma.hpp"
 
 namespace _462 {
 class Geometry;
