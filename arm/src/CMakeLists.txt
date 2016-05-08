@@ -14,6 +14,7 @@ include_directories(
     ${PNG_INCLUDE_DIRS}
 )
 
+add_subdirectory(axidma)
 add_subdirectory(application)
 add_subdirectory(math)
 add_subdirectory(p3)

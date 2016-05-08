@@ -160,6 +160,9 @@ public:
     // Whether we should use FPGA acceleration
     bool fpga_accel;
 
+    // AXI DMA interface for FPGA operations
+    AxiDma* axidma_interface;
+
 private:
 
     typedef std::vector< SphereLight > SphereLightList;
@@ -178,8 +181,6 @@ private:
     GeometryList geometries;
     // list of all triangles and their associated geometries.
     TriangleList triangles;
-
-private:
 
     // no meaningful assignment or copy
     Scene(const Scene&);

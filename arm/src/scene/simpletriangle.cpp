@@ -283,9 +283,73 @@ namespace _462 {
      * @return Best intersection.
      */
     Intersection SimpleTriangle::fpga_intersect(std::vector<SimpleTriangle*>
-            &tris, Ray &ray) {
+            &tris, Ray &ray, AxiDma* interface) {
 
         Intersection result;
+        result.time = std::numeric_limits<float>::infinity();
+
+        float* transmit_buffer = (float*) interface->tx_buf;
+        float* receive_buffer = (float*) interface->rx_buf;
+        size_t tx_size = interface->tx_size / sizeof(float);
+        size_t rx_size = interface->rx_size / sizeof(float);
+        size_t tris_per_transfer = tx_size / 15;
+
+        // Loop in intervals of tx_size
+        for (size_t i = 0; i < tris.size(); i += tris_per_transfer) {
+
+            for (size_t j = 0; j < tris_per_transfer; j++) {
+                SimpleTriangle* cur = tris[i + j];
+
+                size_t txi = j * 15;
+
+                // Copy data into the transmit buffer
+                transmit_buffer[txi] = cur->vertices[0].x;
+                transmit_buffer[txi + 1] = cur->vertices[0].y;
+                transmit_buffer[txi + 2] = cur->vertices[0].z;
+
+                transmit_buffer[txi + 3] = cur->vertices[1].x;
+                transmit_buffer[txi + 4] = cur->vertices[1].y;
+                transmit_buffer[txi + 5] = cur->vertices[1].z;
+
+                transmit_buffer[txi + 6] = cur->vertices[2].x;
+                transmit_buffer[txi + 7] = cur->vertices[2].y;
+                transmit_buffer[txi + 8] = cur->vertices[2].z;
+
+                transmit_buffer[txi + 9] = ray.d.x;
+                transmit_buffer[txi + 10] = ray.d.y;
+                transmit_buffer[txi + 11] = ray.d.z;
+
+                transmit_buffer[txi + 12] = ray.e.x;
+                transmit_buffer[txi + 13] = ray.e.y;
+                transmit_buffer[txi + 14] = ray.e.z;
+            }
+
+            // Send data to the FPGA
+            interface->transfer();
+
+            // Examine results
+            for (size_t j = 0; j < tris_per_transfer; j++) {
+                size_t rxi = j * 3;
+
+                float t = receive_buffer[rxi];
+                float gamma = receive_buffer[rxi + 1];
+                float beta = receive_buffer[rxi + 2];
+
+                if (EPS < t && t < result.time &&
+                        0.0 <= gamma && gamma <= 1.0 &&
+                        0.0 <= beta &&
+                        beta <= 1.0 - gamma) {
+                    result.time = t;
+                    result.shape = tris[i + j].parent;
+                    result.tri = tris[i + j].num_tri;
+                    result.x = beta;
+                    result.y = gamma;
+                }
+            }
+        }
+
+        if (result.time == std::numeric_limits<float>::infinity())
+            result.time = -1.0;
 
         return result;
     }

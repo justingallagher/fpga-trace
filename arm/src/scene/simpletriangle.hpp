@@ -50,7 +50,7 @@ class SimpleTriangle {
                 &tris, Ray &ray);
 
         static Intersection fpga_intersect(std::vector<SimpleTriangle*> &tris,
-                Ray &ray);
+                Ray &ray, AxiDma* interface);
 
         // Points of each vertex, in absolute coordinates
         Vector3 vertices[3];

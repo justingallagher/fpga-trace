@@ -298,6 +298,9 @@ void RaytracerApplication::toggle_raytracing( int width, int height )
         scene.camera.aspect = real_t( width ) / real_t( height );
         scene.simd_accel = options.simd_accel;
         scene.fpga_accel = options.fpga_accel;
+        if (scene.fpga_accel) {
+            scene.axidma_interface = new AxiDma(1920 * 1080, 1920 * 1080 / 5);
+        }
 
         if (!raytracer.initialize(&scene, options.num_samples, width, height))
         {
