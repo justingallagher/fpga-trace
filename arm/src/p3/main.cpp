@@ -65,6 +65,7 @@ struct Options
     bool simd_accel;
     // whether to use FPGA hardware acceleration
     bool fpga_accel;
+    size_t num_threads;
 };
 
 class RaytracerApplication : public Application
@@ -505,6 +506,7 @@ static bool parse_args( Options* opt, int argc, char* argv[] )
     opt->num_samples = 1;
     opt->simd_accel = false;
     opt->fpga_accel = false;
+    opt->num_threads = MAX_THREADS;
 
     for (int i = 2; i < argc; i++)
     {
@@ -538,6 +540,9 @@ static bool parse_args( Options* opt, int argc, char* argv[] )
         case 'f':
             opt->fpga_accel = true;
             break;
+        case 't':
+            opt->num_threads = atoi(argv[++i]);
+            break;
         }
     }
 
@@ -560,7 +565,7 @@ int main( int argc, char* argv[] )
     }
 
 #ifdef OPENMP
-    omp_set_num_threads(opt.fpga_accel ? 1 : MAX_THREADS);
+    omp_set_num_threads(opt.fpga_accel ? 1 : opt.num_threads);
 #endif
 
     RaytracerApplication app( opt );
