@@ -12,7 +12,7 @@ Ray tracing is an image rendering algorithm that simulates the travel of photons
 Rays are projected away from the viewer through each pixel in the output, and tested for interactions with models in the scene.
 After finding the nearest intersection with a polygon, the algorithm can determine the lighting and color of the point, as well as emit additional rays to simulate reflection, refraction, scattering, etc.
 
-[INSERT DIAGRAM]
+![Ray tracing diagram](img/raytracing_demo.png)
 
 Although ray tracing is extremely parallel, it is still very inefficient, as in the worst case each ray needs to be tested against each triangle. A large image of a large scene could easily require billions of intersection tests to be conducted.
 
