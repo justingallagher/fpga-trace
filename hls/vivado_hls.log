@@ -1,43 +1,73 @@
 @I [LIC-101] Checked out feature [VIVADO_HLS]
 @I [HLS-10] Running 'C:/Xilinx/Vivado_HLS/2015.1/bin/unwrapped/win64.o/vivado_hls.exe'
-            for user 'Justin' on host 'win10desktop' (Windows NT_amd64 version 6.2) on Sun May 08 18:15:17 -0400 2016
+            for user 'Justin' on host 'win10desktop' (Windows NT_amd64 version 6.2) on Mon May 09 00:02:34 -0400 2016
             in directory 'C:/Users/Justin/Documents/GitHub/fpga-trace/hls'
 @I [HLS-10] Opening project 'C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect'.
+@I [HLS-10] Adding design file 'triangle_intersect.h' to the project
+@I [HLS-10] Adding design file 'triangle_intersect.cpp' to the project
+@I [HLS-10] Adding test bench file 'testbench.cpp' to the project
 @I [HLS-10] Opening solution 'C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect'.
 @I [SYN-201] Setting up clock 'default' with a period of 5ns.
 @I [LIC-101] Checked out feature [VIVADO_HLS]
 @I [HLS-10] Setting target device to 'xc7z020clg484-1'
-@I [IMPL-8] Exporting RTL as an IP in IP-XACT.
-
-****** Vivado v2015.1 (64-bit)
-  **** SW Build 1215546 on Mon Apr 27 19:22:08 MDT 2015
-  **** IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip'
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.1/data/ip'.
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tri_intersect_ap_fadd_7_full_dsp_32'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tri_intersect_ap_fadd_7_full_dsp_32'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tri_intersect_ap_fdiv_28_no_dsp_32'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tri_intersect_ap_fdiv_28_no_dsp_32'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tri_intersect_ap_fmul_3_max_dsp_32'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tri_intersect_ap_fmul_3_max_dsp_32'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tri_intersect_ap_fsub_7_full_dsp_32'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tri_intersect_ap_fsub_7_full_dsp_32'...
-****** Webtalk v2015.1 (64-bit)
-  **** SW Build 1215546 on Mon Apr 27 19:22:08 MDT 2015
-  **** IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
-source C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/tmp.hw/webtalk/labtool_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/Users/Justin/Documents/GitHub/fpga-trace/hls/triangle_intersect/tri_intersect/impl/ip/tmp.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Sun May 08 18:15:27 2016. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sun May 08 18:15:27 2016...
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.1/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Sun May 08 18:15:27 2016...
+@I [HLS-10] Analyzing design file 'triangle_intersect.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@W [HLS-40] Directive 'UNROLL' cannot be applied: Label 'LOAD' does not exist in function 'tri_intersect'. 
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [XFORM-602] Inlining function 'intersect' into 'tri_intersect' (triangle_intersect.cpp:106) automatically.
+@I [XFORM-501] Unrolling loop 'READ' (triangle_intersect.cpp:81) in function 'tri_intersect' completely.
+@I [XFORM-501] Unrolling loop 'WRITE' (triangle_intersect.cpp:111) in function 'tri_intersect' completely.
+@I [XFORM-602] Inlining function 'intersect' into 'tri_intersect' (triangle_intersect.cpp:106) automatically.
+@I [XFORM-151] Mapping array 'v0x' (triangle_intersect.cpp:60) with offset 0, array 'v0y' (triangle_intersect.cpp:61) with offset 32, array 'v0z' (triangle_intersect.cpp:62) with offset 64, array 'v1x' (triangle_intersect.cpp:63) with offset 96, array 'v1y' (triangle_intersect.cpp:64) with offset 128, array 'v1z' (triangle_intersect.cpp:65) with offset 160, array 'v2x' (triangle_intersect.cpp:66) with offset 192, array 'v2y' (triangle_intersect.cpp:67) with offset 224, array 'v2z' (triangle_intersect.cpp:68) with offset 256, array 'rdx' (triangle_intersect.cpp:69) with offset 288, array 'rdy' (triangle_intersect.cpp:70) with offset 320, array 'rdz' (triangle_intersect.cpp:71) with offset 352, array 'rex' (triangle_intersect.cpp:72) with offset 384, array 'rey' (triangle_intersect.cpp:73) with offset 416, array 'rez' (triangle_intersect.cpp:74) with offset 448, array 't' (triangle_intersect.cpp:76) with offset 480, array 'gamma' (triangle_intersect.cpp:77) with offset 512 and array 'beta' (triangle_intersect.cpp:78) with offset 544 into array 'data_array' vertically.
+@I [HLS-111] Elapsed time: 10.783 seconds; current memory usage: 83.7 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'tri_intersect' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'tri_intersect' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'WORK'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 84.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.111 seconds; current memory usage: 86.9 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'tri_intersect' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.162 seconds; current memory usage: 87.2 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'tri_intersect' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/ins_data' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/ins_keep_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/ins_strb_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/ins_user_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/ins_last_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/ins_id_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/ins_dest_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/outs_data' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/outs_keep_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/outs_strb_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/outs_user_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/outs_last_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/outs_id_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'tri_intersect/outs_dest_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on function 'tri_intersect' to 'ap_ctrl_none'.
+@I [RTGEN-100] Generating core module 'tri_intersect_fadd_32ns_32ns_32_9_full_dsp': 8 instance(s).
+@I [RTGEN-100] Generating core module 'tri_intersect_fdiv_32ns_32ns_32_30': 1 instance(s).
+@I [RTGEN-100] Generating core module 'tri_intersect_fmul_32ns_32ns_32_5_max_dsp': 27 instance(s).
+@I [RTGEN-100] Generating core module 'tri_intersect_fsub_32ns_32ns_32_9_full_dsp': 15 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'tri_intersect'.
+@I [HLS-111] Elapsed time: 0.338 seconds; current memory usage: 91.4 MB.
+@I [RTMG-278] Implementing memory 'tri_intersect_data_array_ram' using block RAMs.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'tri_intersect'.
+@I [WVHDL-304] Generating RTL VHDL for 'tri_intersect'.
+@I [WVLOG-307] Generating RTL Verilog for 'tri_intersect'.
+@I [HLS-112] Total elapsed time: 12.464 seconds; peak memory usage: 91.4 MB.
 @I [LIC-101] Checked in feature [VIVADO_HLS]

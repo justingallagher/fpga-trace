@@ -9,8 +9,8 @@
 module tri_intersect_data_array_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
 
 parameter DWIDTH = 576;
-parameter AWIDTH = 5;
-parameter MEM_SIZE = 20;
+parameter AWIDTH = 1;
+parameter MEM_SIZE = 2;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -78,8 +78,8 @@ module tri_intersect_data_array(
     q1);
 
 parameter DataWidth = 32'd576;
-parameter AddressRange = 32'd20;
-parameter AddressWidth = 32'd5;
+parameter AddressRange = 32'd2;
+parameter AddressWidth = 32'd1;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

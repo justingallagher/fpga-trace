@@ -29,7 +29,6 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include"/>
-									<listOptionValue builtIn="false" value="C:/Users/Justin/Documents/GitHub/fpga-trace/hls"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/win64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.334184401" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
@@ -47,7 +46,6 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include"/>
-									<listOptionValue builtIn="false" value="C:/Users/Justin/Documents/GitHub/fpga-trace/hls"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/win64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1869589100" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
@@ -115,7 +113,6 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include"/>
-									<listOptionValue builtIn="false" value="C:/Users/Justin/Documents/GitHub/fpga-trace/hls"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/win64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1460174644" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -128,7 +125,6 @@
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include/etc"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/include"/>
-									<listOptionValue builtIn="false" value="C:/Users/Justin/Documents/GitHub/fpga-trace/hls"/>
 									<listOptionValue builtIn="false" value="C:/Xilinx/Vivado_HLS/2015.1/win64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1540600373" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>

@@ -2,9 +2,6 @@
     <downStreamTool>
         <DownStreamTool name=""/>
     </downStreamTool>
-    <clockList>
-        <clock name="default" period="5"/>
-    </clockList>
     <config>
         <schedule model="tri_intersect"/>
     </config>
@@ -67,5 +64,8 @@
         <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
         <library name="DefaultPlatform" value="xilinx/zynq/zynq_fpv6"/>
     </libraryList>
+    <clockList>
+        <clock name="default" default="false" period="5"/>
+    </clockList>
 </solution>
 

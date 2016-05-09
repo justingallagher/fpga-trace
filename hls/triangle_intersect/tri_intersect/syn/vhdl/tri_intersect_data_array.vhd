@@ -14,8 +14,8 @@ entity tri_intersect_data_array_ram is
     generic(
             mem_type    : string := "block"; 
             dwidth     : integer := 576; 
-            awidth     : integer := 5; 
-            mem_size    : integer := 20
+            awidth     : integer := 1; 
+            mem_size    : integer := 2
     ); 
     port (
           addr0     : in std_logic_vector(awidth-1 downto 0); 
@@ -107,8 +107,8 @@ use IEEE.std_logic_1164.all;
 entity tri_intersect_data_array is
     generic (
         DataWidth : INTEGER := 576;
-        AddressRange : INTEGER := 20;
-        AddressWidth : INTEGER := 5);
+        AddressRange : INTEGER := 2;
+        AddressWidth : INTEGER := 1);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

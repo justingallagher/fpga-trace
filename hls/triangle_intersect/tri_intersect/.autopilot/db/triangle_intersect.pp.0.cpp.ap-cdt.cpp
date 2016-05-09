@@ -32098,7 +32098,7 @@ inline void intersect(float v0x, float v0y, float v0z,
   float rdx, float rdy, float rdz, float rex, float rey, float rez,
   float *t, float *gamma, float *beta) {
 #pragma empty_line
- // Compute t
+ // Set the first vertex as the origin
  float a = v0x - v1x;
  float b = v0y - v1y;
  float c = v0z - v1z;
@@ -32115,6 +32115,7 @@ inline void intersect(float v0x, float v0y, float v0z,
  float m = a*(e*i-h*f) + b*(g*f-d*i) + c*(d*h-e*g);
  float im = 1.0f/m;
 #pragma empty_line
+ // Compute time of intersection
  *t = (f*(a*k-j*b) + e*(j*c-a*l) + d*(b*l-k*c)) * -1.0f * im;
 #pragma empty_line
  // Compute gamma
@@ -32131,95 +32132,95 @@ inline void intersect(float v0x, float v0y, float v0z,
  * @param ins Input stream.
  * @param outs Output stream.
  */
-void tri_intersect(data_t ins[15 * 20], data_t outs[3 * 20]) {_ssdm_SpecArrayDimSize(outs,3 * 20);_ssdm_SpecArrayDimSize(ins,15 * 20);
+void tri_intersect(data_t ins[15 * 2], data_t outs[3 * 2]) {_ssdm_SpecArrayDimSize(outs,3 * 2);_ssdm_SpecArrayDimSize(ins,15 * 2);
 #pragma HLS INTERFACE axis port=outs
-#pragma line 57 "triangle_intersect.cpp"
+#pragma line 58 "triangle_intersect.cpp"
 
 #pragma HLS INTERFACE axis port=ins
-#pragma line 57 "triangle_intersect.cpp"
+#pragma line 58 "triangle_intersect.cpp"
 
 #pragma HLS INTERFACE ap_ctrl_none port=return
-#pragma line 57 "triangle_intersect.cpp"
+#pragma line 58 "triangle_intersect.cpp"
 
 #pragma empty_line
- float v0x[20];
+ float v0x[2];
 #pragma HLS ARRAY_MAP variable=v0x instance=data_array vertical
-#pragma line 59 "triangle_intersect.cpp"
-
- float v0y[20];
-#pragma HLS ARRAY_MAP variable=v0y instance=data_array vertical
 #pragma line 60 "triangle_intersect.cpp"
 
- float v0z[20];
-#pragma HLS ARRAY_MAP variable=v0z instance=data_array vertical
+ float v0y[2];
+#pragma HLS ARRAY_MAP variable=v0y instance=data_array vertical
 #pragma line 61 "triangle_intersect.cpp"
 
- float v1x[20];
-#pragma HLS ARRAY_MAP variable=v1x instance=data_array vertical
+ float v0z[2];
+#pragma HLS ARRAY_MAP variable=v0z instance=data_array vertical
 #pragma line 62 "triangle_intersect.cpp"
 
- float v1y[20];
-#pragma HLS ARRAY_MAP variable=v1y instance=data_array vertical
+ float v1x[2];
+#pragma HLS ARRAY_MAP variable=v1x instance=data_array vertical
 #pragma line 63 "triangle_intersect.cpp"
 
- float v1z[20];
-#pragma HLS ARRAY_MAP variable=v1z instance=data_array vertical
+ float v1y[2];
+#pragma HLS ARRAY_MAP variable=v1y instance=data_array vertical
 #pragma line 64 "triangle_intersect.cpp"
 
- float v2x[20];
-#pragma HLS ARRAY_MAP variable=v2x instance=data_array vertical
+ float v1z[2];
+#pragma HLS ARRAY_MAP variable=v1z instance=data_array vertical
 #pragma line 65 "triangle_intersect.cpp"
 
- float v2y[20];
-#pragma HLS ARRAY_MAP variable=v2y instance=data_array vertical
+ float v2x[2];
+#pragma HLS ARRAY_MAP variable=v2x instance=data_array vertical
 #pragma line 66 "triangle_intersect.cpp"
 
- float v2z[20];
-#pragma HLS ARRAY_MAP variable=v2z instance=data_array vertical
+ float v2y[2];
+#pragma HLS ARRAY_MAP variable=v2y instance=data_array vertical
 #pragma line 67 "triangle_intersect.cpp"
 
- float rdx[20];
-#pragma HLS ARRAY_MAP variable=rdx instance=data_array vertical
+ float v2z[2];
+#pragma HLS ARRAY_MAP variable=v2z instance=data_array vertical
 #pragma line 68 "triangle_intersect.cpp"
 
- float rdy[20];
-#pragma HLS ARRAY_MAP variable=rdy instance=data_array vertical
+ float rdx[2];
+#pragma HLS ARRAY_MAP variable=rdx instance=data_array vertical
 #pragma line 69 "triangle_intersect.cpp"
 
- float rdz[20];
-#pragma HLS ARRAY_MAP variable=rdz instance=data_array vertical
+ float rdy[2];
+#pragma HLS ARRAY_MAP variable=rdy instance=data_array vertical
 #pragma line 70 "triangle_intersect.cpp"
 
- float rex[20];
-#pragma HLS ARRAY_MAP variable=rex instance=data_array vertical
+ float rdz[2];
+#pragma HLS ARRAY_MAP variable=rdz instance=data_array vertical
 #pragma line 71 "triangle_intersect.cpp"
 
- float rey[20];
-#pragma HLS ARRAY_MAP variable=rey instance=data_array vertical
+ float rex[2];
+#pragma HLS ARRAY_MAP variable=rex instance=data_array vertical
 #pragma line 72 "triangle_intersect.cpp"
 
- float rez[20];
-#pragma HLS ARRAY_MAP variable=rez instance=data_array vertical
+ float rey[2];
+#pragma HLS ARRAY_MAP variable=rey instance=data_array vertical
 #pragma line 73 "triangle_intersect.cpp"
 
-#pragma empty_line
- float t[20];
-#pragma HLS ARRAY_MAP variable=t instance=data_array vertical
-#pragma line 75 "triangle_intersect.cpp"
+ float rez[2];
+#pragma HLS ARRAY_MAP variable=rez instance=data_array vertical
+#pragma line 74 "triangle_intersect.cpp"
 
- float gamma[20];
-#pragma HLS ARRAY_MAP variable=gamma instance=data_array vertical
+#pragma empty_line
+ float t[2];
+#pragma HLS ARRAY_MAP variable=t instance=data_array vertical
 #pragma line 76 "triangle_intersect.cpp"
 
- float beta[20];
-#pragma HLS ARRAY_MAP variable=beta instance=data_array vertical
+ float gamma[2];
+#pragma HLS ARRAY_MAP variable=gamma instance=data_array vertical
 #pragma line 77 "triangle_intersect.cpp"
+
+ float beta[2];
+#pragma HLS ARRAY_MAP variable=beta instance=data_array vertical
+#pragma line 78 "triangle_intersect.cpp"
 
 #pragma empty_line
  // Load data
- READ: for (int i = 0; i < 20; i++) {
+ READ: for (int i = 0; i < 2; i++) {
 #pragma HLS UNROLL
-#pragma line 80 "triangle_intersect.cpp"
+#pragma line 81 "triangle_intersect.cpp"
 
   int b = i * 15;
 #pragma empty_line
@@ -32244,45 +32245,45 @@ void tri_intersect(data_t ins[15 * 20], data_t outs[3 * 20]) {_ssdm_SpecArrayDim
   rez[i] = ins[b + 14].data;
  }
 #pragma empty_line
- WORK: for (int i = 0; i < 20; i++) {
+ WORK: for (int i = 0; i < 2; i++) {
 #pragma HLS PIPELINE
-#pragma line 104 "triangle_intersect.cpp"
+#pragma line 105 "triangle_intersect.cpp"
 
   intersect(v0x[i], v0y[i], v0z[i], v1x[i], v1y[i], v1z[i],
     v2x[i], v2y[i], v2z[i], rdx[i], rdy[i], rdz[i],
     rex[i], rey[i], rez[i], t + i, gamma + i, beta + i);
  }
 #pragma empty_line
- WRITE: for(int i = 0; i < 20; i++) {
+ WRITE: for(int i = 0; i < 2; i++) {
 #pragma HLS UNROLL
-#pragma line 110 "triangle_intersect.cpp"
+#pragma line 111 "triangle_intersect.cpp"
 
   int b = i * 3;
 #pragma empty_line
   outs[b].data = t[i];
-  outs[b].dest = ins[20 * 15 - 1].dest;
-  outs[b].id = ins[20 * 15 - 1].id;
-  outs[b].keep = ins[20 * 15 - 1].keep;
+  outs[b].dest = ins[2 * 15 - 1].dest;
+  outs[b].id = ins[2 * 15 - 1].id;
+  outs[b].keep = ins[2 * 15 - 1].keep;
   outs[b].last = 0;
-  outs[b].strb = ins[20 * 15 - 1].strb;
-  outs[b].user = ins[20 * 15 - 1].user;
+  outs[b].strb = ins[2 * 15 - 1].strb;
+  outs[b].user = ins[2 * 15 - 1].user;
 #pragma empty_line
   outs[b+1].data = gamma[i];
-  outs[b+1].dest = ins[20 * 15 - 1].dest;
-  outs[b+1].id = ins[20 * 15 - 1].id;
-  outs[b+1].keep = ins[20 * 15 - 1].keep;
+  outs[b+1].dest = ins[2 * 15 - 1].dest;
+  outs[b+1].id = ins[2 * 15 - 1].id;
+  outs[b+1].keep = ins[2 * 15 - 1].keep;
   outs[b+1].last = 0;
-  outs[b+1].strb = ins[20 * 15 - 1].strb;
-  outs[b+1].user = ins[20 * 15 - 1].user;
+  outs[b+1].strb = ins[2 * 15 - 1].strb;
+  outs[b+1].user = ins[2 * 15 - 1].user;
 #pragma empty_line
   outs[b+2].data = beta[i];
-  outs[b+2].dest = ins[20 * 15 - 1].dest;
-  outs[b+2].id = ins[20 * 15 - 1].id;
-  outs[b+2].keep = ins[20 * 15 - 1].keep;
+  outs[b+2].dest = ins[2 * 15 - 1].dest;
+  outs[b+2].id = ins[2 * 15 - 1].id;
+  outs[b+2].keep = ins[2 * 15 - 1].keep;
   outs[b+2].last = 0;
-  outs[b+2].strb = ins[20 * 15 - 1].strb;
-  outs[b+2].user = ins[20 * 15 - 1].user;
+  outs[b+2].strb = ins[2 * 15 - 1].strb;
+  outs[b+2].user = ins[2 * 15 - 1].user;
  }
 #pragma empty_line
- outs[3 * 20 - 1].last = ins[20 * 15 - 1].last;
+ outs[3 * 2 - 1].last = ins[2 * 15 - 1].last;
 }

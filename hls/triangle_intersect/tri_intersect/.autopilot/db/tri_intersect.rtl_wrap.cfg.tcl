@@ -11,7 +11,7 @@ set Const0 "0"
 set Volatile0 "0"
 set Pointer0 "0"
 set Reference0 "0"
-set Dims0 [list 300]
+set Dims0 [list 30]
 set Interface0 "wire"
 set structMem0 ""
 set PortName00 "data"
@@ -112,7 +112,7 @@ set Const1 "0"
 set Volatile1 "0"
 set Pointer1 "0"
 set Reference1 "0"
-set Dims1 [list 60]
+set Dims1 [list 6]
 set Interface1 "wire"
 set structMem1 ""
 set PortName10 "data"

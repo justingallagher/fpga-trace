@@ -32082,7 +32082,7 @@ inline void intersect(float v0x, float v0y, float v0z,
   float rdx, float rdy, float rdz, float rex, float rey, float rez,
   float *t, float *gamma, float *beta) {
 #pragma empty_line
- // Compute t
+ // Set the first vertex as the origin
  float a = v0x - v1x;
  float b = v0y - v1y;
  float c = v0z - v1z;
@@ -32099,6 +32099,7 @@ inline void intersect(float v0x, float v0y, float v0z,
  float m = a*(e*i-h*f) + b*(g*f-d*i) + c*(d*h-e*g);
  float im = 1.0f/m;
 #pragma empty_line
+ // Compute time of intersection
  *t = (f*(a*k-j*b) + e*(j*c-a*l) + d*(b*l-k*c)) * -1.0f * im;
 #pragma empty_line
  // Compute gamma
@@ -32115,30 +32116,30 @@ inline void intersect(float v0x, float v0y, float v0z,
  * @param ins Input stream.
  * @param outs Output stream.
  */
-void tri_intersect(data_t ins[15 * 20], data_t outs[3 * 20]) {
+void tri_intersect(data_t ins[15 * 2], data_t outs[3 * 2]) {
 #pragma empty_line
- float v0x[20];
- float v0y[20];
- float v0z[20];
- float v1x[20];
- float v1y[20];
- float v1z[20];
- float v2x[20];
- float v2y[20];
- float v2z[20];
- float rdx[20];
- float rdy[20];
- float rdz[20];
- float rex[20];
- float rey[20];
- float rez[20];
+ float v0x[2];
+ float v0y[2];
+ float v0z[2];
+ float v1x[2];
+ float v1y[2];
+ float v1z[2];
+ float v2x[2];
+ float v2y[2];
+ float v2z[2];
+ float rdx[2];
+ float rdy[2];
+ float rdz[2];
+ float rex[2];
+ float rey[2];
+ float rez[2];
 #pragma empty_line
- float t[20];
- float gamma[20];
- float beta[20];
+ float t[2];
+ float gamma[2];
+ float beta[2];
 #pragma empty_line
  // Load data
- READ: for (int i = 0; i < 20; i++) {
+ READ: for (int i = 0; i < 2; i++) {
   int b = i * 15;
 #pragma empty_line
   v0x[i] = ins[b].data;
@@ -32162,39 +32163,39 @@ void tri_intersect(data_t ins[15 * 20], data_t outs[3 * 20]) {
   rez[i] = ins[b + 14].data;
  }
 #pragma empty_line
- WORK: for (int i = 0; i < 20; i++) {
+ WORK: for (int i = 0; i < 2; i++) {
   intersect(v0x[i], v0y[i], v0z[i], v1x[i], v1y[i], v1z[i],
     v2x[i], v2y[i], v2z[i], rdx[i], rdy[i], rdz[i],
     rex[i], rey[i], rez[i], t + i, gamma + i, beta + i);
  }
 #pragma empty_line
- WRITE: for(int i = 0; i < 20; i++) {
+ WRITE: for(int i = 0; i < 2; i++) {
   int b = i * 3;
 #pragma empty_line
   outs[b].data = t[i];
-  outs[b].dest = ins[20 * 15 - 1].dest;
-  outs[b].id = ins[20 * 15 - 1].id;
-  outs[b].keep = ins[20 * 15 - 1].keep;
+  outs[b].dest = ins[2 * 15 - 1].dest;
+  outs[b].id = ins[2 * 15 - 1].id;
+  outs[b].keep = ins[2 * 15 - 1].keep;
   outs[b].last = 0;
-  outs[b].strb = ins[20 * 15 - 1].strb;
-  outs[b].user = ins[20 * 15 - 1].user;
+  outs[b].strb = ins[2 * 15 - 1].strb;
+  outs[b].user = ins[2 * 15 - 1].user;
 #pragma empty_line
   outs[b+1].data = gamma[i];
-  outs[b+1].dest = ins[20 * 15 - 1].dest;
-  outs[b+1].id = ins[20 * 15 - 1].id;
-  outs[b+1].keep = ins[20 * 15 - 1].keep;
+  outs[b+1].dest = ins[2 * 15 - 1].dest;
+  outs[b+1].id = ins[2 * 15 - 1].id;
+  outs[b+1].keep = ins[2 * 15 - 1].keep;
   outs[b+1].last = 0;
-  outs[b+1].strb = ins[20 * 15 - 1].strb;
-  outs[b+1].user = ins[20 * 15 - 1].user;
+  outs[b+1].strb = ins[2 * 15 - 1].strb;
+  outs[b+1].user = ins[2 * 15 - 1].user;
 #pragma empty_line
   outs[b+2].data = beta[i];
-  outs[b+2].dest = ins[20 * 15 - 1].dest;
-  outs[b+2].id = ins[20 * 15 - 1].id;
-  outs[b+2].keep = ins[20 * 15 - 1].keep;
+  outs[b+2].dest = ins[2 * 15 - 1].dest;
+  outs[b+2].id = ins[2 * 15 - 1].id;
+  outs[b+2].keep = ins[2 * 15 - 1].keep;
   outs[b+2].last = 0;
-  outs[b+2].strb = ins[20 * 15 - 1].strb;
-  outs[b+2].user = ins[20 * 15 - 1].user;
+  outs[b+2].strb = ins[2 * 15 - 1].strb;
+  outs[b+2].user = ins[2 * 15 - 1].user;
  }
 #pragma empty_line
- outs[3 * 20 - 1].last = ins[20 * 15 - 1].last;
+ outs[3 * 2 - 1].last = ins[2 * 15 - 1].last;
 }

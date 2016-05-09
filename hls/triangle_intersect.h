@@ -11,7 +11,7 @@
 
 #include "ap_int.h"
 
-#define PARALLEL_TESTS 20
+#define PARALLEL_TESTS 2
 
 typedef struct {
 	float data;

@@ -21,7 +21,7 @@ inline void intersect(float v0x, float v0y, float v0z,
 		float rdx, float rdy, float rdz, float rex, float rey, float rez,
 		float *t, float *gamma, float *beta) {
 
-	// Compute t
+	// Set the first vertex as the origin
 	float a = v0x - v1x;
 	float b = v0y - v1y;
 	float c = v0z - v1z;
@@ -38,6 +38,7 @@ inline void intersect(float v0x, float v0y, float v0z,
 	float m = a*(e*i-h*f) + b*(g*f-d*i) + c*(d*h-e*g);
 	float im = 1.0f/m;
 
+	// Compute time of intersection
 	*t = (f*(a*k-j*b) + e*(j*c-a*l) + d*(b*l-k*c)) * -1.0f * im;
 
 	// Compute gamma

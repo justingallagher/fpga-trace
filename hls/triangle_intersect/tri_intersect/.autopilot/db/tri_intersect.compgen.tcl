@@ -283,8 +283,8 @@ set MemName tri_intersect_data_array
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
 set DataWd 576
-set AddrRange 20
-set AddrWd 5
+set AddrRange 2
+set AddrWd 1
 set impl_style block
 set TrueReset 0
 set HasInitializer 0

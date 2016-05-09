@@ -32098,7 +32098,7 @@ inline void intersect(float v0x, float v0y, float v0z,
   float rdx, float rdy, float rdz, float rex, float rey, float rez,
   float *t, float *gamma, float *beta) {
 
- // Compute t
+ // Set the first vertex as the origin
  float a = v0x - v1x;
  float b = v0y - v1y;
  float c = v0z - v1z;
@@ -32115,6 +32115,7 @@ inline void intersect(float v0x, float v0y, float v0z,
  float m = a*(e*i-h*f) + b*(g*f-d*i) + c*(d*h-e*g);
  float im = 1.0f/m;
 
+ // Compute time of intersection
  *t = (f*(a*k-j*b) + e*(j*c-a*l) + d*(b*l-k*c)) * -1.0f * im;
 
  // Compute gamma
@@ -32131,95 +32132,95 @@ inline void intersect(float v0x, float v0y, float v0z,
  * @param ins Input stream.
  * @param outs Output stream.
  */
-void tri_intersect(data_t ins[15 * 20], data_t outs[3 * 20]) {_ssdm_SpecArrayDimSize(outs,3 * 20);_ssdm_SpecArrayDimSize(ins,15 * 20);
+void tri_intersect(data_t ins[15 * 2], data_t outs[3 * 2]) {_ssdm_SpecArrayDimSize(outs,3 * 2);_ssdm_SpecArrayDimSize(ins,15 * 2);
 _ssdm_op_SpecInterface(outs, "axis", 0, 0, 0, 0, "", "", "");
-#57 "triangle_intersect.cpp"
+#58 "triangle_intersect.cpp"
 
 _ssdm_op_SpecInterface(ins, "axis", 0, 0, 0, 0, "", "", "");
-#57 "triangle_intersect.cpp"
+#58 "triangle_intersect.cpp"
 
 _ssdm_op_SpecInterface(0, "ap_ctrl_none", 0, 0, 0, 0, "", "", "");
-#57 "triangle_intersect.cpp"
+#58 "triangle_intersect.cpp"
 
 
- float v0x[20];
+ float v0x[2];
 _ssdm_SpecArrayMap( v0x, "data_array", -1, "VERTICAL", "");
-#59 "triangle_intersect.cpp"
-
- float v0y[20];
-_ssdm_SpecArrayMap( v0y, "data_array", -1, "VERTICAL", "");
 #60 "triangle_intersect.cpp"
 
- float v0z[20];
-_ssdm_SpecArrayMap( v0z, "data_array", -1, "VERTICAL", "");
+ float v0y[2];
+_ssdm_SpecArrayMap( v0y, "data_array", -1, "VERTICAL", "");
 #61 "triangle_intersect.cpp"
 
- float v1x[20];
-_ssdm_SpecArrayMap( v1x, "data_array", -1, "VERTICAL", "");
+ float v0z[2];
+_ssdm_SpecArrayMap( v0z, "data_array", -1, "VERTICAL", "");
 #62 "triangle_intersect.cpp"
 
- float v1y[20];
-_ssdm_SpecArrayMap( v1y, "data_array", -1, "VERTICAL", "");
+ float v1x[2];
+_ssdm_SpecArrayMap( v1x, "data_array", -1, "VERTICAL", "");
 #63 "triangle_intersect.cpp"
 
- float v1z[20];
-_ssdm_SpecArrayMap( v1z, "data_array", -1, "VERTICAL", "");
+ float v1y[2];
+_ssdm_SpecArrayMap( v1y, "data_array", -1, "VERTICAL", "");
 #64 "triangle_intersect.cpp"
 
- float v2x[20];
-_ssdm_SpecArrayMap( v2x, "data_array", -1, "VERTICAL", "");
+ float v1z[2];
+_ssdm_SpecArrayMap( v1z, "data_array", -1, "VERTICAL", "");
 #65 "triangle_intersect.cpp"
 
- float v2y[20];
-_ssdm_SpecArrayMap( v2y, "data_array", -1, "VERTICAL", "");
+ float v2x[2];
+_ssdm_SpecArrayMap( v2x, "data_array", -1, "VERTICAL", "");
 #66 "triangle_intersect.cpp"
 
- float v2z[20];
-_ssdm_SpecArrayMap( v2z, "data_array", -1, "VERTICAL", "");
+ float v2y[2];
+_ssdm_SpecArrayMap( v2y, "data_array", -1, "VERTICAL", "");
 #67 "triangle_intersect.cpp"
 
- float rdx[20];
-_ssdm_SpecArrayMap( rdx, "data_array", -1, "VERTICAL", "");
+ float v2z[2];
+_ssdm_SpecArrayMap( v2z, "data_array", -1, "VERTICAL", "");
 #68 "triangle_intersect.cpp"
 
- float rdy[20];
-_ssdm_SpecArrayMap( rdy, "data_array", -1, "VERTICAL", "");
+ float rdx[2];
+_ssdm_SpecArrayMap( rdx, "data_array", -1, "VERTICAL", "");
 #69 "triangle_intersect.cpp"
 
- float rdz[20];
-_ssdm_SpecArrayMap( rdz, "data_array", -1, "VERTICAL", "");
+ float rdy[2];
+_ssdm_SpecArrayMap( rdy, "data_array", -1, "VERTICAL", "");
 #70 "triangle_intersect.cpp"
 
- float rex[20];
-_ssdm_SpecArrayMap( rex, "data_array", -1, "VERTICAL", "");
+ float rdz[2];
+_ssdm_SpecArrayMap( rdz, "data_array", -1, "VERTICAL", "");
 #71 "triangle_intersect.cpp"
 
- float rey[20];
-_ssdm_SpecArrayMap( rey, "data_array", -1, "VERTICAL", "");
+ float rex[2];
+_ssdm_SpecArrayMap( rex, "data_array", -1, "VERTICAL", "");
 #72 "triangle_intersect.cpp"
 
- float rez[20];
-_ssdm_SpecArrayMap( rez, "data_array", -1, "VERTICAL", "");
+ float rey[2];
+_ssdm_SpecArrayMap( rey, "data_array", -1, "VERTICAL", "");
 #73 "triangle_intersect.cpp"
 
+ float rez[2];
+_ssdm_SpecArrayMap( rez, "data_array", -1, "VERTICAL", "");
+#74 "triangle_intersect.cpp"
 
- float t[20];
+
+ float t[2];
 _ssdm_SpecArrayMap( t, "data_array", -1, "VERTICAL", "");
-#75 "triangle_intersect.cpp"
-
- float gamma[20];
-_ssdm_SpecArrayMap( gamma, "data_array", -1, "VERTICAL", "");
 #76 "triangle_intersect.cpp"
 
- float beta[20];
-_ssdm_SpecArrayMap( beta, "data_array", -1, "VERTICAL", "");
+ float gamma[2];
+_ssdm_SpecArrayMap( gamma, "data_array", -1, "VERTICAL", "");
 #77 "triangle_intersect.cpp"
+
+ float beta[2];
+_ssdm_SpecArrayMap( beta, "data_array", -1, "VERTICAL", "");
+#78 "triangle_intersect.cpp"
 
 
  // Load data
- READ: for (int i = 0; i < 20; i++) {
+ READ: for (int i = 0; i < 2; i++) {
 _ssdm_Unroll(0,0,0, "");
-#80 "triangle_intersect.cpp"
+#81 "triangle_intersect.cpp"
 
   int b = i * 15;
 
@@ -32244,45 +32245,45 @@ _ssdm_Unroll(0,0,0, "");
   rez[i] = ins[b + 14].data;
  }
 
- WORK: for (int i = 0; i < 20; i++) {
+ WORK: for (int i = 0; i < 2; i++) {
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
-#104 "triangle_intersect.cpp"
+#105 "triangle_intersect.cpp"
 
   intersect(v0x[i], v0y[i], v0z[i], v1x[i], v1y[i], v1z[i],
     v2x[i], v2y[i], v2z[i], rdx[i], rdy[i], rdz[i],
     rex[i], rey[i], rez[i], t + i, gamma + i, beta + i);
  }
 
- WRITE: for(int i = 0; i < 20; i++) {
+ WRITE: for(int i = 0; i < 2; i++) {
 _ssdm_Unroll(0,0,0, "");
-#110 "triangle_intersect.cpp"
+#111 "triangle_intersect.cpp"
 
   int b = i * 3;
 
   outs[b].data = t[i];
-  outs[b].dest = ins[20 * 15 - 1].dest;
-  outs[b].id = ins[20 * 15 - 1].id;
-  outs[b].keep = ins[20 * 15 - 1].keep;
+  outs[b].dest = ins[2 * 15 - 1].dest;
+  outs[b].id = ins[2 * 15 - 1].id;
+  outs[b].keep = ins[2 * 15 - 1].keep;
   outs[b].last = 0;
-  outs[b].strb = ins[20 * 15 - 1].strb;
-  outs[b].user = ins[20 * 15 - 1].user;
+  outs[b].strb = ins[2 * 15 - 1].strb;
+  outs[b].user = ins[2 * 15 - 1].user;
 
   outs[b+1].data = gamma[i];
-  outs[b+1].dest = ins[20 * 15 - 1].dest;
-  outs[b+1].id = ins[20 * 15 - 1].id;
-  outs[b+1].keep = ins[20 * 15 - 1].keep;
+  outs[b+1].dest = ins[2 * 15 - 1].dest;
+  outs[b+1].id = ins[2 * 15 - 1].id;
+  outs[b+1].keep = ins[2 * 15 - 1].keep;
   outs[b+1].last = 0;
-  outs[b+1].strb = ins[20 * 15 - 1].strb;
-  outs[b+1].user = ins[20 * 15 - 1].user;
+  outs[b+1].strb = ins[2 * 15 - 1].strb;
+  outs[b+1].user = ins[2 * 15 - 1].user;
 
   outs[b+2].data = beta[i];
-  outs[b+2].dest = ins[20 * 15 - 1].dest;
-  outs[b+2].id = ins[20 * 15 - 1].id;
-  outs[b+2].keep = ins[20 * 15 - 1].keep;
+  outs[b+2].dest = ins[2 * 15 - 1].dest;
+  outs[b+2].id = ins[2 * 15 - 1].id;
+  outs[b+2].keep = ins[2 * 15 - 1].keep;
   outs[b+2].last = 0;
-  outs[b+2].strb = ins[20 * 15 - 1].strb;
-  outs[b+2].user = ins[20 * 15 - 1].user;
+  outs[b+2].strb = ins[2 * 15 - 1].strb;
+  outs[b+2].user = ins[2 * 15 - 1].user;
  }
 
- outs[3 * 20 - 1].last = ins[20 * 15 - 1].last;
+ outs[3 * 2 - 1].last = ins[2 * 15 - 1].last;
 }
