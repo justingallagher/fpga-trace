@@ -6,7 +6,7 @@ Comparing these implementations, I found that the FPGA implementation performed 
 
 ## Background
 
-### What is ray tracing?
+### What is Ray Tracing?
 
 Ray tracing is an image rendering algorithm that simulates the travel of photons through a scene.
 Rays are projected away from the viewer through each pixel in the output, and tested for interactions with models in the scene.
@@ -14,11 +14,11 @@ After finding the nearest intersection with a polygon, the algorithm can determi
 
 [INSERT DIAGRAM]
 
-Although ray tracing is extremely parallel, it is still very inefficient, as in the worst case each ray needs to be tested against each triangle, and there could be millions of each.
+Although ray tracing is extremely parallel, it is still very inefficient, as in the worst case each ray needs to be tested against each triangle. A large image of a large scene could easily require billions of intersection tests to be conducted.
 
 ### The Triangle-Ray Intersection Test
 
-The test processes a set of vertices forming a triangle and a light ray, calculating when the two intersect and at what point (in trilinear coordinates)
+The test processes a set of vertices forming a triangle and a light ray, calculating when the two intersect and at what point (in trilinear coordinates):
 
 [INSERT CODE]
 
@@ -47,7 +47,7 @@ C++ Ray Tracer running on ARM
 
 In FPGA accelerated mode, the processor delegates work to the FPGA by writing it to the Direct Memory Access buffer.
 The processor is responsible for generating the rays to test, as well as calculating the final color of each pixel.
-Similar to a map-reduce: the triangles and rays are mapped to intersections in the hardware, then reduced to find the nearest intersection in software.
+This operation is similar to a map-reduce: the triangles and rays are mapped to intersections in the hardware, then reduced to find the nearest intersection in software.
 
 In addition, support for SIMD computation on the CPU was added for comparison.
 The triangle intersection-test is trivially implementable in SIMD, by simply vectorizing inputs and float operations.
@@ -58,22 +58,22 @@ The triangle intersection-test is trivially implementable in SIMD, by simply vec
 
 The FPGA hardware implements an interface between the ARM CPU and the triangle intersect module defined in High Level Synthesis.
 I use Direct Memory Access, allowing the CPU to write directly to an address in memory that will be streamed to the hardware through the AXI4 interconnect.
-This allows for interaction to be easily implemented, but also forces memory accesses to be sequential, and limits us to the bandwidth of this AXI bus (around 266 Mb/s).
+This allows for interaction to be easily implemented, but also forces memory accesses to be sequential, and limits us to the bandwidth of the AXI bus (around 266 Mb/s).
 
 ### Custom Triangle Intersection Module
 
 The intersection module is written using C++, which is compiled down to a hardware circuit through High Level Synthesis.
 To get around the problem of sequential memory access, the data is pipelined with multiple circuits processing data simultaneously in a staggered fashion.
 
-For example, consider three circuits processing data simultaneously. Their access patterns would look similar to this:
+For example, consider three circuits working in parallel. Their access patterns would look similar to this:
 
 [INSERT PARALLELISM DIAGRAM]
 
 This pattern allows for maximum parallelism while still adhering to sequential memory access.
 
 To decide on how many circuits to include, I tested the throughput of the circuit on a large number of random triangle/ray intersections.
-As can be seen from the graph, performance quickly converges to the theoretical maximum limited by memory bandwidth.
-Because of this, I decided on 20 simultaneously operating circuits as a balance between performance and energy consumption.
+As can be seen from the graph, performance quickly converges to the theoretical maximum given by the memory bandwidth.
+I decided on 20 simultaneously operating circuits as a balance between performance and energy consumption.
 
 [INSERT GRAPH]
 
@@ -95,12 +95,12 @@ In addition, I tested the algorithm using four different scenes of varying compl
 
 ### Data
 
-Measured by number of intersections per second, the FPGA implementation is not quite competitive with CPU implementations.
+Measured by number of intersections per second, the FPGA implementation is not competitive with CPU implementations with smaller load.
 However, performance improves dramatically on high work loads, owing to the reduction in communication overhead.
 
 [INSERT GRAPH]
 
-However, the FPGA and CPU are at differing performance levels.
+The FPGA and CPU do operate at differing performance levels.
 When adjusted for the clock speed (667 MHz for the CPU, and 100 MHz for the FPGA clock), it can be seen that the FPGA implementation requires around half the clock cycles needed for the CPU version.
 
 [INSERT GRAPH]
@@ -130,5 +130,5 @@ With greater memory bandwidth, a much better speedup is possible.
 [Xilinx AXI DMA Driver and Library by Brandon Perez](https://github.com/bperez77/xilinx_axidma)
 * Provides a Linux driver and C library for sending data to the hardware using AXI and Direct Memory Access.
 
-[15-462 Computer Graphics](http://www.cs.cmu.edu/afs/cs/academic/class/15462-s15/www/)
+[15-462 Computer Graphics Spring 2015 Page](http://www.cs.cmu.edu/afs/cs/academic/class/15462-s15/www/)
 * Provides template for ray tracer implementation and sample scenes.
