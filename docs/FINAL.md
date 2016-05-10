@@ -20,7 +20,7 @@ Although ray tracing is extremely parallel, it is still very inefficient, as in 
 
 The test processes a set of vertices forming a triangle and a light ray, calculating when the two intersect and at what point (in trilinear coordinates):
 
-[INSERT CODE]
+![Triangle intersection code](img/tri_intersect.png)
 
 This intersection test involves lots of (slow) floating point operations that need to be done in sequence.
 Fortunately, we need to conduct millions of tests, so parallelism can be easily implemented.
@@ -54,7 +54,7 @@ The triangle intersection-test is trivially implementable in SIMD, by simply vec
 
 ### Hardware Design
 
-[INSERT HW DESIGN]
+![FPGA hardware design](img/hw_design.png)
 
 The FPGA hardware implements an interface between the ARM CPU and the triangle intersect module defined in High Level Synthesis.
 I use Direct Memory Access, allowing the CPU to write directly to an address in memory that will be streamed to the hardware through the AXI4 interconnect.
@@ -67,7 +67,7 @@ To get around the problem of sequential memory access, the data is pipelined wit
 
 For example, consider three circuits working in parallel. Their access patterns would look similar to this:
 
-[INSERT PARALLELISM DIAGRAM]
+![Parallelism diagram](img/parallelism_diagram.png)
 
 This pattern allows for maximum parallelism while still adhering to sequential memory access.
 
@@ -75,7 +75,7 @@ To decide on how many circuits to include, I tested the throughput of the circui
 As can be seen from the graph, performance quickly converges to the theoretical maximum given by the memory bandwidth.
 I decided on 20 simultaneously operating circuits as a balance between performance and energy consumption.
 
-[INSERT GRAPH]
+![fpga_circuits.png](img/fpga_circuits.png)
 
 ## Results
 
@@ -91,24 +91,26 @@ I tested my implementation using the following configurations:
 
 In addition, I tested the algorithm using four different scenes of varying complexities, depicted below:
 
-[INSERT SCENES]
+![Triangle and Cubes scenes](img/scenes1.png)
+
+![Small and Large Plane scenes](img/scenes2.png)
 
 ### Data
 
 Measured by number of intersections per second, the FPGA implementation is not competitive with CPU implementations with smaller load.
 However, performance improves dramatically on high work loads, owing to the reduction in communication overhead.
 
-[INSERT GRAPH]
+![Throughput per second](img/throughput_sec.png)
 
 The FPGA and CPU do operate at differing performance levels.
 When adjusted for the clock speed (667 MHz for the CPU, and 100 MHz for the FPGA clock), it can be seen that the FPGA implementation requires around half the clock cycles needed for the CPU version.
 
-[INSERT GRAPH]
+![Throughput per clock](img/throughput_clock.png)
 
 This also translates to improved energy efficiency, with the FPGA implementation edging out even the Multithreaded SIMD algorithm.
 Energy efficiency is approximated by dividing the total number of intersections per second by power consumption reported by the hardware profiler.
 
-[INSERT GRAPH]
+![Throughput per joule](img/throughput_power.png)
 
 ### Conclusion
 
